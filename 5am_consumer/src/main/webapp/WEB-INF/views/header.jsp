@@ -74,10 +74,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
+			<span>t h e </span>
+				<h1 ><a href="/index">5 A M</a></h1>
 			</div>
 			<div class="head-t">
-				<ul class="card">
+				<ul class="card"  style="font-size: 20px">
 					<li><a href="/about" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 				</ul>	
 			</div>
@@ -99,8 +100,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 					</div> 
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-						<ul class="nav navbar-nav ">
-							<li class=" active"><a href="/index" class="hyper "><span>Home</span></a></li>	
+						<ul class="nav navbar-nav "  style="font-size: 20px">
+							<li ><a href="/index" class="hyper "><span >Home</span></a></li>	
 							
 							<li class="dropdown ">
 								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Kitchen<b class="caret"></b></span></a>
@@ -154,8 +155,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						</ul>
 					</div>
 					</nav>
-					<div class="cart" style="height:25px;">
-						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
+					<div class="cart" style="height:25px; font-size: 20px">
+						<a href="/login"><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
 						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
 						<span  style="margin-left:10px"class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
 					</div>
