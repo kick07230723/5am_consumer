@@ -233,7 +233,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							</li>
 							
 							<li><a href="/qna/list" class="hyper"> <span>자주하는 질문</span></a></li>
-							<li><a href="/contact" class="hyper"><span>Contact Us</span></a></li>
+							<li><a href="/contact/list" class="hyper"><span>Contact Us</span></a></li>
 						</ul>
 					</div>
 					</nav>
