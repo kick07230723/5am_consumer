@@ -74,8 +74,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-			<span>t h e </span>
-				<h1 ><a href="/index">5 A M</a></h1>
+			
+				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
 			</div>
 			<div class="head-t">
 				<ul class="card"  style="font-size: 20px">
