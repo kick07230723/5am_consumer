@@ -40,16 +40,12 @@
 				
 			</ul>
 		</div>
+		
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
 				<h2 ><a href="/index"><b>T<br>H<br>E</b>5 A M<span>The Best Advertisement For You</span></a></h2>
-				<p class="fo-para">  한글테스트</p>
-				<ul class="social-fo">
-					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="#" class=" pin"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-					<li><a href="#" class=" dri"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				</ul>
+				<p class="fo-para">  당신을 위한 광고 플랫폼</p>
+
 				<div class=" address">
 					<div class="col-md-4 fo-grid1">
 							<p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
