@@ -23,7 +23,9 @@
 		<div class=" contact-w3">	
 			<div class="col-md-5 contact-right">	
 				<img src="images/cac.jpg" class="img-responsive" alt="">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" style="border:0"></iframe>
+				
+				 <div class="col-md-5 contact-right" id="googlemap" style="width: 100%;height: 298px"></div>
+				 
 			</div>
 			<div class="col-md-7 contact-left">
 				<h4>Contact Information</h4>
@@ -81,7 +83,22 @@
 				
 				<!--Plug-in Initialisation-->
 				<script type="text/javascript">
+				
+				function initMap() {
+			        var uluru = {lat: 37.498078, lng: 127.027600};
+			        var map = new google.maps.Map(document.getElementById('googlemap'), {
+			          zoom: 15,
+			          center: uluru
+			        });
+			        var marker = new google.maps.Marker({
+			          position: uluru,
+			          map: map
+			        });
+			      }
+				
 				$(document).ready(function() {
+					
+					
 					//Horizontal Tab
 					$('#parentHorizontalTab').easyResponsiveTabs({
 						type: 'default', //Types: default, vertical, accordion
@@ -127,6 +144,12 @@
 				});
 			</script>
 				
+				
+			 <script async defer
+		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4GoEFApy-CaOFoG0_IsO3msny1ART9Yw&callback=initMap">
+		    console.log("silhang");
+		    </script>
+				
 			</div>
 			
 		<div class="clearfix"></div>
@@ -134,6 +157,10 @@
 	</div>
 </div>
 <!-- //contact -->
+
+   
+
+
 
 <!--footer-->
 <%@ include file="/WEB-INF/views/footer.jsp" %>
