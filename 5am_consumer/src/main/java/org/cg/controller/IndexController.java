@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/index")
 public class IndexController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
 	
-	@GetMapping("/index")
+	@GetMapping
 	public void getIndex()throws Exception{
 
 	}

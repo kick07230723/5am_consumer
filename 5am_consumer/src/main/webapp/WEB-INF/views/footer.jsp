@@ -23,7 +23,7 @@
 		<div class="col-md-3 footer-grid ">
 			<h3>Customer Services</h3>
 			<ul>
-				<li><a href="shipping.html">Shipping</a></li>
+				<li><a href="/qna/list">Q&A</a></li>
 				<li><a href="terms.html">Terms & Conditions</a></li>
 				<li><a href="faqs.html">Faqs</a></li>
 				<li><a href="contact.html">Contact</a></li>
