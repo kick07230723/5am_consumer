@@ -449,6 +449,7 @@ span.fa.fa-shopping-cart.my-cart-icon {
     position: absolute !important;
     font-size: 1.5em;
     color: #039445;
+    float: none;
 }
 .badge {
     display: inline-block;
