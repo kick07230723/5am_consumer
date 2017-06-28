@@ -73,14 +73,17 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 		<div class="container">
 			
-			<div class="logo">
-			<span>t h e </span>
-				<h1 ><a href="/index">5 A M</a></h1>
+			<div class="logo" style="margin-bottom: 5%">
+				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
 			</div>
+<<<<<<< HEAD
 			<div class="head-t">
 				<ul class="card"  style="font-size: 20px">
 				</ul>	
 			</div>
+=======
+
+>>>>>>> branch 'master' of https://github.com/kick07230723/5am_consumer.git
 		
 
 		
@@ -99,8 +102,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 					</div> 
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-						<ul class="nav navbar-nav "  style="font-size: 20px">
-							<li ><a href="/index" class="hyper "><span >Home</span></a></li>	
+						<ul class="nav navbar-nav " style="font-size: 22px">
+							<li><a href="/index" class="hyper "><span>Home</span></a></li>	
 							
 							<li class="dropdown ">
 								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Kitchen<b class="caret"></b></span></a>
@@ -154,9 +157,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						</ul>
 					</div>
 					</nav>
+<<<<<<< HEAD
 					<div class="cart" style="height:25px; font-size: 20px">
 						<a href="/login/main"><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
 						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
+=======
+					<div class="cart" style="height:25px;">
+						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
+						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
+>>>>>>> branch 'master' of https://github.com/kick07230723/5am_consumer.git
 						<span  style="margin-left:10px"class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
 					</div>
 					<div class="clearfix"></div>

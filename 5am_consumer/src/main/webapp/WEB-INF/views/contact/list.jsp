@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/views/header.jsp" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  <!--banner-->
 <div class="banner-top">
 	<div class="container">
@@ -49,12 +49,12 @@
 						</ul>
 						<div class="resp-tabs-container hor_1">
 							<div>
-								<form action="#" method="post">
-									<input type="text" value="Name" name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-									<input type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-									<textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-									<input type="submit" value="Submit" >
-								</form>
+								
+									<input id="name" type="text" value="Name" name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+									<input id="address" type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+									<textarea id="message" name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+									<input id="sendBtn" type="submit" value="Submit" >
+								
 							</div>
 							<div>
 								<div class="map-grid">
@@ -237,7 +237,46 @@
 
   });
   </script>
-
+  
+<script type="text/javascript">
+$(document).ready(function() {
+	var $address = $("#address").val();
+	var $name =$("#name").val();
+	var $message = $("#message").val();
+	
+	$("#sendBtn").on("click", function(e){
+		
+		if($address==""){
+			 alert("메일 주소를 입력해주세요");
+		 }
+		 
+		else if($name==""){
+			 alert("이름을 입력해주세요");
+		 }
+		 
+		else if($message==""){
+			 alert("내용을 입력해주세요");
+		 }
+		else{
+		    $.ajax({
+		        url:'/contact/list',
+		        type:'POST',
+		        dataType : 'text',
+		        data : { "address" :$address , 
+		        	"name" : $name ,
+		        	"message" :$message
+		        },
+		        success : function(result){
+		        	alert("메일이 전송되었습니다");
+					$("#address").val("Email"), 
+			        $("#name").val("Name"),
+			        $("#message").val("Message...")
+		        }
+		    })
+		}
+	});
+})
+</script>
   
 </body>
 </html>
