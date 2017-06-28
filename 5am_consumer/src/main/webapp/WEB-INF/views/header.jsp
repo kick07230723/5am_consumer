@@ -76,14 +76,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="logo" style="margin-bottom: 5%">
 				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
 			</div>
-<<<<<<< HEAD
-			<div class="head-t">
-				<ul class="card"  style="font-size: 20px">
-				</ul>	
-			</div>
-=======
 
->>>>>>> branch 'master' of https://github.com/kick07230723/5am_consumer.git
 		
 
 		
@@ -112,35 +105,34 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="col-sm-3">
 											<ul class="multi-column-dropdown">
 			
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>식음료</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>화장품</a></li>
-												<li><a href="/kitchen/list"> <i class="fa fa-angle-right" aria-hidden="true"></i>의약 &amp;건강</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>교양 &amp; 오락</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>생활잡화</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Water & Beverages</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Fruits & Vegetables</a></li>
+												<li><a href="/kitchen"> <i class="fa fa-angle-right" aria-hidden="true"></i>Staples</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Branded Food</a></li>
+										
 											</ul>
 										
 										</div>
 										<div class="col-sm-3">
 										
 											<ul class="multi-column-dropdown">
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>교육 &amp; 단체</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>레저 &amp; 스포츠</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>패션</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>주택 &amp; 가구</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>금융</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>컴퓨터 &amp; 주변기기</a></li>
-												
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Breakfast &amp; Cereal</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Snacks</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Spices</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Biscuit &amp; Cookie</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Sweets</a></li>
+										
 											</ul>
 										
 										</div>
 										<div class="col-sm-3">
 										
 											<ul class="multi-column-dropdown">
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>전자 &amp; 통신</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>유통</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>수송</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>인터넷</a></li>
-												<li><a href="/kitchen/list"><i class="fa fa-angle-right" aria-hidden="true"></i>서비스 &amp; 기타</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
+												<li><a href="/kitchen"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
+										
 											</ul>
 										</div>
 										<div class="col-sm-3 w3l">
@@ -152,20 +144,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							</li>
 							
 							
+							
 							<li><a href="/qna/list" class="hyper"> <span> Q & A</span></a></li>
 							<li><a href="/contact/list" class="hyper"><span>Contact Us</span></a></li>
 						</ul>
 					</div>
 					</nav>
-<<<<<<< HEAD
-					<div class="cart" style="height:25px; font-size: 20px">
-						<a href="/login/main"><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
-						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
-=======
 					<div class="cart" style="height:25px;">
 						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
 						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
->>>>>>> branch 'master' of https://github.com/kick07230723/5am_consumer.git
 						<span  style="margin-left:10px"class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
 					</div>
 					<div class="clearfix"></div>
