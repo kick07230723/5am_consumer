@@ -74,10 +74,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
+			<span>t h e </span>
+				<h1 ><a href="/index">5 A M</a></h1>
 			</div>
 			<div class="head-t">
-				<ul class="card">
+				<ul class="card"  style="font-size: 20px">
 					<li><a href="/about" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 				</ul>	
 			</div>
@@ -99,8 +100,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 					</div> 
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-						<ul class="nav navbar-nav ">
-							<li class=" active"><a href="/index" class="hyper "><span>Home</span></a></li>	
+						<ul class="nav navbar-nav "  style="font-size: 20px">
+							<li ><a href="/index" class="hyper "><span >Home</span></a></li>	
 							
 							<li class="dropdown ">
 								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Kitchen<b class="caret"></b></span></a>
@@ -146,99 +147,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									</div>	
 								</ul>
 							</li>
-							<li class="dropdown">
 							
-								<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span> Personal Care <b class="caret"></b></span></a>
-								<ul class="dropdown-menu multi multi1">
-									<div class="row">
-										<div class="col-sm-3">
-											<ul class="multi-column-dropdown">
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Ayurvedic </a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Baby Care</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Purfumes</a></li>
-										
-											</ul>
-											
-										</div>
-										<div class="col-sm-3">
-											
-											<ul class="multi-column-dropdown">
-												<li><a href="care.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care </a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Oral Care</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Personal Hygiene</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>
-										
-											</ul>
-											
-										</div>
-										<div class="col-sm-3">
-											
-											<ul class="multi-column-dropdown">
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Fashion Accessories </a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Grooming Tools</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shaving Need</a></li>
-												<li><a href="care.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Sanitary Needs</a></li>
-										
-											</ul>
-										</div>
-										<div class="col-sm-3 w3l">
-											<a href="care.html"><img src="images/me1.png" class="img-responsive" alt=""></a>
-										</div>
-										<div class="clearfix"></div>
-									</div>	
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span>Household<b class="caret"></b></span></a>
-								<ul class="dropdown-menu multi multi2">
-									<div class="row">
-										<div class="col-sm-3">
-											<ul class="multi-column-dropdown">
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cleaning Accessories</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>CookWear</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Detergents</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Gardening Needs</a></li>
-										
-											</ul>
-										
-										</div>
-										<div class="col-sm-3">
-											
-											<ul class="multi-column-dropdown">
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Kitchen & Dining</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>KitchenWear</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pet Care</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Plastic Wear</a></li>
-										
-											</ul>
-										
-										</div>
-										<div class="col-sm-3">
-										
-											<ul class="multi-column-dropdown">
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Pooja Needs</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Serveware</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Safety Accessories</a></li>
-												<li><a href="hold.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Festive Decoratives </a></li>
-										
-											</ul>
-										</div>
-										<div class="col-sm-3 w3l">
-											<a href="hold.html"><img src="images/me2.png" class="img-responsive" alt=""></a>
-										</div>
-										<div class="clearfix"></div>
-									</div>	
-								</ul>
-							</li>
 							
-							<li><a href="/qna/list" class="hyper"> <span>자주하는 질문</span></a></li>
+							
+							<li><a href="/qna/list" class="hyper"> <span> Q & A</span></a></li>
 							<li><a href="/contact/list" class="hyper"><span>Contact Us</span></a></li>
 						</ul>
 					</div>
 					</nav>
-					<div class="cart" style="height:25px;">
-						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
+					<div class="cart" style="height:25px; font-size: 20px">
+						<a href="/login"><i class="fa fa-user" aria-hidden="true" style="margin-left:10px; "></i>Login</a >
 						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin-left:10px"></i>Register</a>
 						<span  style="margin-left:10px"class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
 					</div>

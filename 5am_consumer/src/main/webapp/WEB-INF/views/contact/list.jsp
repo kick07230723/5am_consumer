@@ -22,10 +22,11 @@
 		</div>
 		<div class=" contact-w3">	
 			<div class="col-md-5 contact-right">	
-				<img src="images/cac.jpg" class="img-responsive" alt="">
 				
+				<img src="images/5am.jpg" class="img-responsive" alt="">
 				 <div class="col-md-5 contact-right" id="googlemap" style="width: 100%;height: 298px"></div>
 				 
+				
 			</div>
 			<div class="col-md-7 contact-left">
 				<h4>Contact Information</h4>
