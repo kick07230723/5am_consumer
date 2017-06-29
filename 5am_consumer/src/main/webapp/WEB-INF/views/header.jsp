@@ -159,7 +159,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<div class="cart" style="height:auto; width: auto">
 						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; "></i>Login</a >
 						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i>Register</a>
-						<i  style="margin:10px;" class="fa fa-shopping-cart my-cart-icon"><i class="badge badge-notify my-cart-badge" style="margin:10px;"></i></i>
+						<i  style="margin:10px;position:relative;" class="fa fa-shopping-cart my-cart-icon"><i class="badge badge-notify my-cart-badge" style="margin:10px;"></i></i>
 
 					</div>
 					<div class="clearfix"></div>
