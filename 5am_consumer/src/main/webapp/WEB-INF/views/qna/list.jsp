@@ -184,24 +184,115 @@
 				</div>
 			</div>
 				<div class="panel-group" id="accordion">
-				<!-- First Panel -->
-					<div class="panel panel-default">
+				
+				
+				<!-- input 창 -->
+				
+				<div class="panel panel-default">
 						<div class="panel-heading">
-							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne2">
-								 <span>1.</span> What are the delivery charges?
+							 <h4 class="panel-title"  data-toggle="collapse" data-target="#cusregi">
+								 <span style="color:highlighttext;font-weight: bold;">질문 등록하기</span>  
 							 </h4>
+							
 						</div>
-						<div id="collapseOne2" class="panel-collapse collapse">
+						
+						<div id="cusregi" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. .</p>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
+								<div class="input-group">
+								  <span class="input-group-addon" id="basic-addon1">제목</span>
+								  <input id="custitle" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
+								</div>
+								
+								
+								<div class="input-group">
+								  <span class="input-group-addon" id="basic-addon1">내용</span>
+								  <input id="cuscontent" style="height: 400px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1">
+								</div>
+								
+								<h2 class="t-button" style="text-align: right;">
+							    <a id="cusregi2" href="#"><span class="label label-info" >등록하기</span></a>
+							    </h2>
+								
 							</div>
 						</div>
 					</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<!-- First Panel -->
+				
+				<c:forEach items="${list}" var="QuestionVO"> 
+                                       
+ 					 <div class="panel panel-default">
+						<div class="panel-heading">
+							 <h4 class="panel-title" data-cusqno="${QuestionVO.cusqno}" data-toggle="collapse" data-target="#${QuestionVO.cusqno}">
+								 <span>${QuestionVO.cusqno}.</span> ${QuestionVO.custitle}  
+							 </h4>
+							 <h6 style="text-align: right;">작성자 : ${QuestionVO.cuswriter}</h6>
+						</div>
+						<div id="${QuestionVO.cusqno}" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>${QuestionVO.cuscontent} </p>
+								
+							</div>
+						</div>
+					</div>
+                                        
+                                        </tr>
+                                        </c:forEach>
+								<div style="width: 100%;text-align: right;">
+  								<label>
+				                <form  id="f1" style="text-align: right;" >
+								
+								<input id="hpage" type="hidden" name="page" value="${cri.page}">
+				                
+				                <select style="margin-bottom:5px;padding: 5px;" name="type" class="type" >
+								<option value="n" ${cri.type eq null?'selected':''}>---</option>
+								<option value="t" ${cri.type eq 't'?'selected':''}>제목</option>
+								<option value="c" ${cri.type eq 'c'?'selected':''}>내용</option>
+								<option value="w" ${cri.type eq 'w'?'selected':''}>작성자</option>
+							    </select> 
+							    
+							    <input type="search" class="form-control input-sm" aria-controls="dataTables-example" name="keyword" value="${cri.keyword}">
+							    <h2 class="t-button">
+							    <a id="btnn" href="#"><span class="label label-info" >Search</span></a>
+							    </h2>
+							    </form>
+							    </label>					
+							    </div>
 					
 					
+				
+				 
+					 <nav aria-label="Page navigation" style="text-align: center;">
+									<ul class="pagination">
+										<c:if test="${pageMaker.prev}">
+											<li><a class="prev" href="${pageMaker.start-1}"
+												aria-label="Previous"> <span aria-hidden=false>&laquo;</span>
+											</a></li>
+										</c:if>
 					
-						
+										<c:forEach begin="${pageMaker.start}" end="${pageMaker.end}"
+											var="idx">
+											<li class="${pageMaker.current ==idx?'active':''}">
+											<a class="curr" href="${idx}">${idx}</a></li>
+										</c:forEach>
+					
+										<c:if test="${pageMaker.next}">
+											<li><a class="next" href="${pageMaker.end+1}" aria-label="Next">
+													<span aria-hidden="${pageMaker.next}">&raquo;</span>
+											</a></li>
+										</c:if>
+					
+									</ul>
+								</nav>
+					
 					
 					
 				</div>
@@ -215,6 +306,111 @@
 <!-- smooth scrolling -->
 	<script type="text/javascript">
 		$(document).ready(function() {
+			
+			$("#cusregi2").on("click",function(e){
+				e.preventDefault();
+				
+				  $.ajax({
+				type:'post',
+				url:'/qna/regi',
+				data:{
+					custitle:$("#custitle").val(),
+					cuscontent:$("#cuscontent").val(),
+					cuswriter:"userVO.id"
+				},
+				success:function(re){
+					
+					
+					 
+				
+					 
+					 swal({
+						  title: "Are you register?",
+						  text: "You will not be able to recover this imaginary file!",
+						  type: "success",
+						  showCancelButton: true,
+						  confirmButtonColor: "#19ffb2",
+						  confirmButtonText: "Yes, register it!",
+						  closeOnConfirm: false,
+						  html: false
+						}, function(){
+							
+							location.reload();
+						  swal("success!",
+						  "Your imaginary file has been success.",
+						  "success");
+						});
+					 
+					 
+					 
+					 
+					 
+					 
+				}
+			}).done(function(){
+				
+			});  
+				
+				
+				
+			});
+			
+			
+			
+			$("#btnn").on("click", function(e) {
+				e.preventDefault();
+				 $("#hpage").val("1");
+				$("#f1").attr('method', 'get');
+				$("#f1").attr("action", "/qna/list").submit(); 
+	 
+			});
+			
+			
+			$(".prev").on("click", function(e) {
+				e.preventDefault();
+				$("#hpage").val($(this).attr("href"));
+				$("#f1").attr("action", "/qna/list").submit();
+
+			});
+			
+			$(".curr").on("click", function(e) {
+				e.preventDefault();
+				$("#hpage").val($(this).attr("href"));
+				$("#f1").attr("action", "/qna/list").submit();
+
+			});
+			
+			$(".next").on("click", function(e) {
+				e.preventDefault();
+				$("#hpage").val($(this).attr("href"));
+				$("#f1").attr("action", "/qna/list").submit();
+
+			});
+			
+			$(".panel-title").on("click", function(e) {
+				e.preventDefault();
+				console.log($(this)[0].dataset.cusqno);
+				
+				/* ajax로 보내서 댓글 가져오기  */
+			
+				
+				/*  $.ajax({
+					type:'post',
+					url:'/qna/fdelete',
+					data:{fname:$(this).attr("data-fname")},
+					success:function(re){
+						if(re=='delete')
+						alert("deleted");
+					}
+				});  */
+				
+				
+				
+				
+				
+			});
+			
+			
 		/*
 			var defaults = {
 			containerID: 'toTop', // fading element id

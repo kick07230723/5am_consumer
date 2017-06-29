@@ -3,37 +3,37 @@ package org.cg.persistence;
 import java.util.List;
 
 import org.cg.domain.Criteria;
-import org.cg.domain.QAnswerVO;
-import org.cg.domain.QuestionVO;
+import org.cg.domain.CusAnswerVO;
+import org.cg.domain.CusQuestionVO;
 
 public interface QnaDAO {
 	
 //  question
 	
-	public List<QuestionVO> getQList(Criteria cri);
+	public List<CusQuestionVO> getQList(Criteria cri);
 	
 	public int getTotal(Criteria cri);
 	
-	public QuestionVO qReadOne(QuestionVO vo);
+	public CusQuestionVO qReadOne(CusQuestionVO vo);
 	
-	public void qUpdate(QuestionVO vo);
+	public void qUpdate(CusQuestionVO vo);
 	
-	public void qDelete(QuestionVO vo);
+	public void qDelete(CusQuestionVO vo);
 	
-	public void qInsert(QuestionVO vo);
+	public void qInsert(CusQuestionVO vo);
 	
+	public String gettime();
 	
 //	answer
 	
-	public List<QAnswerVO> getAList(QuestionVO vo);
+	public List<CusAnswerVO> getAList(CusQuestionVO vo);
 	
-	public void aInsert(QAnswerVO vo);
+	public void aInsert(CusAnswerVO vo);
 	
-	public void aDelete(QAnswerVO vo);
+	public void aDelete(CusAnswerVO vo);
 	
-	public void aUpdate(QAnswerVO vo);
+	public void aUpdate(CusAnswerVO vo);
 	
-	public void aDeleteAll(QuestionVO vo);
 	
 
 	

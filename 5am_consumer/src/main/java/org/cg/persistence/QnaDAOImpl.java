@@ -5,8 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.cg.domain.Criteria;
-import org.cg.domain.QAnswerVO;
-import org.cg.domain.QuestionVO;
+import org.cg.domain.CusAnswerVO;
+import org.cg.domain.CusQuestionVO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -17,8 +17,9 @@ public class QnaDAOImpl implements QnaDAO {
 	private SqlSessionTemplate sess;
 
 	private static final String namespace = "org.cg.persistence.QnaDAO";
+	
 	@Override
-	public List<QuestionVO> getQList(Criteria cri) {
+	public List<CusQuestionVO> getQList(Criteria cri) {
 		
 		return sess.selectList(namespace+".QuestionList",cri);
 	}
@@ -28,47 +29,48 @@ public class QnaDAOImpl implements QnaDAO {
 		return sess.selectOne(namespace+".getTotal",cri);
 	}
 	@Override
-	public QuestionVO qReadOne(QuestionVO vo) {
+	public CusQuestionVO qReadOne(CusQuestionVO vo) {
 		
 		return sess.selectOne(namespace+".getDetail",vo);
 	}
 	@Override
-	public void qUpdate(QuestionVO vo) {
+	public void qUpdate(CusQuestionVO vo) {
 		sess.update(namespace+".qupdate",vo);
 		
 	}
 	@Override
-	public void qDelete(QuestionVO vo) {
+	public void qDelete(CusQuestionVO vo) {
 		sess.delete(namespace+".qdelete",vo);
 	}
 	@Override
-	public void qInsert(QuestionVO vo) {
+	public void qInsert(CusQuestionVO vo) {
 		sess.insert(namespace+".qinsert",vo);
 		
 	}
 	@Override
-	public List<QAnswerVO> getAList(QuestionVO vo) {
+	public List<CusAnswerVO> getAList(CusQuestionVO vo) {
 		
 		return sess.selectList(namespace+".getAnsList",vo);
 	}
 	@Override
-	public void aInsert(QAnswerVO vo) {
+	public void aInsert(CusAnswerVO vo) {
 			sess.insert(namespace+".ainsert",vo);
 	}
 	@Override
-	public void aDelete(QAnswerVO vo) {
+	public void aDelete(CusAnswerVO vo) {
 		sess.delete(namespace+".adelete",vo);
 	}
 	@Override
-	public void aUpdate(QAnswerVO vo) {
+	public void aUpdate(CusAnswerVO vo) {
 		sess.update(namespace+".aupdate",vo);
 		
 	}
 	@Override
-	public void aDeleteAll(QuestionVO vo) {
-		sess.delete(namespace+".adeleteall",vo);
-		
+	public String gettime() {
+	
+		return sess.selectOne(namespace+".gettime");
 	}
+	
 	
 	
 	
