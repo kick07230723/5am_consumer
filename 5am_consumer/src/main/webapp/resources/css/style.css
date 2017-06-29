@@ -781,7 +781,7 @@ a:focus {
 .my-cart-b:hover, .my-cart-b:focus, .my-cart-b:active {
 	color: white;
     background: none;
-    border: 2px solid #039445;
+   
     outline: none !important;
 }
 .my-cart-b:hover:before, .my-cart-b:focus:before, .my-cart-b:active:before {
@@ -1816,8 +1816,8 @@ a#myTabDrop1 {
 .key i{
 	    float: left;
     color: #999;
-    font-size: 1.1em;
-    padding: 13px;
+    font-size: 1.0em;
+    padding: 11px;
 }
 .key {
     background: #fff;
