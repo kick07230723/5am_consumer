@@ -68,7 +68,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!---//End-rate---->
 
 </head>
-<body>
+<body class="fade-in">
 <div class="header">
 
 		<div class="container">
