@@ -5,19 +5,15 @@
 	<div class="container">
 		<div class="col-md-3 footer-grid">
 			<h3>About Us</h3>
-			<p>Nam libero tempore, cum soluta nobis est eligendi 
-				optio cumque nihil impedit quo minus id quod maxime 
-				placeat facere possimus.</p>
+			<p>Coding Gears from BIT campus.</p>
 		</div>
 		<div class="col-md-3 footer-grid ">
 			<h3>Menu</h3>
 			<ul>
 				<li><a href="/index">Home</a></li>
-				<li><a href="kitchen.html">Kitchen</a></li>
-				<li><a href="care.html">Personal Care</a></li>
-				<li><a href="hold.html">Household</a></li>						 
-				<li><a href="codes.html">Short Codes</a></li> 
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="/category/list">Category</a></li>
+				<li><a href="/qna/list">Q&A</a></li> 
+				<li><a href="/contact/list">Contact</a></li>
 			</ul>
 		</div>
 		<div class="col-md-3 footer-grid ">
@@ -25,7 +21,7 @@
 			<ul>
 				<li><a href="/qna/list">Q&A</a></li>
 				<li><a href="terms.html">Terms & Conditions</a></li>
-				<li><a href="faqs.html">Faqs</a></li>
+				<li><a href="/qna/list">Faqs</a></li>
 				<li><a href="contact.html">Contact</a></li>
 				<li><a href="offer.html">Online Shopping</a></li>						 
 				 
