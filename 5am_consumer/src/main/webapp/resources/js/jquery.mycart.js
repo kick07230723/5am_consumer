@@ -273,9 +273,9 @@
       var cartIconPosition = $cartIcon.css('position');
       $(window).scroll(function () {
         if ($(window).scrollTop() >= cartIconBottom) {
-          $cartIcon.css('position', 'fixed').css('z-index', '999').css('margin','610px 10px 10px 125px').addClass(classAffixMyCartIcon);
+          $cartIcon.css('position', 'fixed').css('z-index', '999').css('bottom','54px').css('right','0%').addClass(classAffixMyCartIcon);
         } else {
-          $cartIcon.css('position', cartIconPosition).css('background-color', 'inherit').css('margin','10px').removeClass(classAffixMyCartIcon);
+          $cartIcon.css('position', cartIconPosition).css('background-color', 'inherit').css('margin','0px').css('bottom','0px').removeClass(classAffixMyCartIcon);
         }
       });
     }
