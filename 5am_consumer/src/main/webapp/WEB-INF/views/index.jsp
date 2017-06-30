@@ -3,13 +3,13 @@
 <div data-vide-bg="video/video">
     <div class="container">
 		<div class="banner-info">
-			<h3>It is a long established fact that a reader will be distracted by 
-			the readable </h3>	
-			<div class="search-form">
-				<form action="#" method="post">
-					<input type="text" placeholder="Search..." name="Search...">
-					<input type="submit" value=" " >
-				</form>
+			<h3>검색을 원하시는 장소를 입력하세요</h3><br>
+			
+			<div class="search-form">			
+				
+					<input id="area" type="text" placeholder="구/동 주소를 입력하세요..." name="Search...">
+					<input id="searcharea" type="submit" value=" " >
+				
 			</div>		
 		</div>	
     </div>
@@ -711,19 +711,7 @@
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 
 <!-- smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
+	
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //smooth scrolling -->
 <!-- for bootstrap working -->
@@ -1538,3 +1526,117 @@
 						</div>
 					</div>
 				</div>
+				<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
+<script type="text/javascript">				
+
+    $(document).ready(function(e) {
+    	
+    	var geocoder = new daum.maps.services.Geocoder();
+    	
+		function transGeocode(bbb){
+    		
+    		geocoder.addr2coord(bbb, function(status, result) {
+
+    		     if (status === daum.maps.services.Status.OK) {
+    		    	 
+    		    	 console.log(result.addr[0].lat);
+    		    	 console.log(result.addr[0].lng);
+    		    	 
+    		    	 $.ajax({
+       		    	  type: "POST",
+       		    	  url: "/index/search",
+       		    	  data: {
+       		    		  lat : result.addr[0].lat,
+       		    		  lng : result.addr[0].lng,
+       		    		  
+       		    	  },
+       		 		  dataType: 'Json',
+       		    	  success: function(re){
+       		    		console.log("리스트를 받아서 ");
+       		    		  console.log(re);
+       		    	  },
+       		    	 
+       		    	}); 
+    		    	 
+    		    	
+
+    		    } 
+    		     
+    		     
+    		    
+    		});
+    		
+    		
+    	}
+    	
+    	var currentLocation = function(){    		
+    		
+    		if (!!navigator.geolocation)
+    	    {
+    	        navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
+    	    }
+    	    else
+    	    {
+    	        alert("이 브라우저는 Geolocation를 지원하지 않습니다");
+    	    }
+
+    	    function successCallback(position)
+    	    {
+    	        var lat = position.coords.latitude;
+    	        var lng = position.coords.longitude;    	        
+
+    	        $.ajax({
+    	            type: "post",
+    	            contentType:"application/json",
+    	            dataType :'jsonp',
+    	            crossDomain:true,
+    	            url: "https://apis.daum.net/local/geo/coord2addr?apikey=175962b9a13ff23b6ba95789998c261c&longitude="+lng+"&latitude="+lat+"&inputCoordSystem=WGS84&output=json",
+    	            error   : function (msg) {
+    	                alert(msg);
+    	                
+    	            },
+    	            success: function(data){
+    	                $("#area").val(data.fullName);
+    	                console.log(data);
+    	            }
+    	        });
+
+    	    }
+
+    	    function errorCallback(error)
+    	    {
+    	        alert(error.message);
+    	    }
+    		
+    		
+    	}
+    	
+    	$().UItoTop({ easingType: 'easeOutQuart' });
+    	
+    	$("#area").on("click", function(e){
+    		
+    		e.preventDefault();
+    		
+    		currentLocation();
+    		
+    		
+    	})
+    	
+    	
+
+    	$("#searcharea").on('click',function(e){
+    		e.preventDefault();
+
+    		console.log("in~~~!!");
+    		var putArea = $("#area").val();
+    		console.log(putArea);
+    		
+    		transGeocode(putArea);
+    		
+    		
+    	})
+
+    	
+    	
+})
+</script>

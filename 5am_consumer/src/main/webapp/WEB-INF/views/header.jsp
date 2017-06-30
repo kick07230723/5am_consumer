@@ -77,7 +77,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 		<div class="container">
 			
-			<div class="logo" style="margin-bottom: 5%">
+			<div class="logo">
 				<h1 ><a href="/index"><span>t h e </span>5 A M</a></h1>
 			</div>
 
@@ -104,7 +104,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<li ><a href="/index" class="hyper "><span >Home</span></a></li>	
 							
 							<li class="dropdown ">
-								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Kitchen<b class="caret"></b></span></a>
+								<a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Category<b class="caret"></b></span></a>
 								<ul class="dropdown-menu multi">
 									<div class="row">
 										<div class="col-sm-3">
