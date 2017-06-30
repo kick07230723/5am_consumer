@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class StoreVO {
 
 	private String sid,sname,saddr,saddrm,scategory,sphone,semail;
-	private Double lng,lat;
+	private String lng,lat;
 	private Timestamp regdate,updatedate;
 	public String getSid() {
 		return sid;
@@ -49,16 +49,17 @@ public class StoreVO {
 	public void setSemail(String semail) {
 		this.semail = semail;
 	}
-	public Double getLng() {
+	
+	public String getLng() {
 		return lng;
 	}
-	public void setLng(Double lng) {
+	public void setLng(String lng) {
 		this.lng = lng;
 	}
-	public Double getLat() {
+	public String getLat() {
 		return lat;
 	}
-	public void setLat(Double lat) {
+	public void setLat(String lat) {
 		this.lat = lat;
 	}
 	public Timestamp getRegdate() {
