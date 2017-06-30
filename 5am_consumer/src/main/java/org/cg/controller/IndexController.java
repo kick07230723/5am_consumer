@@ -1,49 +1,30 @@
 package org.cg.controller;
 
+import java.util.List;
 
+import org.cg.domain.StoreVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
 @RequestMapping("/index")
 public class IndexController {
 	
-	@Inject
-	StoreDAO dao;
-	
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
-	
 
+	
 	@GetMapping
 	public void getIndex()throws Exception{
-		
+
 	}
-
-	@RequestMapping(value = "getadli", method = RequestMethod.POST)
-	public ResponseEntity<Map<String,Object>> sendadlist(){
-
-		
-		logger.info("inininin");
-		 
-		String a="hello!!";
-		
-		
-		List<String> list = new ArrayList<>();
-		
-		
-		Map<String,Object> map= new HashMap<String,Object>();
-		map.put("hello","hello hello");
-		map.put("list",list);
-		
-		ResponseEntity<Map<String, Object>> entity=null;
-				
-			entity=new ResponseEntity<>(map,HttpStatus.OK);  
-		
-		
-		
-		   return entity;		
-	}
-
-		
 	
 	@GetMapping("/shipping")
 	public void getShipping()throws Exception{

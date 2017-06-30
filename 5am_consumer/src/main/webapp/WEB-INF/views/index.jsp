@@ -40,16 +40,11 @@
 				</nav>
 				<div class=" tab-content tab-content-t ">
 					<div class="tab-pane active text-style" id="tab1">
-					
-					<button id="search">ddddd</button>
-					
 						<div class=" con-w3l">
-							
-							
 							<div class="col-md-3 m-wthree">
 								<div class="col-m">								
 									<a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
-										<img src="http://localhost:8080/admin/display/gif?fName=f20-5.gif" class="img-responsive" alt="">
+										<img src="images/of.png" class="img-responsive" alt="">
 										<div class="offer"><p><span>Offer</span></p></div>
 									</a>
 									<div class="mid-1">
@@ -70,9 +65,6 @@
 									</div>
 								</div>
 							</div>
-							
-							
-							
 							<div class="col-md-3 m-wthree">
 								<div class="col-m">
 									<a href="#" data-toggle="modal" data-target="#myModal2" class="offer-img">
@@ -96,8 +88,6 @@
 									</div>
 								</div>
 							</div>
-							
-							
 							<div class="col-md-3 m-wthree">
 								<div class="col-m">
 									<a href="#" data-toggle="modal" data-target="#myModal3" class="offer-img">
@@ -121,8 +111,6 @@
 									</div>
 								</div>
 							</div>
-							
-							
 							<div class="col-md-3 m-wthree">
 								<div class="col-m">
 									<a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img">
@@ -146,19 +134,9 @@
 									</div>
 								</div>
 							</div>
-							
-				
-							
-							
 							<div class="clearfix"></div>
 						 </div>
-						 
-						 
-						 
-						 
 					</div>
-					
-					
 					<div class="tab-pane  text-style" id="tab2">
 						<div class=" con-w3l">
 							<div class="col-md-3 m-wthree">
@@ -455,9 +433,6 @@
 		
 	</div>
 	</div>
-	
-	
-	
 	</div>
 
 <!--content-->
@@ -513,11 +488,6 @@
 	</div>
 </div>
 <!--content-->
-
-
-
-
-
   <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -543,9 +513,6 @@
       </div>
     
     </div><!-- /.carousel -->
-
-
-
 
 <!--content-->
 	<div class="product">
@@ -743,59 +710,6 @@
 	
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 
-<script type="text/javascript">
- 
- var str;
- 
- var adlist= function(list){
-	 	    	 	
-	 alert(str);
-	 
-	 	$(".con-w31").append(str);
-	 
-	 
- }
-
-
-$(document).ready(function(){
-	
-	$("#search").on('click',function(){
-		
-		console.log("hello?");
-		      
-
-	        $.ajax({
-	            url: '/getadli',
-	            type: 'post',
-	            dataType: 'json',
-	            success: function (data) {
-						
-	            		console.log(data);
-	            		
-	            		alert(data['hello']);
-	            		alert(data['list']);
-	            		
-	            		adlist();
-	            		
-	            		
-	            }
-	        });
-		
-		
-		
-		
-
-	})
-	
-})
-
-
-</script>
-
-
-
-
-
 <!-- smooth scrolling -->
 	
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
@@ -854,7 +768,7 @@ $(document).ready(function(){
 						<div class="modal-body modal-spa">
 								<div class="col-md-5 span-2">
 											<div class="item">
-												<img src="http://localhost:8080/admin/display/gif?fName=f20-5.gif" class="img-responsive" alt="">
+												<img src="images/of.png" class="img-responsive" alt="">
 											</div>
 								</div>
 								<div class="col-md-7 span-1 ">
