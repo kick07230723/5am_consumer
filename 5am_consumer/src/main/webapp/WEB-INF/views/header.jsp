@@ -152,6 +152,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							
 							<li><a href="/qna/list" class="hyper"> <span> Q & A</span></a></li>
 							<li><a href="/contact/list" class="hyper"><span>Contact Us</span></a></li>
+							<li><a href="/notice/list" class="hyper"><span>Notice</span></a></li>
+							
 						</ul>
 					</div>
 					</nav>

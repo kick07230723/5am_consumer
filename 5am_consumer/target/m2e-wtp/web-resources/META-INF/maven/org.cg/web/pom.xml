@@ -7,8 +7,6 @@
 	<name>5am_consumer</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	
-	
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.3.7.RELEASE</org.springframework-version>
@@ -21,8 +19,6 @@
 			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
 		</repository>
 	</repositories>
-	
-
 
 	<dependencies>
 			<!--E-mail -->
@@ -32,12 +28,7 @@
 		    <version>1.4.7</version>
 		</dependency>
 	
-
-
 		<!-- Spring -->
-
-	
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

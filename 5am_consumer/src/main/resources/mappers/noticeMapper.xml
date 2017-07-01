@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="org.cg.persistence.NoticeDAO" >
+  
+<insert id="addNotice" parameterType="org.cg.domain.NoticeVO">
+INSERT INTO tbl_test(tno, WRITER, title, content) VALUES (seq_test_tno.nextval, 'ADMIN',#{title},#{content})
+</insert>
+
+
+<select id="noticeList" resultType="org.cg.domain.NoticeVO">
+
+<![CDATA[
+SELECT ROWNUM rno,tno, writer, title, CONTENT, REGDATE, UPDATEDATE  FROM (SELECt tno, writer, title, CONTENT, REGDATE, UPDATEDATE FROM TBL_TEST ORDER BY REGDATE DESC) where rownum >0 and rownum <=10
+
+]]>
+</select>
+
+</mapper>

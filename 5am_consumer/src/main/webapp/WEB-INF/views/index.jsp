@@ -1177,7 +1177,7 @@
 				<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 <script type="text/javascript">				
 
-var str;
+var str="";
 
  function adlist(list){
 	 	    	 	
