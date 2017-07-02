@@ -8,7 +8,7 @@ public interface NoticeDAO {
 	
 	public void create(NoticeVO vo);
 	
-	public List<NoticeVO> getList(); 
+	public List<NoticeVO> getList(int page); 
 	
 	
 

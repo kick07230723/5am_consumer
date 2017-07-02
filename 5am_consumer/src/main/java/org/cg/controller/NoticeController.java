@@ -31,13 +31,13 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/list")
-	public @ResponseBody List<NoticeVO> listpost(@RequestParam("page") String page){
+	public @ResponseBody List<NoticeVO> listpost(@RequestParam("page") Integer page){
 		
 		logger.info("리스크 주가");
 		
 		logger.info(page);
 		
-		List<NoticeVO> list= dao.getList();
+		List<NoticeVO> list= dao.getList(page);
 		
 		return list;
 		
@@ -52,7 +52,7 @@ public class NoticeController {
 		
 		dao.create(vo);
 		
-		List<NoticeVO> list= dao.getList();
+		List<NoticeVO> list= dao.getList(1);
 		
 		return list;
 				

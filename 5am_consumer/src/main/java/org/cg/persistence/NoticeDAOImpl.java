@@ -22,8 +22,8 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 	
 	@Override
-	public List<NoticeVO> getList() {
-		return sess.selectList(namespace+".noticeList");
+	public List<NoticeVO> getList(int page) {
+		return sess.selectList(namespace+".noticeList",page);
 	}
 
 	

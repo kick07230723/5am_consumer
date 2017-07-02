@@ -13,7 +13,7 @@
 <div class="contact">
 	<div class="container">
 		<!--- terms ---->
-		<div class="terms">
+		<div class="terms" style="padding:0px;">
 			<div class="container">
 
 				<div class="spec ">
@@ -54,9 +54,7 @@
 				
 
 					<div id="showList"></div>
-
-
-			
+								
 
 			</div>
 		</div>
@@ -142,6 +140,8 @@
   
 <script type="text/javascript">
 $(document).ready(function() {
+	
+	 var page = 1;
 
 	function nlist(){
 		
@@ -149,7 +149,7 @@ $(document).ready(function() {
 		        type: "POST",
 		        url: "/notice/list",
 		        data : {
-		        	page : "1"
+		        	page : page
 		        },
 		 		dataType: 'Json',
 		        success: function(re) {
@@ -164,26 +164,26 @@ $(document).ready(function() {
 	
 	nlist();
 	
+	
 	var str="";
 
 	 function adlist(list){			 	
 		 				 
 		 $.each(list, function(index, value) {
-			 console.log(index);  
-			 console.log(value.title);
+		
 			 
 			 
 			 str+='<div class="ter-wthree">'
 				+'<h6><span>'+value.tno+'. </span> '+value.title+'</h6>'
-				+'<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.</p>'
-				+'<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. </p>'
-				+'<p> Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance</p>'
+				+'<p>'+new Date(value.regdate).toLocaleString()+'</p>'
+				
+				+'<p>'+value.content+'</p>'
 			+'</div>'
 			 
 			}); 
 		 
 		
-		 	$("#showList").append(str);
+		 	$("#showList").html(str);
 		 	
 		 			 
 		 
@@ -217,7 +217,22 @@ $(document).ready(function() {
 		 
 		 
 		 
-	 })
+	 });
+	 
+	 $(document).scroll(
+				function() {
+					var maxHeight = $(document).height();
+					var currentScroll = $(window).scrollTop()
+							+ $(window).height();
+
+					if (maxHeight <= currentScroll) {
+						console.log("down");
+						page = page + 1;
+						nlist();
+
+					}
+
+				});
 	 
 	
 
