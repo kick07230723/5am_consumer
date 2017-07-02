@@ -3,8 +3,9 @@
 <div data-vide-bg="video/video">
     <div class="container">
 		<div class="banner-info">
-			<h3>검색을 원하시는 장소를 입력하세요</h3><br>
-			
+		<br><br><br><br><br><br><br><br><br>
+			<h3>검색을 원하시는 장소를 입력하세요</h3>
+			<br>
 			<div class="search-form">			
 				
 					<input id="area" type="text" placeholder="구/동 주소를 입력하세요..." name="Search...">
