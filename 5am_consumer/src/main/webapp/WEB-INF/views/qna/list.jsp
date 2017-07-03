@@ -206,7 +206,8 @@
 								
 								<div class="input-group">
 								  <span class="input-group-addon" id="basic-addon1">내용</span>
-								  <input id="cuscontent" style="height: 400px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1">
+								  <textarea id="cuscontent" style="height: 400px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
+								  
 								</div>
 								
 								<h2 class="t-button" style="text-align: right;">
