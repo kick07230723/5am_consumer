@@ -4,14 +4,18 @@ import java.sql.Timestamp;
 
 public class NoticeVO {
 	
- 	int tno; 
+ 	int tcno; 
 	String writer, title, content; 
 	Timestamp regdate, updatedate;
-	public int getTno() {
-		return tno;
+	
+	
+	
+	
+	public int getTcno() {
+		return tcno;
 	}
-	public void setTno(int tno) {
-		this.tno = tno;
+	public void setTcno(int tcno) {
+		this.tcno = tcno;
 	}
 	public String getWriter() {
 		return writer;
@@ -45,7 +49,7 @@ public class NoticeVO {
 	}
 	@Override
 	public String toString() {
-		return "NoticeVO [tno=" + tno + ", writer=" + writer + ", title=" + title + ", content=" + content
+		return "NoticeVO [tcno=" + tcno + ", writer=" + writer + ", title=" + title + ", content=" + content
 				+ ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
 	}
 	

@@ -174,7 +174,7 @@ $(document).ready(function() {
 			 
 			 
 			 str+='<div class="ter-wthree">'
-				+'<h6><span>'+value.tno+'. </span> '+value.title+'</h6>'
+				+'<h6><span>'+value.tcno+'. </span> '+value.title+'</h6>'
 				+'<p>'+new Date(value.regdate).toLocaleString()+'</p>'
 				
 				+'<p>'+value.content+'</p>'
