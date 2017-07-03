@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div data-vide-bg="video/video">
     <div class="container">
+    
 		<div class="banner-info">
 		<br><br><br><br><br><br><br><br><br>
 			<h3>검색을 원하시는 장소를 입력하세요</h3>
@@ -26,54 +27,41 @@
 		<div class="spec ">
 			<h3>Special Offers</h3>
 			<div class="ser-t">
-				<b></b>
-				<span><i></i></span>
-				<b class="line"></b>
+				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
 		</div>
-			<div class="tab-head ">
-				<nav class="nav-sidebar">
-					<ul class="nav tabs ">
-					  <li class="active"><a href="#tab1" data-toggle="tab">Staples</a></li>
-					  <li class=""><a href="#tab2" data-toggle="tab">Snacks</a></li> 
-					  <li class=""><a href="#tab3" data-toggle="tab">Fruits & Vegetables</a></li>  
-					  <li class=""><a href="#tab4" data-toggle="tab">Breakfast & Cereal</a></li>
-					</ul>
-				</nav>
-				<div class=" tab-content tab-content-t ">
-					<div class="tab-pane active text-style" id="tab1">
-					
-					
-						<div class=" con-w3l" id="adlist">
-							
-							
-							
-							
-							
-							
-							
-							
-							<div class="clearfix"></div>
-						 </div>
-						 
-						 
-						 
-						 
+		<div class="tab-head ">
+			<nav class="nav-sidebar">
+				<ul class="nav tabs ">
+					<li class="active"><a href="#tab1" data-toggle="tab">Staples</a></li>
+					<li class=""><a href="#tab2" data-toggle="tab">Snacks</a></li>
+					<li class=""><a href="#tab3" data-toggle="tab">Fruits Vegetables</a></li>
+					<li class=""><a href="#tab4" data-toggle="tab">Breakfast Cereal</a></li>
+				</ul>
+			</nav>
+			<div class=" tab-content tab-content-t ">
+				<div class="tab-pane active text-style" id="tab1">
+
+
+					<div class=" con-w3l" id="adlist">
+
+						<div class="clearfix"></div>
 					</div>
-					
-					
-					
-					
-					
+
+
 				</div>
+
+
+
 			</div>
-		
+		</div>
+
 	</div>
-	</div>
-	
-	
-	
-	</div>
+</div>
+
+
+
+</div>
 
 <!--content-->
 
@@ -83,10 +71,9 @@
 
 
 
-  <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
+  <!-- Carousel  ================================================== -->
+   <!--  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      Indicators
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -107,13 +94,13 @@
         </div>
       </div>
     
-    </div><!-- /.carousel -->
-
+    </div>/.carousel
+ -->
 
 
 
 <!--content-->
-	<div class="product">
+	<!-- <div class="product">
 		<div class="container">
 			<div class="spec ">
 				<h3>Special Offers</h3>
@@ -304,7 +291,7 @@
 							<div class="clearfix"></div>
 						 </div>
 		</div>
-	</div>
+	</div> -->
 	
 <%@ include file="/WEB-INF/views/footer.jsp" %>
 
@@ -1126,85 +1113,70 @@
 						</div>
 					</div>
 				</div>
-				<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
+
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 <script type="text/javascript">				
-
-var str="";
-
-var page = 1;
-
- function adlist(list){
-	 	    	 	
-	 
-	 console.log(list[0].lat);
-	 console.log(list[0].lng);
-	 console.log(list[0].sid);
-	 
-	 $.each(list, function(index, value) {
-		 console.log(index);  
-		 console.log(value.sid);
-		 
-		 
-		 str+='<div class="col-md-3 m-wthree"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">'
-				+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
-				+'<div class="mid-1"><div class="women">'
-				+'<h6><a href="single.html">Moong</a>(1 kg)</h6></div><div class="mid-2">'
-				+'<p><label>$2.00</label><em class="item_price">$1.50</em></p>'
-			  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
-				+'<div class="clearfix"></div></div><div class="add">'
-			  	+'<button class="btn  my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>'
-				+'</div></div></div></div>'
-		 
-				
-		 
-		}); 
-	 
-	 str+='<div class="content-mid">   <div class="col-md-4 m-w3ls"> <div class="col-md1 "> <a href="kitchen.html"> <img src="images/co1.jpg" class="img-responsive img" alt=""> <div class="big-sa"> <h6>New Collections</h6> <h3>Season<span>ing </span></h3> <p>There are many variations of passages of Lorem Ipsum available, but the majority </p> </div> </a> </div> </div> <div class="col-md-4 m-w3ls1"> <div class="col-md "> <a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt=""> <div class="big-sale"> <div class="big-sale1"> <h3>Big <span>Sale</span></h3> <p>It is a long established fact that a reader </p> </div> </div> </a> </div> </div> <div class="col-md-4 m-w3ls"> <div class="col-md2 "> <a href="kitchen.html"> <img src="images/co2.jpg" class="img-responsive img1" alt=""> <div class="big-sale2"> <h3>Cooking <span>Oil</span></h3> <p>It is a long established fact that a reader </p>		 </div> </a> </div> <div class="col-md3 "> <a href="hold.html"> <img src="images/co3.jpg" class="img-responsive img1" alt=""> <div class="big-sale3"> <h3>Vegeta<span>bles</span></h3> <p>It is a long established fact that a reader </p> </div> </a> </div> </div> <div class="clearfix"></div>  </div>'
-	 
-	 
-	 
-	/*  list.each(function(adstore){
-		 console.log(adstore);
-	 }) */
-	 
-	 	$("#adlist").append(str);
-	 
-	 str="";
-	 
-}
-
- 
- /* 맨처음에 보여주는거  */
-	function nlist(){
-		
-		 $.ajax({
-			  type: "POST",
-	    	  url: "/index/getadlist",
-	 		  dataType: 'Json',
-	 		 data : {
-		        	page : page
-		        },
-	    	  success: function(re){
-	    		console.log("리스트를 받아서 ");
-	    		  console.log(re);
-	    		adlist(re);
-	    		 
-	    	  } 
-		    });
-		
-		
-	}
- 
-
 
 
     $(document).ready(function(e) {
     	
+    	var page = 1;
     	
-    	 
-    	
+    	function adlist(list){
+	    	 	
+    		 console.log(list[0].lat);
+    		 console.log(list[0].lng);
+    		 console.log(list[0].sid);
+    		 
+    		 var str="";
+    		 
+    		 $.each(list, function(index, value) {
+    			 console.log(index);  
+    			 console.log(value.sid);
+    			 
+    			 
+    			 str+='<div class="col-md-3 m-wthree"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">'
+    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
+    					+'<div class="mid-1"><div class="women">'
+    					+'<h6><a href="single.html">'+value.sid+'</a></h6></div><div class="mid-2">'
+    					+'<p><label>$2.00</label><em class="item_price">$1.50</em></p>'
+    				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
+    					+'<div class="clearfix"></div></div><div class="add">'
+    				  	+'<button class="btn  my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+    					+'</div></div></div></div>'
+    			 
+    					
+    			 
+    			}); 
+    		 
+    		 mid_adv='<div class="content-mid"><div class="col-md-4 m-w3ls"> <div class="col-md1 "> <a href="kitchen.html"> <img src="images/co1.jpg" class="img-responsive img" alt=""> <div class="big-sa"> <h6>New Collections</h6> <h3>Season<span>ing </span></h3> <p>There are many variations of passages of Lorem Ipsum available, but the majority </p> </div> </a> </div> </div> <div class="col-md-4 m-w3ls1"> <div class="col-md "> <a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt=""> <div class="big-sale"> <div class="big-sale1"> <h3>Big <span>Sale</span></h3> <p>It is a long established fact that a reader </p> </div> </div> </a> </div> </div> <div class="col-md-4 m-w3ls"> <div class="col-md2 "> <a href="kitchen.html"> <img src="images/co2.jpg" class="img-responsive img1" alt=""> <div class="big-sale2"> <h3>Cooking <span>Oil</span></h3> <p>It is a long established fact that a reader </p>		 </div> </a> </div> <div class="col-md3 "> <a href="hold.html"> <img src="images/co3.jpg" class="img-responsive img1" alt=""> <div class="big-sale3"> <h3>Vegeta<span>bles</span></h3> <p>It is a long established fact that a reader </p> </div> </a> </div> </div> <div class="clearfix"></div> </div> </div>'
+    		 
+    		 	$("#adlist").append(str +mid_adv);
+    		
+    		 
+    	}
     		
     		nlist();
+    		
+    		/* 맨처음에 보여주는거  */
+    		function nlist(){
+    			
+    			 $.ajax({
+    				  type: "POST",
+    		    	  url: "/index/getadlist",
+    		 		  dataType: 'Json',
+    		 		  data : {
+    			        	page : page
+    			        },
+    		    	  success: function(re){
+    		    		console.log("리스트를 받아서 ");
+    		    		adlist(re);
+    		    		 
+    		    	  } 
+    			    });
+    			
+    			
+    		}
     	 
     	 
     	
@@ -1299,7 +1271,7 @@ var page = 1;
     		currentLocation();
     		
     		
-    	})
+    	});
     	
     	
 
@@ -1313,22 +1285,21 @@ var page = 1;
     		transGeocode(putArea);
     		
     		
-    	})
+    	});
 
     	
     	
     	$(document).scroll(
 				function() {
 					var maxHeight = $(document).height();
-					var currentScroll = $(window).scrollTop()
-							+ $(window).height();
+					var currentScroll = $(window).scrollTop() + $(window).height();
 
 					if (maxHeight <= currentScroll) {
 						console.log("down");
 						page = page + 1;
 						nlist();
 
-					}
+					};
 
 				});
     	

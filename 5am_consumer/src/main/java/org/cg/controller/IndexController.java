@@ -39,13 +39,7 @@ public class IndexController {
 
 		logger.info("들어왔어요");
 				 
-		List<StoreVO> list= new ArrayList<>();
-			
-		
-		list=dao.getadlist(page);
-		logger.info(list.toString());
-		/*list.forEach(item->logger.info(item));*/
-		
+		List<StoreVO> list = dao.getadlist(page);
 		
 		return list;
 		
@@ -68,7 +62,7 @@ public class IndexController {
 	}
 	
 	@PostMapping("/search")
-	public @ResponseBody List<StoreVO> searchResult(@RequestParam("lat") String lat,@RequestParam("lng") String lng){
+	public @ResponseBody List<StoreVO> searchResult(@RequestParam("lat") String lat, @RequestParam("lng") String lng){
 		
 		logger.info(lat);
 		logger.info(lng);
@@ -78,9 +72,8 @@ public class IndexController {
 		vo.setLat(lat);
 		vo.setLng(lng);
 		
-		list=dao.getlist(vo);
+		list = dao.getlist(vo);
 		logger.info(list.toString());
-		/*list.forEach(item->logger.info(item));*/
 		
 		
 		return list;
