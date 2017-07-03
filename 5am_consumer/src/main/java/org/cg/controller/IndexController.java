@@ -1,9 +1,7 @@
 package org.cg.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -11,8 +9,6 @@ import org.cg.domain.StoreVO;
 import org.cg.persistence.StoreDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,13 +35,14 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "getadlist", method = RequestMethod.POST)
-	public @ResponseBody List<StoreVO> sendadlist(){
+	public @ResponseBody List<StoreVO> sendadlist(@RequestParam("page") Integer page){
 
+		logger.info("들어왔어요");
 				 
 		List<StoreVO> list= new ArrayList<>();
 			
 		
-		list=dao.getadlist();
+		list=dao.getadlist(page);
 		logger.info(list.toString());
 		/*list.forEach(item->logger.info(item));*/
 		

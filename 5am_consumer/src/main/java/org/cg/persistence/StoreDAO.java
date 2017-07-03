@@ -8,6 +8,6 @@ public interface StoreDAO {
 
 	public List<StoreVO> getlist(StoreVO vo);
 
-	public List<StoreVO> getadlist();
+	public List<StoreVO> getadlist(Integer page);
 	
 }

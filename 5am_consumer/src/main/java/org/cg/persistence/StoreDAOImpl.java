@@ -25,9 +25,9 @@ public class StoreDAOImpl implements StoreDAO {
 
 
 	@Override
-	public List<StoreVO> getadlist() {
+	public List<StoreVO> getadlist(Integer page) {
 		
-		return sess.selectList(namespace+".getadlist");
+		return sess.selectList(namespace+".getadlist",page);
 	}
 
 	
