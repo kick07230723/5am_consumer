@@ -3,6 +3,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 import org.cg.domain.NoticeVO;
+import org.cg.persistence.NoticeDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -17,6 +18,9 @@ public class dbtest {
 	
 	@Inject
 	SqlSessionTemplate sess;
+	
+	@Inject
+	NoticeDAO dao;
 
 
 
@@ -37,10 +41,10 @@ public class dbtest {
 		for (int i = 0; i < 500; i++) {
 			
 			NoticeVO vo = new NoticeVO();
-			vo.setWriter("writer77"+i);
-			vo.setTitle("title77"+i);
+			vo.setWriter("writer"+i);
+			vo.setTitle("title"+i);
 			vo.setContent(i+"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur");
-			sess.insert("org.addNotice", vo);
+			dao.create(vo);
 			}
 		}
 	
