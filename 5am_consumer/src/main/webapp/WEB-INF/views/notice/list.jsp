@@ -210,7 +210,7 @@ $(document).ready(function() {
 		 		dataType: 'Json',
 		        success: function(re) {
 		           console.log(re);
-		           adlist(re);
+		           
 		           window.location = '/notice/list';
 		        }
 		    });

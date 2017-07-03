@@ -147,7 +147,7 @@
 				
 				
 			 <script async defer
-		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4GoEFApy-CaOFoG0_IsO3msny1ART9Yw&callback=initMap">
+		    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0DfWOA4fxhGSsp0NB8OloHco98NCClkk&callback=initMap">
 		    console.log("silhang");
 		    </script>
 				
