@@ -85,7 +85,6 @@
 								</div>
 								<div class="col-md-7 span-1 ">
 									<h3>StoreName</h3>
-									<input id="put" type="text" value="">
 									<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
 									<div class="price_single">
 									  <span class="reducedfrom "><del>$2.00</del>$1.50</span>
@@ -178,9 +177,6 @@
     		 var str="";
     		 
     		 $.each(list, function(index, value) {
-    			 console.log(index);  
-    			 console.log(value.sid);
-    			 
     			 
     			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
     					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'

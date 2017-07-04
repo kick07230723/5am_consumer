@@ -200,6 +200,10 @@ img.img-head {
     text-align: center;
 	margin-top: 2em;
 }
+
+.logo {
+  margin-bottom:20px;
+}
 .logo h1{
    font-family: 'Montserrat', sans-serif;
     font-size: 5em;
@@ -380,13 +384,14 @@ ul.multi-column-dropdown {
 nav.navbar.navbar-default {
     float: left;
     height: 44px;
-    margin-top:20px;"
+    margin-top:10px;"
 }
 .cart{
 	float: right; 
 	cursor: pointer;
-	margin-top: 11px;
-    width: 30%;
+    height:auto; 
+    width: auto; 
+    margin-top:10px
 }
 
 
@@ -2573,6 +2578,7 @@ ul.multi-column-dropdown {
 }
 .nav-top {
     margin-bottom: 1em;
+    margin-top:20px;
 }
 .tabs li {
     display: inline-block;
@@ -2851,8 +2857,21 @@ a.at-in {
 .cart {
     width: 27%;
 }
+
+.cart i {
+    margin: 0px; 
+    margin-left: 10px; 
+    position: relative; 
+    background-color: inherit; 
+    bottom: 0px; 
+    z-index: 999;
+    right: 0%;
+}
+
+
 nav.navbar.navbar-default {
     width: 73%;
+    margin-top:0px;
 }
 .m-wthree {
     width: 50%;
