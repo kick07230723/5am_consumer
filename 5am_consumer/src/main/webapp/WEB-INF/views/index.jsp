@@ -148,6 +148,8 @@
         return total * 1;
       }
     });
+    
+    
 
   });
   </script>
@@ -172,8 +174,6 @@
     	var page = 1;
     	
     	function adlist(list){
-	    	 	
-    		 
     		 
     		 var str="";
     		 
@@ -189,7 +189,7 @@
     					+'<p><label>$2.00</label><em class="item_price">$1.50</em></p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button class="btn  my-cart-btn my-cart-b " data-id="1" data-name="'+value.sid+'" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
     					+'</div></div></div></div>'
     			 
     					
@@ -235,7 +235,41 @@
        				 $("#put").val($(this).data("name"));
        				 
         			 
-    			 })
+    			 });
+    			 
+    			 var goToCartIcon = function($addTocartBtn){
+    			      var $cartIcon = $(".my-cart-icon");
+    			      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+    			      $addTocartBtn.prepend($image);
+    			      var position = $cartIcon.position();
+    			      $image.animate({
+    			        top: position.top,
+    			        left: position.left
+    			      }, 500 , "linear", function() {
+    			        $image.remove();
+    			      });
+    			    }
+    			 
+    			 $('#adlist .my-cart-btn').myCart({
+    			        classCartIcon: 'my-cart-icon',
+    			        classCartBadge: 'my-cart-badge',
+    			        affixCartIcon: true,
+    			        checkoutCart: function(products) {
+    			          $.each(products, function(){
+    			            console.log(this);
+    			          });
+    			        },
+    			        clickOnAddToCart: function($addTocart){
+    			          goToCartIcon($addTocart);
+    			        },
+    			        getDiscountPrice: function(products) {
+    			          var total = 0;
+    			          $.each(products, function(){
+    			            total += this.quantity * this.price;
+    			          });
+    			          return total * 1;
+    			        }
+    			      });
     		
     		 
     	}
