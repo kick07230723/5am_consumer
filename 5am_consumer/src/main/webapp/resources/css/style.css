@@ -1011,6 +1011,9 @@ ul.product-qty {
 .col-md2 {
     margin-bottom: 30px;
 }
+.col-md3 {
+    margin-bottom: 5px;
+}
 .content-mid {
     padding: 6em 0;
 }
@@ -2337,7 +2340,7 @@ span.last {
 .m-wthree {
     width: 50%;
     float: left;
-    margin-bottom: 2em;
+    margin-bottom: 10px;
 }
 .pro-1 {
     width: 50%;
@@ -2854,8 +2857,8 @@ nav.navbar.navbar-default {
 .m-wthree {
     width: 50%;
     float: left;
-    margin-bottom: 1em;
-    padding: 0 3px;
+    margin-bottom: 10px;
+    padding: 20px 30px;
 }
 .mid-1 {
     padding: 2em 0 0;
