@@ -730,7 +730,7 @@ div#my-cart-empty-message {
     text-decoration: none;
     color: #029241;
     font-size: 1em;
-    border: 2px solid #039445;
+    border: 3px solid #039445;
     border-radius: 50px;
     padding: 0.5em 1em;
     outline: none;

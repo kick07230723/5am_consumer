@@ -1,5 +1,6 @@
 package org.cg.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -30,5 +31,13 @@ public class StoreDAOImpl implements StoreDAO {
 		return sess.selectList(namespace+".getadlist",page);
 	}
 
+
+	@Override
+	public List<StoreVO> categetadlist(HashMap<String, String> map) {
+		
+		return sess.selectList(namespace+".categetadlist", map);
+	}
+
+	
 	
 }
