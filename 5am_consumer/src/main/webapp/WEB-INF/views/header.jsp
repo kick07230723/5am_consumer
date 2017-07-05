@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>5AM입니다</title>
 <!-- for-mobile-apps -->
+ <meta name="google-signin-client_id" content="948481018340-dkdp02e8rb5soim2ivitvqftm335nj6b">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
@@ -159,8 +160,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</nav>
 
 					<div class="cart">
-						<a href="/login" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; "></i>Login</a >
-						<a href="/register" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i>Register</a>
+						<c:if test="${login.cemail !=null}">    
+						<a id="logout" ><i class="fa fa-user" aria-hidden="true" style="margin:10px;  "></i>Logout</a >
+						
+					</c:if>
+					<c:if test="${login.cemail ==null}">
+						<a href="/login/main" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; "></i>Login</a >
+					</c:if>
+					<c:if test="${login.cemail ==null}">
+						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i>Register</a>
+						</c:if>
 						<i  style="margin:10px;position:relative;" class="fa fa-shopping-cart my-cart-icon"><i class="badge badge-notify my-cart-badge" style="margin:10px;"></i></i>
 
 					</div>
@@ -173,6 +182,152 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 
-
   <!-- header 끝!!!-->
-  
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+	<script
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script type='text/javascript'>
+
+$(document).ready(function(e){
+	
+	$("#logout").on("click",function(e){
+		  $.ajax({
+				url: 'https://nid.naver.com/oauth2.0/token',
+				method: 'post',
+			    dataType: 'json',		    
+			    data: {
+			    	
+			    	grant_type: 'delete',
+			    	client_id: 'VGj7n1FTUga3PmTRQzjP',
+			    	client_secret:'S9GAgqYQFY',
+			    	access_token:'${token}',	
+			    	service_provider:'NAVER'
+			    	
+			    } ,
+			    success: function(re) {
+			  		console.log(re)
+			    	
+			        
+			    },
+			}); 	  
+		
+	})
+	
+	  	
+	  Kakao.init('e007bd67d95edb54cf4e8a0eb454088a');
+	  function ktout() {
+	  	Kakao.Auth.logout(function (){
+	  		
+	  		
+	  	});
+	  	
+	  }
+	  
+	  $("#logout").on("click",function(e){
+		  location.href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://5am.zz.am/login/logout"
+		  ktout();
+		  FB.logout();
+		  
+		  
+	  })
+	 /*    $("#logout").on("click",function(e){
+	    	  FB.logout();
+		  
+	  })
+	   */
+	
+
+
+	  function onSuccess(googleUser) {
+		    var profile = googleUser.getBasicProfile();
+		    gapi.client.load('plus', 'v1', function () {
+		        var request = gapi.client.plus.people.get({
+		            'userId': 'me'
+		        });
+		        //Display the user details
+		        request.execute(function (resp) {
+		        	
+		         
+		        });
+		    });
+		}
+		function onFailure(error) {
+		    alert(error);
+		}
+		
+		 function signOut() {
+			    var auth2 = gapi.auth2.getAuthInstance();
+			    auth2.signOut().then(function () {
+			      console.log('User signed out.');
+			    });
+			  }
+
+
+			function statusChangeCallback(response) { 
+				console.log('statusChangeCallback'); 
+				console.log(response);
+
+			if (response.status === 'connected') {
+				testAPI(); 
+				} 
+
+
+			}
+
+			function checkLoginState() { 
+				FB.getLoginStatus(function(response) {
+					statusChangeCallback(response); 
+					}); 
+				} 
+				
+
+			window.fbAsyncInit = function() { 
+				FB.init({ appId : '1600320570002277', 
+					      cookie : true,
+					      xfbml  : true,
+					      version: 'v2.1'
+				})
+
+			FB.getLoginStatus(function(response) { 
+				statusChangeCallback(response);
+					}); 
+				
+					
+				}; 
+				
+
+			(function(d, s, id) { 
+				var js, fjs = d.getElementsByTagName(s)[0]; 
+				if (d.getElementById(id)) return; 
+				js = d.createElement(s); 
+				js.id = id; js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.9&appId=1600320570002277"; 
+				fjs.parentNode.insertBefore(js, fjs); 
+				}(document, 'script', 'facebook-jssdk')); 
+			// 로그인이 성공한 다음에는 간단한 그래프API를 호출한다. 
+			// 이 호출은 statusChangeCallback()에서 이루어진다.  -->
+
+				
+			function testAPI() { 
+				FB.api('/me',{fields: 'name,email,gender'},function(response) {
+				
+				
+					
+					
+
+				
+			});
+				
+			} 
+			
+			/*   $("#logout").on("click",function(e){
+				  location.href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://5am.zz.am/logout"
+				  
+			  })
+ */
+
+	
+})
+
+</script>  
