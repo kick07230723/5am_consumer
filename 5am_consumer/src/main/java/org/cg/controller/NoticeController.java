@@ -23,7 +23,6 @@ public class NoticeController {
 	@Inject
 	NoticeDAO dao;
 	
-	
 	@GetMapping("/list")
 	public void noticeGet(){
 		
@@ -32,7 +31,7 @@ public class NoticeController {
 	@PostMapping("/list")
 	public @ResponseBody List<NoticeVO> listpost(@RequestParam("page") Integer page){
 		
-		logger.info("리스크 주가");
+		logger.info("리스크 보내기");
 		
 		logger.info(page);
 		
@@ -43,7 +42,7 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/register")
-	public @ResponseBody List<NoticeVO> registerpost(NoticeVO vo){
+	public @ResponseBody String registerpost(NoticeVO vo){
 		
 		logger.info("노티스 추가");
 		
@@ -51,9 +50,7 @@ public class NoticeController {
 		
 		dao.create(vo);
 		
-		List<NoticeVO> list= dao.getList(1);
-		
-		return list;
+		return "register compelte";
 				
 	}
 	

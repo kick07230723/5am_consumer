@@ -72,12 +72,13 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>공지사항 수정</h4>						
 						</div>
 						<div class="modal-body modal-spa">
 								
 								<div class="col-md-12 span-2 ">
-								<h5 id="tcno">520</h5>
+								<h5 id="tcno"></h5>
 									<p class="in-para"></p>
 									<h5> 제목</h5>
 									<p class="in-para"> <input id="title" type="text" value="" style="width:100%; border:none;"></p>
@@ -195,11 +196,11 @@ $(document).ready(function() {
 	nlist();
 	
 	
-	
+	 var str="";
 
 	 function adlist(list){	
-		 var str="";
-		 				 
+		 
+			 
 		 $.each(list, function(index, value) {			 
 			 
 			 str+='<div class="ter-wthree">'
@@ -214,7 +215,7 @@ $(document).ready(function() {
 			 
 			}); 
 		 
-		
+		 
 		 	$("#showList").html(str);
 		 	
 		};
@@ -222,6 +223,9 @@ $(document).ready(function() {
 	 $("#registerBtn").on("click",function(e){
 		 
 		 e.preventDefault();
+		 
+		 str="";
+		 page=1;
 	
 		 console.log("공지사항 등록 시작")
 		
@@ -236,7 +240,7 @@ $(document).ready(function() {
 		        	title : title,
 		        	content : content
 		        },
-		 		dataType: 'Json',
+		 		dataType: 'text',
 		        success: function(re) {
 		           console.log(re);
 		           nlist();
@@ -294,6 +298,8 @@ $(document).ready(function() {
 	 })
 		 $("#showList ").on("click",".noticedel",function(e){
 			 		e.preventDefault();
+			 		str="";
+					 page=1;
 			 		console.log("delete ??");		 		
 			 		console.log($(this).data("tcno"));
 			 		
@@ -315,6 +321,8 @@ $(document).ready(function() {
 		 	
 		 	$("#showList ").on("click",".noticemodi", function(e){
 		 		e.preventDefault();
+		 		str="";
+				 page=1;
 		 		console.log("modification ??")
 		 		console.log(this);
 		 		console.log($(this).data("content"));
@@ -331,6 +339,3 @@ $(document).ready(function() {
 	
 })
 </script>
-  
-</body>
-</html>
