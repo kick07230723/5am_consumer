@@ -243,9 +243,6 @@ $(document).ready(function() {
 					$("#custitle").val("");
 					$("#cuscontent").val("");	
 		           
-		           
-		          
-		        
 		        }
 		    });
 		 
