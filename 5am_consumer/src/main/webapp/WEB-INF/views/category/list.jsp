@@ -335,6 +335,8 @@
 		    					};
 
 		    				});
+		    		
+		    		$().UItoTop({ easingType: 'easeOutQuart' });
 			 
 			 
 
