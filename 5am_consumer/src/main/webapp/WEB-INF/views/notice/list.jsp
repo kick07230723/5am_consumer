@@ -17,7 +17,7 @@
 			<div class="container">
 
 				<div class="spec ">
-					<h3>Notice</h3>
+					<h3>Notice  </h3>
 					<div class="ser-t">
 						<b></b> <span><i></i></span> <b class="line"></b>
 					</div>
@@ -26,7 +26,8 @@
 				<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h6 class="panel-title"  data-toggle="collapse" data-target="#cusregi">
-								 <span style="color:highlighttext;font-weight: bold;">공지사항 등록하기</span>  
+								 <span style="color:highlighttext;font-weight: bold;">공지사항 등록하기</span> 
+								 
 							 </h6>
 							
 						</div>
@@ -45,7 +46,7 @@
 								</div>
 								
 								<h2 class="t-button" style="text-align: right;">
-							    <a id="registerBtn" href="#"><span class="label label-info" >등록하기</span></a>
+							    <a id="registerBtn" href="#" data-toggle="collapse" data-target="#cusregi"><span class="label label-info"  >등록하기</span></a>
 							    </h2>
 								
 							</div>
@@ -65,6 +66,37 @@
 </div>
 
 <!-- //contact -->
+
+<!-- modal -->
+			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-info">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						</div>
+						<div class="modal-body modal-spa">
+								
+								<div class="col-md-12 span-2 ">
+								<h5 id="tcno">520</h5>
+									<p class="in-para"></p>
+									<h5> 제목</h5>
+									<p class="in-para"> <input id="title" type="text" value="" style="width:100%; border:none;"></p>
+									<h5> 내용</h5>
+									<p class="in-para"> <textarea id="content" style="width:100%; border:none;" ></textarea></p>
+									 <div class="add-to">
+										   <button id="modiBtn" class="my-cart-btn1 " data-dismiss="modal" aria-label="Close">Modify</button>
+										<button class="my-cart-btn1"  data-dismiss="modal" aria-label="Close">Cancel</button>
+									
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+<!-- modal -->
 
    
 
@@ -153,48 +185,45 @@ $(document).ready(function() {
 		        },
 		 		dataType: 'Json',
 		        success: function(re) {
-		           console.log(re);
-		           
-		           adlist(re);
-		        }	        
-		    });
-		
+		           console.log(re);		           
+		           adlist(re);		           
+		        },	        
+		    });	
 		
 	}
 	
 	nlist();
 	
 	
-	var str="";
+	
 
-	 function adlist(list){			 	
+	 function adlist(list){	
+		 var str="";
 		 				 
-		 $.each(list, function(index, value) {
-		
-			 
+		 $.each(list, function(index, value) {			 
 			 
 			 str+='<div class="ter-wthree">'
-				+'<h6><span>'+value.tcno+'. </span> '+value.title+'</h6>'
-				+'<p>'+new Date(value.regdate).toLocaleString()+'</p>'
+				
+				+'<h6><span>'+value.tcno+'. </span> '+value.title
+				+'<a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-tcno ="'+value.tcno+'" data-title ="'+value.title+'" data-content ="'+value.content+'" ><i class="glyphicon glyphicon-wrench"></i></a>'
+				+'<a class="noticedel" href="" data-tcno ="'+value.tcno+'"><i class="glyphicon glyphicon-remove"></i></a></h6>'
+				+'<p>'+new Date(value.regdate).toLocaleString()+'</p>'	
 				
 				+'<p>'+value.content+'</p>'
-			+'</div>'
+				+'</div>'
 			 
 			}); 
 		 
 		
 		 	$("#showList").html(str);
 		 	
-		 			 
-		 
-	}
+		};
 	 
 	 $("#registerBtn").on("click",function(e){
 		 
 		 e.preventDefault();
 	
 		 console.log("공지사항 등록 시작")
-	 
 		
 		 var title = $('#custitle').val();
 		 var content = $('#cuscontent').val();
@@ -210,8 +239,13 @@ $(document).ready(function() {
 		 		dataType: 'Json',
 		        success: function(re) {
 		           console.log(re);
+		           nlist();
+					$("#custitle").val("");
+					$("#cuscontent").val("");	
 		           
-		           window.location = '/notice/list';
+		           
+		          
+		        
 		        }
 		    });
 		 
@@ -234,6 +268,66 @@ $(document).ready(function() {
 
 				});
 	 
+	 
+	 $("#modiBtn").on("click",function(){
+		 
+		 console.log("수정 to controller");
+		 console.log($("#tcno")[0].innerText);
+		 console.log($("#title").val());
+		 console.log($("#content").val());
+		 $.ajax({
+		        type: "POST",
+		        url: "/notice/modi",
+		        
+		        data : {
+		        	
+		        	tcno : $("#tcno")[0].innerText,
+		        	title : $("#title").val(),
+		        	content : $("#content").val()
+		        },
+		 		dataType: 'text',
+		        success: function(re) {
+		           console.log(re);
+		           nlist();
+		            
+		        }
+		    });
+		 
+		 
+	 })
+		 $("#showList ").on("click",".noticedel",function(e){
+			 		e.preventDefault();
+			 		console.log("delete ??");		 		
+			 		console.log($(this).data("tcno"));
+			 		
+			 		$.ajax({
+				        type: "POST",
+				        url: "/notice/del",			        
+				        data : {
+				        	tcno : $(this).data("tcno")
+				        },
+				 		dataType: 'text',
+				        success: function(re) {
+				           console.log(re);				           
+				          nlist();
+				         
+				        }
+				    });
+			 	
+			 	});
+		 	
+		 	$("#showList ").on("click",".noticemodi", function(e){
+		 		e.preventDefault();
+		 		console.log("modification ??")
+		 		console.log(this);
+		 		console.log($(this).data("content"));
+		 		$("#tcno").html($(this).data("tcno"));
+		 		$("#title").val($(this).data("title"));
+		 		$("#content").val($(this).data("content"));
+		 		
+		 	});
+	 
+
 	
 
 	

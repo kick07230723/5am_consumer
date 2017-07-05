@@ -10,6 +10,10 @@ public interface NoticeDAO {
 	
 	public List<NoticeVO> getList(int page); 
 	
+	public void update(NoticeVO vo);
+	
+	public void delete(String tcno);
+	
 	
 
 }

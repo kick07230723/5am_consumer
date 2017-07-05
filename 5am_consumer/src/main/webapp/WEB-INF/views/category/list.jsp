@@ -343,6 +343,3 @@
 		
 	})
 </script>
-
-</body>
-</html>

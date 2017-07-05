@@ -19,4 +19,13 @@ select rno, tcno, writer, title, CONTENT, REGDATE, UPDATEDATE from (select ROWNU
 ]]>
 </select>
 
+<update id="modiNotice" parameterType="org.cg.domain.NoticeVO">
+update tbl_customer_notice set title=#{title}, content=#{content}, updatedate=sysdate where tcno= #{tcno}
+
+</update>
+
+<delete id="delNotice">
+delete  from tbl_customer_notice where tcno = #{tcno}
+</delete>
+
 </mapper>

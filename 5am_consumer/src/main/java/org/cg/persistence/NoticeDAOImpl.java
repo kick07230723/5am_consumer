@@ -26,6 +26,17 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return sess.selectList(namespace+".noticeList",page);
 	}
 
+	@Override
+	public void update(NoticeVO vo) {
+		sess.update(namespace+".modiNotice", vo);		
+	}
+
+	@Override
+	public void delete(String tcno) {
+		sess.delete(namespace+".delNotice", tcno);
+		
+	}
+
 	
 
 }

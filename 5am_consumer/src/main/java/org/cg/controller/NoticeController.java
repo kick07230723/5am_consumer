@@ -42,7 +42,7 @@ public class NoticeController {
 		
 	}
 	
-	@PostMapping("register")
+	@PostMapping("/register")
 	public @ResponseBody List<NoticeVO> registerpost(NoticeVO vo){
 		
 		logger.info("노티스 추가");
@@ -54,6 +54,32 @@ public class NoticeController {
 		List<NoticeVO> list= dao.getList(1);
 		
 		return list;
+				
+	}
+	
+	@PostMapping("/modi")
+	public @ResponseBody String modifypost(NoticeVO vo){
+		
+		logger.info("노티스 수정");
+		
+		logger.info(vo);
+		
+		dao.update(vo);
+		
+		return "Successfully modified";
+				
+	}
+	
+	@PostMapping("/del")
+	public @ResponseBody String delpost(@RequestParam("tcno") String tcno){
+		
+		logger.info("노티스 삭제");
+		
+		logger.info(tcno);
+		
+		dao.delete(tcno);
+		
+		return "delete complete";
 				
 	}
 
