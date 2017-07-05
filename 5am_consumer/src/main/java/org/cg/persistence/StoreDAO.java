@@ -7,7 +7,7 @@ import org.cg.domain.StoreVO;
 
 public interface StoreDAO {
 
-	public List<StoreVO> getlist(StoreVO vo);
+	public List<StoreVO> getlist(StoreVO vo,Integer page);
 
 	public List<StoreVO> getadlist(Integer page);
 	

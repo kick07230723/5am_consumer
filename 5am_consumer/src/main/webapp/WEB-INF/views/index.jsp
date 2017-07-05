@@ -171,6 +171,8 @@
     	
     	var idnum = 1;
     	var page = 1;
+    	var lat=0;
+    	var lng=0;
     	
     	function adlist(list){
     		 
@@ -275,11 +277,14 @@
     		/* 맨처음에 보여주는거  */
     		function nlist(){
     			
+    			
     			 $.ajax({
     				  type: "POST",
     		    	  url: "/index/getadlist",
     		 		  dataType: 'Json',
     		 		  data : {
+    		 			 	lat : lat,
+      		    		  	lng : lng,
     			        	page : page
     			        },
     		    	  success: function(re){
@@ -291,10 +296,31 @@
     		    			alert("더이상의 결과가 없습니다.")
     		    		}
     		    		 
-    		    	  } 
-    			    });
+    		    	  } ,
+    			        beforeSend: function () {
+                            var width = 0;
+                            var height = 0;
+                            var left = 0;
+                            var top = 0;
+                            width = 70;
+                            height = 70;
+                            top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+                            left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+                            if($("#div_ajax_load_image").length != 0) {
+                                   $("#div_ajax_load_image").css({
+                                          "top": top+"px",
+                                          "left": left+"px"
+                                   });
+                                   $("#div_ajax_load_image").show();
+                            }
+                            else {
+                                   $('body').append('<div id="div_ajax_load_image" style="position:absolute; top:' + top + 'px; left:' + left + 'px; width:' + width + 'px; height:' + height
+                                   + 'px; z-index:9999; background:transparent; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="images/loading.gif" style="width:70px; height:70px;"></div>');
+                            }
+                          },
+                        complete: function () {$("#div_ajax_load_image").hide();},
     			
-    			
+    			 });
     		}
     	 
     	 
@@ -309,14 +335,16 @@
     		    	 
     		    	 console.log(result.addr[0].lat);
     		    	 console.log(result.addr[0].lng);
+    		    	 lat=result.addr[0].lat;
+    		    	 lan=result.addr[0].lng;
     		    	 
     		    	 $.ajax({
        		    	  type: "POST",
-       		    	  url: "/index/search",
+       		    	  url: "/index/getadlist",
        		    	  data: {
        		    		  lat : result.addr[0].lat,
        		    		  lng : result.addr[0].lng,
-       		    		  
+       		    		  page:page
        		    	  },
        		 		  dataType: 'Json',
        		    	  success: function(re){
@@ -325,6 +353,7 @@
        		    		adlist(re);
        		    		 
        		    	  },
+
        		    	 
        		    	}); 
     		    	 
@@ -392,13 +421,14 @@
     		
     	});
     	
-    	
+    	var putArea="";
 
     	$("#searcharea").on('click',function(e){
     		e.preventDefault();
-
+    		$("#adlist").html('');
+    		page=1;
     		console.log("in~~~!!");
-    		var putArea = $("#area").val();
+    		putArea = $("#area").val();
     		console.log(putArea);
     		
     		transGeocode(putArea);
@@ -407,8 +437,7 @@
     	});
 
     	
-    	
-    	$(document).scroll(
+	    	$(document).scroll(
 				function() {
 					var maxHeight = $(document).height();
 					var currentScroll = $(window).scrollTop() + $(window).height();
@@ -416,6 +445,7 @@
 					if (maxHeight <= currentScroll) {
 						console.log("down");
 						page = page + 1;
+
 						nlist();
 
 					};

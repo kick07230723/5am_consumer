@@ -19,9 +19,13 @@ public class StoreDAOImpl implements StoreDAO {
 
 	
 	@Override
-	public List<StoreVO> getlist(StoreVO vo) {
+	public List<StoreVO> getlist(StoreVO vo,Integer page) {
 		
-		return sess.selectList(namespace+".getlist",vo);
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("vo", vo);
+		map.put("page", page);
+		
+		return sess.selectList(namespace+".getlist",map);
 	}
 
 

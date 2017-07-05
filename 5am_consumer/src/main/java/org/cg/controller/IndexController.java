@@ -35,13 +35,36 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "getadlist", method = RequestMethod.POST)
-	public @ResponseBody List<StoreVO> sendadlist(@RequestParam("page") Integer page){
+	public @ResponseBody List<StoreVO> sendadlist(@RequestParam("lat") String lat, @RequestParam("lng") String lng,@RequestParam("page") Integer page){
 
-		logger.info("들어왔어요");
-				 
-		List<StoreVO> list = dao.getadlist(page);
+		logger.info("zzzzzzzzzzzzzzzdddd");
+		logger.info("..."+lat+"...");
+		logger.info(lng);
+		logger.info(""+page);
 		
-		return list;
+		
+		if(lat.equals("0")){
+			logger.info("lat 0일떄");
+			
+			List<StoreVO> list = dao.getadlist(page);
+			
+			return list;
+		}else{
+			logger.info("lat 좌표 들왔을떄");
+			List<StoreVO> list= new ArrayList<>();
+			StoreVO vo=new StoreVO(); 
+			vo.setLat(lat);
+			vo.setLng(lng);
+			
+			list = dao.getlist(vo,page);
+			logger.info(list.toString());
+			
+			
+			return list;
+		}
+		
+				 
+		
 		
 	}
 	
@@ -62,17 +85,19 @@ public class IndexController {
 	}
 	
 	@PostMapping("/search")
-	public @ResponseBody List<StoreVO> searchResult(@RequestParam("lat") String lat, @RequestParam("lng") String lng){
+	public @ResponseBody List<StoreVO> searchResult(@RequestParam("lat") String lat, @RequestParam("lng") String lng, @RequestParam("page") Integer page){
 		
+		logger.info("zzzzzzzzzzzzzzzdddd");
 		logger.info(lat);
 		logger.info(lng);
+		logger.info(""+page);
 		
 		List<StoreVO> list= new ArrayList<>();
 		StoreVO vo=new StoreVO(); 
 		vo.setLat(lat);
 		vo.setLng(lng);
 		
-		list = dao.getlist(vo);
+		list = dao.getlist(vo,page);
 		logger.info(list.toString());
 		
 		
