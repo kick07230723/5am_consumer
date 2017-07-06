@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
@@ -29,8 +30,9 @@ public class CategoryController {
 	StoreDAO dao;
 	
 	@GetMapping("/list")
-	public void categoryget(){
+	public void categoryget(@RequestParam("cate")String cate,Model model){
 		
+		model.addAttribute("cate", cate);
 		
 		
 	}

@@ -104,30 +104,30 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<ul class="nav navbar-nav "  style="font-size: 20px">
 							<li ><a href="/index" class="hyper "><span >Home</span></a></li>	
 							
-							<li class="dropdown">
+							<li class="dropdown ">
 								<a href="#"  class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Category<b class="caret"></b></span></a>
 								<ul class="dropdown-menu multi">
 									<div class="row" id="category">
 										<div class="col-sm-3">
 											<ul class="multi-column-dropdown">
 			
-												<li  id="list2"><a href="/category/list"  data-category="식음료"><i class="fa fa-angle-right" aria-hidden="true"></i>식음료</a></li>
-												<li><a href="/category/list"  data-category="화장품"><i class="fa fa-angle-right" aria-hidden="true"></i>화장품</a></li>
-												<li><a href="/category/list"  data-category="의약&amp;건강"> <i class="fa fa-angle-right" aria-hidden="true"></i>의약 &amp;건강</a></li>
-												<li><a href="/category/list"  data-category="교양&amp;오락"><i class="fa fa-angle-right" aria-hidden="true"></i>교양 &amp; 오락</a></li>
-												<li><a href="/category/list"  data-category="생활잡화"><i class="fa fa-angle-right" aria-hidden="true"></i>생활잡화</a></li>
+												<li><a href="/category/list?cate='식음료'"  data-category="식음료"><i class="fa fa-angle-right" aria-hidden="true"></i>식음료</a></li>
+												<li><a href="/category/list?cate='화장품'"  data-category="화장품"><i class="fa fa-angle-right" aria-hidden="true"></i>화장품</a></li>
+												<li><a href="/category/list?cate='의약&amp;건강'"  data-category="의약&amp;건강"> <i class="fa fa-angle-right" aria-hidden="true"></i>의약 &amp;건강</a></li>
+												<li><a href="/category/list?cate='교양&amp;오락'"  data-category="교양&amp;오락"><i class="fa fa-angle-right" aria-hidden="true"></i>교양 &amp; 오락</a></li>
+												<li><a href="/category/list?cate='생활잡화'"  data-category="생활잡화"><i class="fa fa-angle-right" aria-hidden="true"></i>생활잡화</a></li>
 											</ul>
 										
 										</div>
 										<div class="col-sm-3">
 										
 											<ul class="multi-column-dropdown">
-												<li><a href="/category/list"  data-category="교육&amp;단체"><i class="fa fa-angle-right" aria-hidden="true"></i>교육 &amp; 단체</a></li>
-												<li><a href="/category/list"  data-category="레저&amp;스포츠"><i class="fa fa-angle-right" aria-hidden="true"></i>레저 &amp; 스포츠</a></li>
-												<li><a href="/category/list"  data-category="패션"><i class="fa fa-angle-right" aria-hidden="true"></i>패션</a></li>
-												<li><a href="/category/list"  data-category="주택&amp;가구"><i class="fa fa-angle-right" aria-hidden="true"></i>주택 &amp; 가구</a></li>
-												<li><a href="/category/list"  data-category="금융"><i class="fa fa-angle-right" aria-hidden="true"></i>금융</a></li>
-												<li><a href="/category/list"  data-category="컴퓨터&amp;주변기기"><i class="fa fa-angle-right" aria-hidden="true"></i>컴퓨터 &amp; 주변기기</a></li>
+												<li><a href="/category/list?cate='교육&amp;단체'"  data-category="교육&amp;단체"><i class="fa fa-angle-right" aria-hidden="true"></i>교육 &amp; 단체</a></li>
+												<li><a href="/category/list?cate='레저&amp;스포츠'"  data-category="레저&amp;스포츠"><i class="fa fa-angle-right" aria-hidden="true"></i>레저 &amp; 스포츠</a></li>
+												<li><a href="/category/list?cate='패션'"  data-category="패션"><i class="fa fa-angle-right" aria-hidden="true"></i>패션</a></li>
+												<li><a href="/category/list?cate='주택&amp;가구'"  data-category="주택&amp;가구"><i class="fa fa-angle-right" aria-hidden="true"></i>주택 &amp; 가구</a></li>
+												<li><a href="/category/list?cate='금융'"  data-category="금융"><i class="fa fa-angle-right" aria-hidden="true"></i>금융</a></li>
+												<li><a href="/category/list?cate='컴퓨터&amp;주변기기'"  data-category="컴퓨터&amp;주변기기"><i class="fa fa-angle-right" aria-hidden="true"></i>컴퓨터 &amp; 주변기기</a></li>
 												
 											</ul>
 										
@@ -135,11 +135,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="col-sm-3">
 										
 											<ul class="multi-column-dropdown">
-												<li><a href="/category/list"  data-category="전자&amp;통신"><i class="fa fa-angle-right" aria-hidden="true"></i>전자 &amp; 통신</a></li>
-												<li><a href="/category/list"  data-category="유통"><i class="fa fa-angle-right" aria-hidden="true"></i>유통</a></li>
-												<li><a href="/category/list"  data-category="수송"><i class="fa fa-angle-right" aria-hidden="true"></i>수송</a></li>
-												<li><a href="/category/list"  data-category="인터넷"><i class="fa fa-angle-right" aria-hidden="true"></i>인터넷</a></li>
-												<li><a href="/category/list"  data-category="서비스&amp;기타"><i class="fa fa-angle-right" aria-hidden="true"></i>서비스 &amp; 기타</a></li>
+												<li><a href="/category/list?cate='전자&amp;통신'"  data-category="전자&amp;통신"><i class="fa fa-angle-right" aria-hidden="true"></i>전자 &amp; 통신</a></li>
+												<li><a href="/category/list?cate='유통'"  data-category="유통"><i class="fa fa-angle-right" aria-hidden="true"></i>유통</a></li>
+												<li><a href="/category/list?cate='수송'"  data-category="수송"><i class="fa fa-angle-right" aria-hidden="true"></i>수송</a></li>
+												<li><a href="/category/list?cate='인터넷'"  data-category="인터넷"><i class="fa fa-angle-right" aria-hidden="true"></i>인터넷</a></li>
+												<li><a href="/category/list?cate='서비스&amp;기타'"  data-category="서비스&amp;기타"><i class="fa fa-angle-right" aria-hidden="true"></i>서비스 &amp; 기타</a></li>
 											</ul>
 										</div>
 										<div class="col-sm-3 w3l">
@@ -183,8 +183,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
   <!-- header 끝!!!-->
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 	<script
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
@@ -326,7 +325,7 @@ $(document).ready(function(e){
 				  
 			  })
  */
-		$(".caret").dropdown();
+
 	
 })
 

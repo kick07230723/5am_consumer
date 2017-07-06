@@ -169,8 +169,8 @@
 
 			var page = 1;
 			/* var scategory=$(this).data('category'); */
-			var scategory = $("#list2").text();
-			console.log($("#list2"));
+			var scategory = ${cate}
+		
 			/* 	console.log($(this).data('category'));
 			 */
 			function init() {
@@ -217,7 +217,7 @@
 
 				});
 			}
-			 init();
+			init();
 		
 			 
 			 var idnum = 1;
@@ -328,7 +328,7 @@
 		    		
 		    		
 		    		
-		    		$(window).scroll(
+		    		$(document).scroll(
 		    				function() {
 		    					var maxHeight = $(document).height();
 		    					var currentScroll = $(window).scrollTop() + $(window).height();
