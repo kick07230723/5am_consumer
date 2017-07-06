@@ -71,16 +71,14 @@
 			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
-						<div class="modal-header">
-						
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4>공지사항 수정</h4>						
+						<div class="modal-header">						
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+							<h4> 공지사항 수정</h4>
+								
 						</div>
 						<div class="modal-body modal-spa">
-								
 								<div class="col-md-12 span-2 ">
-								<h5 id="tcno"></h5>
-									<p class="in-para"></p>
-									<h5> 제목</h5>
+									<h5 id="tcno" style="color:red;"></h5><hr><h5> 제목</h5>
 									<p class="in-para"> <input id="title" type="text" value="" style="width:100%; border:none;"></p>
 									<h5> 내용</h5>
 									<p class="in-para"> <textarea id="content" style="width:100%; border:none;" ></textarea></p>
