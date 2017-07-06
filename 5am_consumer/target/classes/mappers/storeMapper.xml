@@ -28,7 +28,7 @@ select * from (select ROWNUM rno, sid, sname, saddr, lng, lat, sphone,semail,reg
 <select id="categetadlist" parameterType="hashmap" resultType="org.cg.domain.StoreVO">
 
 <![CDATA[
-select * from(SELECT  ROWNUM rno, sid, sname, saddr, lng, lat, sphone,semail,regdate,updatedate,saddrm,scategory FROM(select* from (SELECt *FROM tbl_store ORDER BY REGDATE DESC)where (scategory like '%'|| #{scategory} ||'%')))where  rno>(#{page}-1)*10 AND rno<=#{page}*10
+select * from(SELECT  ROWNUM rno, sid, sname, saddr, lng, lat, sphone,semail,regdate,updatedate,saddrm,scategory FROM(select* from (SELECt *FROM tbl_store ORDER BY REGDATE DESC)where scategory=#{scategory}))where  rno>(#{page}-1)*10 AND rno<=#{page}*10
 ]]>
 
 </select>

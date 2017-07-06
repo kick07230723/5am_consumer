@@ -2,6 +2,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Carousel
     ================================================== -->
 <div id="#myCarousel" class="carousel slide" data-ride="carousel">
@@ -160,6 +161,7 @@
 <!-- modal -->
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>
+
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
 <script>
 	$(document).ready(function() {
