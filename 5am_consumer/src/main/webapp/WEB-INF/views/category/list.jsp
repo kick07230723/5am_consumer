@@ -4,7 +4,7 @@
 	pageEncoding="UTF-8"%>
 <!-- Carousel
     ================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="#myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -36,7 +36,7 @@
 <div class="kic-top ">
 	<div class="container ">
 		<div class="kic ">
-			<h3>한글테스트</h3>${cate}
+			<h3>${cate}</h3>
 
 		</div>
 		<div class="col-md-4 kic-top1">
@@ -124,7 +124,7 @@
 </div>
 
 <!-- modal -->
-			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
@@ -169,10 +169,11 @@
 
 			var page = 1;
 			/* var scategory=$(this).data('category'); */
-			var scategory = ${cate};
+			var scategory = $("#list2").text();
+			console.log($("#list2"));
 			/* 	console.log($(this).data('category'));
 			 */
-			var init = function() {
+			function init() {
 
 				$.ajax({
 
@@ -185,12 +186,39 @@
 					},
 					success : function(data) {
 						console.log(data);
-					}
+						if(data.length!=0){
+    		    			adlist(data);
+    		    		}else{
+    		    			alert("더이상의 결과가 없습니다.")
+    		    		}
+					},
+			        beforeSend: function () {
+                        var width = 0;
+                        var height = 0;
+                        var left = 0;
+                        var top = 0;
+                        width = 70;
+                        height = 70;
+                        top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+                        left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+                        if($("#div_ajax_load_image").length != 0) {
+                               $("#div_ajax_load_image").css({
+                                      "top": top+"px",
+                                      "left": left+"px"
+                               });
+                               $("#div_ajax_load_image").show();
+                        }
+                        else {
+                               $('body').append('<div id="div_ajax_load_image" style="position:absolute; top:' + top + 'px; left:' + left + 'px; width:' + width + 'px; height:' + height
+                               + 'px; z-index:9999; background:transparent; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="images/loading.gif" style="width:70px; height:70px;"></div>');
+                        }
+                      },
+                    complete: function () {$("#div_ajax_load_image").hide();},
 
 				});
 			}
-			 
 			 init();
+		
 			 
 			 var idnum = 1;
 		    	var page = 1;
@@ -203,7 +231,7 @@
 		    			 
 		    			 
 		    			 
-		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
+		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
 		    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
 		    					+'<div class="mid-1"><div class="women">'
 		    					+'<h6><a href="single.html">'+value.sid+'</a></h6></div><div class="mid-2">'
@@ -295,34 +323,12 @@
 		    		 
 		    	}
 		    		
-		    		nlist();
+		    	
 		    		
-		    		/* 맨처음에 보여주는거  */
-		    		function nlist(){
-		    			
-		    			 $.ajax({
-		    				  type: "POST",
-		    		    	  url: "/index/getadlist",
-		    		 		  dataType: 'Json',
-		    		 		  data : {
-		    			        	page : page
-		    			        },
-		    		    	  success: function(re){
-		    		    		console.log("리스트를 받아서 ");
-		    		    		
-		    		    		if(re.length!=0){
-		    		    			adlist(re);
-		    		    		}else{
-		    		    			alert("더이상의 결과가 없습니다.")
-		    		    		}
-		    		    		 
-		    		    	  } 
-		    			    });
-		    			
-		    			
-		    		}
 		    		
-		    		$(document).scroll(
+		    		
+		    		
+		    		$(window).scroll(
 		    				function() {
 		    					var maxHeight = $(document).height();
 		    					var currentScroll = $(window).scrollTop() + $(window).height();
@@ -330,7 +336,7 @@
 		    					if (maxHeight <= currentScroll) {
 		    						console.log("down");
 		    						page = page + 1;
-		    						nlist();
+		    						init();
 
 		    					};
 
