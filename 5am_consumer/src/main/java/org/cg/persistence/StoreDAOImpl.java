@@ -42,6 +42,10 @@ public class StoreDAOImpl implements StoreDAO {
 		return sess.selectList(namespace+".categetadlist", map);
 	}
 
-	
+
+	@Override
+	public StoreVO getDetail(String sid) {
+		return sess.selectOne(namespace+".getDetail", sid);
+	}
 	
 }

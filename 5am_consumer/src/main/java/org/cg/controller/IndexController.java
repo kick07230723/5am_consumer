@@ -104,6 +104,15 @@ public class IndexController {
 		return list;
 		
 	}
+	
+	@PostMapping("/getDetail")
+	@ResponseBody
+	public StoreVO getDetail(String sid){
+		StoreVO vo=new StoreVO();
+		vo = dao.getDetail(sid);
+		return vo;
+	}
+
 
 	
 }

@@ -25,20 +25,13 @@
 <div class="content-top ">
 	<div class="container ">
 		<div class="spec ">
-			<h3>Special Offers</h3>
+			<h3><div id="searchName">최근 등록된 상점</div></h3>
 			<div class="ser-t">
 				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
 		</div>
 		<div class="tab-head ">
-			<nav class="nav-sidebar">
-				<ul class="nav tabs ">
-					<li class="active"><a href="#tab1" data-toggle="tab">Staples</a></li>
-					<li class=""><a href="#tab2" data-toggle="tab">Snacks</a></li>
-					<li class=""><a href="#tab3" data-toggle="tab">Fruits Vegetables</a></li>
-					<li class=""><a href="#tab4" data-toggle="tab">Breakfast Cereal</a></li>
-				</ul>
-			</nav>
+
 			<div class=" tab-content tab-content-t ">
 				<div class="tab-pane active text-style" id="tab1">
 
@@ -84,16 +77,16 @@
 											</div>
 								</div>
 								<div class="col-md-7 span-1 ">
-									<h3>StoreName</h3>
-									<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
-									<div class="price_single">
-									  <span class="reducedfrom "><del>$2.00</del>$1.50</span>
-									
-									 <div class="clearfix"></div>
+									<h3><div id="stName">StoreName</div></h3><div id="stCategory"></div><span class="reducedfrom "><div id="stPhone"></div></span>
+									<div id="stAddrm"><p class="in-para"></p></div>
+
+									<div id="stContent"></div>
+										<p class="quick_desc"></p>
+									<div id="reply">
+										 <input id="custitle" type="text" class="form-control" placeholder="댓글을 입력하세요" aria-describedby="basic-addon1">
 									</div>
-									<h4 class="quick">Quick Overview:</h4>
-									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-									 <div class="add-to">
+									<div class="input-group"></div>
+									<div class="add-to">
 										   <button id="cartBtn" class="my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
 									</div>
 								</div>
@@ -179,12 +172,13 @@
     		 var str="";
     		 
     		 $.each(list, function(index, value) {
-    			 
+    			 console.log(value)
     			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
+    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
-    					+'<h6><a href="single.html">'+value.sid+'</a></h6></div><div class="mid-2">'
-    					+'<p><label>$2.00</label><em class="item_price">$1.50</em></p>'
+    					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
+    					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
+    					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
     				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
@@ -195,45 +189,28 @@
     			}); 
     		 
     		 mid_adv='<div class="clearfix"></div> <div class="col-md-4 m-w3ls1">'
-    			 +' <div class="col-md "><a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt="">'
+    			 +' <div class="col-md "><img src="images/co.jpg" class="img-responsive img" alt="">'
     			 +'    <div class="big-sale">'
     			 +'       <div class="big-sale1"><h3>Big <span>Sale</span></h3>'
     			 +'           <p>It is a long established fact that a reader </p></div>'
-    			 +'   </div></a></div></div>'
+    			 +'   </div></div></div>'
     			 +'  <div class="col-md-4 m-w3ls1">'
-    			 +'<div class="col-md "><a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt="">'
+    			 +'<div class="col-md "><img src="images/co.jpg" class="img-responsive img" alt="">'
     			 +'   <div class="big-sale">'
     			 +'      <div class="big-sale1"><h3>Big <span>Sale</span></h3><p>It is a long established fact that a reader </p></div>'
-    			 +'</div></a></div></div>'
+    			 +'</div></div></div>'
     			 +' <div class="col-md-4 m-w3ls">'
-    			 +' <div class="col-md2 "><a href="kitchen.html"> <img src="images/co2.jpg" class="img-responsive img1" alt="">'
+    			 +' <div class="col-md2 "><img src="images/co2.jpg" class="img-responsive img1" alt="">'
     			 +' <div class="big-sale2"><h3>Cooking <span>Oil</span></h3>'
     			 +'    <p>It is a long established fact that a reader </p></div>'
-    			 +' </a></div>'
-    			 +'  <div class="col-md3 "><a href="hold.html"> <img src="images/co3.jpg" class="img-responsive img1" alt="">'
+    			 +' </div>'
+    			 +'  <div class="col-md3 "><img src="images/co3.jpg" class="img-responsive img1" alt="">'
     			 +'    <div class="big-sale3"><h3>Vegeta<span>bles</span></h3>'
     			 +'        <p>It is a long established fact that a reader </p></div>'
-    			 +'  </a></div></div><div class="clearfix"></div>'
+    			 +'  </div></div><div class="clearfix"></div>'
     		 
     		 	$("#adlist").append(str +mid_adv);
     			 
-    			 $(".offer-img").on("click",function(){
-    				 
-    				 console.log("click!!");
-    				 console.log($("#cartBtn"));
-    				 console.log(idnum);
-    				 $("#in1").val($(this).data("name"));
-    				 $(".span-1 h3").html($(this).data("name"));
-    				 $("#storeimg").attr("src",$(this).data("src"));
-    				
-   					 $("#cartBtn").data("name",$(this).data("name"));
-       				 $("#cartBtn").data("image",$(this).data("src"));
-       				 $("#cartBtn").data("summary","summary"+idnum);
-       				 $("#cartBtn").data("id",idnum++);
-       				 $("#put").val($(this).data("name"));
-       				 
-        			 
-    			 });
     			 
     			 var goToCartIcon = function($addTocartBtn){
     			      var $cartIcon = $(".my-cart-icon");
@@ -426,6 +403,7 @@
     	$("#searcharea").on('click',function(e){
     		e.preventDefault();
     		$("#adlist").html('');
+    		$("#searchName").html($("#area").val());
     		page=1;
     		console.log("in~~~!!");
     		putArea = $("#area").val();
@@ -453,9 +431,29 @@
 				});
     	
     	
-    	
-    	
-    	
+	    	 $(document).on("click",".offer-img",function(){
+				 
+ 	    	 $.ajax({
+  		    	  type: "POST",
+  		    	  url: "/index/getDetail",
+  		    	  data: {
+  		    		  sid: $(this).data("name")
+  		    	  },
+  		 		  dataType: 'Json',
+  		    	  success: function(vo){
+  		    		console.log(vo);
+  		    		$("#stName").html(vo.sname);
+  		    		$("#stCategory").html(vo.scategory);
+  		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
+  		    		$("#stPhone").html(vo.sphone);
+  		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
+  		    		
+  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+  		    		
+  		    	  }
+  		    	});     	
+	    	 })
+
 })
 </script>
 

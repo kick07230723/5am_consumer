@@ -33,5 +33,9 @@ select * from(SELECT  ROWNUM rno, sid, sname, saddr, lng, lat, sphone,semail,reg
 
 </select>
 
+<select id="getDetail" parameterType="String" resultType="org.cg.domain.StoreVO">
+select sid, sname, saddr, sphone, semail, regdate, saddrm, scategory from tbl_store where sid= #{sid} 
+</select>
+	
 	
 </mapper>

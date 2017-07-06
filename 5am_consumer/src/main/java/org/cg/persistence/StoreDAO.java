@@ -13,4 +13,5 @@ public interface StoreDAO {
 	
 	public List<StoreVO> categetadlist(HashMap<String, String> map);
 	
+	public StoreVO getDetail(String sid);
 }
