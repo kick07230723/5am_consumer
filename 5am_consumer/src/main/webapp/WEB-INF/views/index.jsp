@@ -268,7 +268,7 @@
     		    		if(re.length!=0){
     		    			adlist(re);
     		    		}else{
-    		    			swal("더이상의 결과가 없습니다.")
+    		    			alert("더이상의 결과가 없습니다.")
     		    		}
     		    		 
     		    	  } ,
@@ -341,7 +341,7 @@
     	    }
     	    else
     	    {
-    	        swal("이 브라우저는 Geolocation를 지원하지 않습니다");
+    	        alert("이 브라우저는 Geolocation를 지원하지 않습니다");
     	    }
 
     	    function successCallback(position)
@@ -356,7 +356,7 @@
     	            crossDomain:true,
     	            url: "https://apis.daum.net/local/geo/coord2addr?apikey=175962b9a13ff23b6ba95789998c261c&longitude="+lng+"&latitude="+lat+"&inputCoordSystem=WGS84&output=json",
     	            error   : function (msg) {
-    	                swal(msg);
+    	                alert(msg);
     	                
     	            },
     	            success: function(data){
@@ -369,7 +369,7 @@
 
     	    function errorCallback(error)
     	    {
-    	        swal(error.message);
+    	        alert(error.message);
     	    }
     		
     		
@@ -429,7 +429,6 @@
     		 })//  끝 
 	    	
 	    	
-
 	    	 $(document).on("click",".offer-img",function(){
 	    		 
 //자세히보기 눌렀을때 정보
@@ -467,7 +466,7 @@
   		 	 		    		$("#titleText").val('');
   		 	 		    		$("#questionText").val('');
 	  		 	 		    	swal({
-	  		 	 		    	  title: "성공!!",
+	  		 	 		    	  title: "성공",
 	  		 	 		    	  text: "댓글이 성공적으로 등록되었습니다",
 	  		 	 		    	  timer: 2000,
 	  		 	 		    	  showConfirmButton: false
@@ -588,6 +587,11 @@
 		 		    	qRead();
   		    	  }
   		    	});     	
+
+
+
+	    	 })
+	    	 
 })
 </script>
 
