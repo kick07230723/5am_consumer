@@ -18,14 +18,13 @@
     </div>
 </div>
 
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="js/jquery.vide.min.js"></script>
+
 
 <!--content-->
 <div class="content-top ">
 	<div class="container ">
 		<div class="spec ">
-			<h3><div id="searchName">최근 등록된 상점</div></h3>
+			<h2>최근 등록된 상점</h2><br>
 			<div class="ser-t">
 				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
@@ -109,57 +108,45 @@
 
 <script src="js/bootstrap.js"></script>
 
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="js/jquery.vide.min.js"></script>
+
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
-
-<script type="text/javascript">
-   $(function () { 
-
-    var goToCartIcon = function($addTocartBtn){
-      var $cartIcon = $(".my-cart-icon");
-      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
-      $addTocartBtn.prepend($image);
-      var position = $cartIcon.position();
-      $image.animate({
-        top: position.top,
-        left: position.left
-      }, 500 , "linear", function() {
-        $image.remove();
-      });
-    }
-
-    $('.my-cart-btn').myCart({
-      classCartIcon: 'my-cart-icon',
-      classCartBadge: 'my-cart-badge',
-      affixCartIcon: true,
-      checkoutCart: function(products) {
-        $.each(products, function(){
-          console.log(this);
-        });
-      },
-      clickOnAddToCart: function($addTocart){
-        goToCartIcon($addTocart);
-      },
-      getDiscountPrice: function(products) {
-        var total = 0;
-        $.each(products, function(){
-          total += this.quantity * this.price;
-        });
-        return total * 1;
-      }
-    });
-    
-    
-
-  });
-  </script>
-  
-  
-
 
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 
 <script type="text/javascript">	
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+=======
+
+
+>>>>>>> 04800f1 a
     $(document).ready(function(e) {
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+=======
+    	
+    	var goToCartIcon = function($addTocartBtn){
+  	      var $cartIcon = $(".my-cart-icon");
+  	      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+  	      $addTocartBtn.prepend($image);
+  	      var position = $cartIcon.position();
+  	      $image.animate({
+  	        top: position.top,
+  	        left: position.left
+  	      }, 500 , "linear", function() {
+  	        $image.remove();
+  	      });
+  	    }
+    	
+    	$('.my-cart-btn').myCart({
+		      
+	        clickOnAddToCart: function($addTocart){
+	        	console.log("여긴 언제 33???");
+	          goToCartIcon($addTocart);
+	        }
+	      });
+    	
+>>>>>>> 04800f1 a
     	
     	var idnum = 1;
     	var page = 1;
@@ -171,15 +158,21 @@
     		 var str="";
     		 
     		 $.each(list, function(index, value) {
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
     			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
     					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+=======
+    			 
+    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
+    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+>>>>>>> 04800f1 a
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
     					+'</div></div></div></div>'
     			 
     					
@@ -210,37 +203,11 @@
     		 	$("#adlist").append(str +mid_adv);
     			 
     			 
-    			 var goToCartIcon = function($addTocartBtn){
-    			      var $cartIcon = $(".my-cart-icon");
-    			      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
-    			      $addTocartBtn.prepend($image);
-    			      var position = $cartIcon.position();
-    			      $image.animate({
-    			        top: position.top,
-    			        left: position.left
-    			      }, 500 , "linear", function() {
-    			        $image.remove();
-    			      });
-    			    }
-    			 
     			 $('#adlist .my-cart-btn').myCart({
-    			        classCartIcon: 'my-cart-icon',
-    			        classCartBadge: 'my-cart-badge',
-    			        affixCartIcon: true,
-    			        checkoutCart: function(products) {
-    			          $.each(products, function(){
-    			            console.log(this);
-    			          });
-    			        },
+    			      
     			        clickOnAddToCart: function($addTocart){
+    			        	console.log("여긴 언제 22???");
     			          goToCartIcon($addTocart);
-    			        },
-    			        getDiscountPrice: function(products) {
-    			          var total = 0;
-    			          $.each(products, function(){
-    			            total += this.quantity * this.price;
-    			          });
-    			          return total * 1;
     			        }
     			      });
     		
@@ -268,7 +235,11 @@
     		    		if(re.length!=0){
     		    			adlist(re);
     		    		}else{
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
     		    			alert("더이상의 결과가 없습니다.")
+=======
+    		    			swal("더 이상 결과가 없습니다.")
+>>>>>>> 04800f1 a
     		    		}
     		    		 
     		    	  } ,
@@ -324,7 +295,7 @@
        		 		  dataType: 'Json',
        		    	  success: function(re){
        		    		console.log("리스트를 받아서 ");
-       		    		  console.log(re);
+       		    		  
        		    		adlist(re);
        		    	  },
        		    	}); 
@@ -419,6 +390,7 @@
 				});
     	
     	
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
  	    	//댓글보고 리스트로 돌아가기 
  	    	$(document).on("click","#listBtn",function(e){
 				e.preventDefault();
@@ -429,6 +401,8 @@
     		 })//  끝 
 	    	
 	    	
+=======
+>>>>>>> 04800f1 a
 	    	 $(document).on("click",".offer-img",function(){
 	    		 
 //자세히보기 눌렀을때 정보
@@ -444,9 +418,15 @@
   		    		$("#stCategory").html(vo.scategory);
   		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
   		    		$("#stPhone").html(vo.sphone);
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
   		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
   		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
   		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+=======
+  		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
+  		    		
+  		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
+>>>>>>> 04800f1 a
   		    		
   		    		
   			    	
@@ -589,9 +569,12 @@
   		    	});     	
 
 
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
 
 	    	 })
 	    	 
+=======
+>>>>>>> 04800f1 a
 })
 </script>
 

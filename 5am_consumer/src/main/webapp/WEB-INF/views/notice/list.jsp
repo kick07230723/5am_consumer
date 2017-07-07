@@ -106,15 +106,7 @@
 <!-- //footer-->
 <!-- tabs -->
 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#horizontalTab').easyResponsiveTabs({
-			type: 'default', //Types: default, vertical, accordion           
-			width: 'auto', //auto or any width like 600px
-			fit: true   // 100% fit in a container
-			});
-		});				
-	</script>
+
 <!-- //tabs -->
 <!-- smooth scrolling -->
 	<script type="text/javascript">
@@ -126,7 +118,7 @@
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //smooth scrolling -->
 <!-- for bootstrap working -->
-		<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
  <script type="text/javascript">

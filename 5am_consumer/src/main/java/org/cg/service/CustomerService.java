@@ -3,13 +3,15 @@ package org.cg.service;
 import java.util.Date;
 
 import org.cg.domain.CustomerVO;
-
+import org.cg.domain.MemberVO;
 import org.cg.dto.LoginDTO;
 
 
 public interface CustomerService {
 	
 	public void insert(CustomerVO vo);
+	
+	public void insertm(MemberVO vo);
 	
 	public void keepLogin(String cemail, String sessionID, Date next);
 

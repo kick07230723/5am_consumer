@@ -5,6 +5,7 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 import org.cg.domain.CustomerVO;
+import org.cg.domain.MemberVO;
 import org.cg.service.CustomerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,14 @@ public class RegisterController {
 		logger.info(""+vo);
 		
 		cservice.insert(vo);
+		
+		MemberVO mvo = new MemberVO();
+		mvo.setMid(vo.getCemail());
+		mvo.setMpw(vo.getCpw());
+		mvo.setMname(vo.getCname());
+		mvo.setMaddr(vo.getCaddrm()+" "+vo.getCaddr());
+		
+		cservice.insertm(mvo);
 	}
 	
 	@PostMapping("/check")

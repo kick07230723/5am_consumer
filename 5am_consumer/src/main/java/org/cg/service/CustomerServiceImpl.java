@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.inject.Inject;
 
 import org.cg.domain.CustomerVO;
+import org.cg.domain.MemberVO;
 import org.cg.dto.LoginDTO;
 import org.cg.persistence.CustomerDAO;
 import org.springframework.stereotype.Service;
@@ -61,6 +62,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public CustomerVO findPw(String cemail, String cname) {
 		// TODO Auto-generated method stub
 		return dao.findPw(cemail, cname);
+	}
+
+
+	@Override
+	public void insertm(MemberVO vo) {
+		dao.insertm(vo);
+		
 	}
 
 }

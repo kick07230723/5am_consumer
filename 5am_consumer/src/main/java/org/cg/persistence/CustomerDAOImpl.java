@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.cg.domain.CustomerVO;
+import org.cg.domain.MemberVO;
 import org.cg.dto.LoginDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -68,6 +69,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 		map.put("cemail", cemail);
 		map.put("cname", cname);
 		return sess.selectOne(namespace+".findPw", map);
+	}
+
+	@Override
+	public void insertm(MemberVO vo) {
+		sess.insert(namespace+".insertm",vo);
+		
 	}
 
 }

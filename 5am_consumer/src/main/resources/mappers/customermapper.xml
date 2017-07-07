@@ -7,6 +7,10 @@
 insert into tbl_customer(cno,cname,cemail,cpw,caddrm,caddr) values(seq_customer_cno.nextval,#{cname},#{cemail},#{cpw},#{caddrm},#{caddr})
 </insert>
 
+<insert id="insertm" parameterType="org.cg.domain.MemberVO">
+insert into tbl_member(mid,mpw,mname,maddr) values(#{mid},#{mpw},#{mname},#{maddr})
+</insert>
+
 <select id="checkSessionKey" resultType="org.cg.domain.CustomerVO">
 		select * from tbl_customer where sessionKey = #{value} and sessionlimit > sysdate	
 </select>
