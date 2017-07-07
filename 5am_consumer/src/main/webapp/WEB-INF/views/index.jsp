@@ -457,7 +457,7 @@
   		 	 		    	  type: "POST",
   		 	 		    	  url: "/index/replyRegister",
   		 	 		    	  data: {
-  		 	 		    		 sid: vo.sid , mid:'회원22' , title:$("#titleText").val(), question: $("#questionText").val()
+  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
   		 	 		    	  },
   		 	 		 		  dataType: 'text',
   		 	 		    	  success: function(re){
