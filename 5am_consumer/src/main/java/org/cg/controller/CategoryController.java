@@ -6,6 +6,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.cg.domain.Criteria;
+import org.cg.domain.MAnswerVO;
+import org.cg.domain.MQuestionVO;
+import org.cg.domain.PageMaker;
 import org.cg.domain.StoreVO;
 import org.cg.persistence.StoreDAO;
 import org.slf4j.Logger;
@@ -57,6 +61,51 @@ public class CategoryController {
 		
 		return list;
 		
+	}
+	
+	@PostMapping("/getDetail")
+	@ResponseBody
+	public StoreVO getDetail(String sid){
+		StoreVO vo=new StoreVO();
+		vo = dao.getDetail(sid);
+		return vo;
+	}
+
+	@PostMapping("/qRead")
+	@ResponseBody
+	public List<MQuestionVO> qRead(Criteria cri){
+		logger.info("cri$$$$$$$ "+cri);
+		List<MQuestionVO> list= new ArrayList<>();
+		list=dao.qRead(cri);
+		return list;
+	}
+	
+	@PostMapping("/qPage")
+	@ResponseBody
+	public PageMaker qPage(Criteria cri){
+		PageMaker pageMaker=new PageMaker(cri, dao.getReplyTotal(cri)); 
+		return pageMaker;
+	}
+	
+	@PostMapping("/qDetail")
+	@ResponseBody
+	public MQuestionVO qDetail(String mqno){
+		MQuestionVO qvo=dao.qDetail(mqno);
+		return qvo;
+	}
+	
+	@PostMapping("/aDetail")
+	@ResponseBody
+	public List<MAnswerVO> aDetail(String mqno){
+		List<MAnswerVO> aList=dao.aDetail(mqno);
+		return aList;
+	}
+	
+	@PostMapping("/replyRegister")
+	@ResponseBody
+	public String replyRegister(MQuestionVO vo){
+		dao.replyRegister(vo);
+		return "success";
 	}
 	
 

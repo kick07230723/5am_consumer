@@ -225,9 +225,25 @@ $(document).ready(function(e){
 	  }
 	  
 	  $("#logout").on("click",function(e){
-		  location.href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://5am.zz.am/login/logout"
-		  ktout();
-		  FB.logout();
+		  swal({
+    		  title: "로그아웃하시겠습니까?",
+    		 
+    		  type: "info",
+    		  showCancelButton: true,
+    		  closeOnConfirm: false,
+    		  showLoaderOnConfirm: true,
+    		},
+    		function(){
+    		  
+    		  swal("로그아웃중입니다.","","success");
+    		  setTimeout(function(){
+    			  location.href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://5am.zz.am/login/logout"
+    				  ktout();
+    				  FB.logout();
+    		  }, 1000);
+    		 
+    		});
+		 
 		  
 		  
 	  })

@@ -95,51 +95,10 @@
 	</div>
 
 <!-- product -->
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content modal-info">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body modal-spa">
-				<div class="col-md-5 span-2">
-					<div class="item">
-						<img src="images/of27.png" class="img-responsive" alt="">
-					</div>
-				</div>
-				<div class="col-md-7 span-1 ">
-					<h3>Rice(500 g)</h3>
-					<p class="in-para">There are many variations of passages of
-						Lorem Ipsum.</p>
-					<div class="price_single">
-						<span class="reducedfrom "><del>$4.00</del>$3.50</span>
 
-						<div class="clearfix"></div>
-					</div>
-					<h4 class="quick">Quick Overview:</h4>
-					<p class="quick_desc">Nam liber tempor cum soluta nobis
-						eleifend option congue nihil imperdiet doming id quod mazim
-						placerat facer possim assum. Typi non habent claritatem insitam;
-						es</p>
-					<div class="add-to">
-						<button class="btn btn-danger my-cart-btn my-cart-btn1 "
-							data-id="27" data-name="Rice" data-summary="summary 27"
-							data-price="3.50" data-quantity="1" data-image="images/of27.png">Add
-							to Cart</button>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!-- modal -->
-			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
@@ -152,16 +111,23 @@
 											</div>
 								</div>
 								<div class="col-md-7 span-1 ">
-									<h3>StoreName</h3>
-									<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
-									<div class="price_single">
-									  <span class="reducedfrom "><del>$2.00</del>$1.50</span>
-									
-									 <div class="clearfix"></div>
+									<h3><div id="stName">StoreName</div></h3>
+									<div id="stCategory"></div>
+									<span class="reducedfrom "><div id="stPhone"></div></span>
+									<div id="stAddrm"></div>
+<!-- 									<div id="stContent"></div>
+									<p class="in-para">댓글 리스트</p> -->
+									<div id="question"></div>
+									<div id="paging"></div>
+									<div id="close"></div> 
+									<div id="detail"></div>
+									<div id="answer"></div><br>
+									<div class="input-group">
+									  <input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
+									  <textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
+									  <a id="aTag" href="#" id="replyBtn" style="float: right" >댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
 									</div>
-									<h4 class="quick">Quick Overview:</h4>
-									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
-									 <div class="add-to">
+									<div class="add-to">
 										   <button id="cartBtn" class="my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
 									</div>
 								</div>
@@ -170,7 +136,6 @@
 						</div>
 					</div>
 				</div>
-
 
 <!-- modal -->
 
@@ -248,14 +213,15 @@
 		    			 
 		    			 
 		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-		    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
-		    					+'<div class="mid-1"><div class="women">'
-		    					+'<h6><a href="single.html">'+value.sid+'</a></h6></div><div class="mid-2">'
-		    					+'<p><label>$2.00</label><em class="item_price">$1.50</em></p>'
-		    				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
-		    					+'<div class="clearfix"></div></div><div class="add">'
-		    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
-		    					+'</div></div></div></div>'
+	    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+	    					+'<div class="mid-1"><div class="women">'
+	    					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
+	    					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
+	    					+'<p>카테고리 : '+value.scategory+'</p>'
+	    				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
+	    					+'<div class="clearfix"></div></div><div class="add">'
+	    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+	    					+'</div></div></div></div>'
 		    			 
 		    					
 		    			 
@@ -284,23 +250,7 @@
 		    		 
 		    		 	$(".agileinf").append(str +mid_adv);
 		    			 
-		    			 $(".offer-img").on("click",function(){
-		    				 
-		    				 console.log("click!!");
-		    				 console.log($("#cartBtn"));
-		    				 console.log(idnum);
-		    				 $("#in1").val($(this).data("name"));
-		    				 $(".span-1 h3").html($(this).data("name"));
-		    				 $("#storeimg").attr("src",$(this).data("src"));
-		    				
-		   					 $("#cartBtn").data("name",$(this).data("name"));
-		       				 $("#cartBtn").data("image",$(this).data("src"));
-		       				 $("#cartBtn").data("summary","summary"+idnum);
-		       				 $("#cartBtn").data("id",idnum++);
-		       				 $("#put").val($(this).data("name"));
-		       				 
-		        			 
-		    			 });
+		    		
 		    			 
 		    			 var goToCartIcon = function($addTocartBtn){
 		    			      var $cartIcon = $(".my-cart-icon");
@@ -359,6 +309,180 @@
 		    				});
 		    		
 		    		$().UItoTop({ easingType: 'easeOutQuart' });
+		    		
+		    		
+		    		//댓글보고 리스트로 돌아가기 
+		 	    	$(document).on("click","#listBtn",function(e){
+						e.preventDefault();
+				    	$("#close").html('');
+			 		    $("#detail").html('');
+				 		$("#answer").html('');
+					 	$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
+		    		 })//  끝 
+			    	
+			    	
+			    	 $(document).on("click",".offer-img",function(){
+			    		 
+		//자세히보기 눌렀을때 정보
+		 	    	 $.ajax({
+		  		    	  type: "POST",
+		  		    	  url: "/category/getDetail",
+		  		    	  data: {
+		  		    		  sid: $(this).data("name")
+		  		    	  },
+		  		 		  dataType: 'Json',
+		  		    	  success: function(vo){
+		  		    		$("#stName").html(vo.sname);
+		  		    		$("#stCategory").html(vo.scategory);
+		  		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
+		  		    		$("#stPhone").html(vo.sphone);
+		  		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
+		  		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
+		  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+		  		    		
+		  		    		
+		  			    	
+		  		     		//댓글달기
+		  		  	    	$(document).on("click","#replyBtn",function(e){
+		  		  	    		e.preventDefault();
+		  		  	    	  	$.ajax({
+		  		 	 		    	  type: "POST",
+		  		 	 		    	  url: "/category/replyRegister",
+		  		 	 		    	  data: {
+		  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
+		  		 	 		    	  },
+		  		 	 		 		  dataType: 'text',
+		  		 	 		    	  success: function(re){
+		  		 	 		    		qRead(); 	
+		  		 	 		    		console.log(re);
+		  		 	 		    		$("#titleText").val('');
+		  		 	 		    		$("#questionText").val('');
+			  		 	 		    	swal({
+			  		 	 		    	  title: "성공",
+			  		 	 		    	  text: "댓글이 성공적으로 등록되었습니다",
+			  		 	 		    	  timer: 2000,
+			  		 	 		    	  showConfirmButton: false
+			  		 	 		    	});
+		  		 	 		    	  }
+		  		 	 		    	});   
+		  		     		 })//  끝  
+		  		    		
+					    	 
+		  		     		
+		  		     		 
+				//자세히보기에서 질문보기
+					    function qRead(){ 
+		  		     			
+		  		     			
+		  		  	    	 //댓글 페이징	
+					    	  	$.ajax({
+					 		    	  type: "POST",
+					 		    	  url: "/category/qPage",
+					 		    	  data: {
+					 		    		 keyword: vo.sid, page:1
+					 		    	  },
+					 		 		  dataType: 'json',
+					 		    	  success: function(pageMaker){
+					 		    		var closeStr='<ul class="pagination pagination-sm">';
+					 		    		for(var i= pageMaker.start; i<pageMaker.end+1; i++){
+					 		    			closeStr += '<li><a class="curr pageNum" data-pnum="'+i+'"href='+i+'>'+i+'</a></li>';
+					 		    		 }
+					 		    		closeStr += '</ul>';
+					 		    		$("#paging").html(closeStr);
+					 		    	  }
+					 		    });  
+		  		  	    	 
+		  		  	    	 
+			  		  	     //댓글 페이지 클릭	
+			  		  	    $(document).on("click",".pageNum",function(e){
+			  		  	    	e.preventDefault();
+					    	  	$.ajax({
+					 		    	  type: "POST",
+					 		    	  url: "/category/qRead",
+					 		    	  data: {
+					 		    		 keyword: vo.sid, page: $(this).data('pnum')
+					 		    	  },
+					 		 		  dataType: 'json',
+					 		    	  success: function(list){
+						 		    		var str='';
+						 		    		for(var i=0; i<list.length; i++){
+						 		    			str += '<a href="#"><h5 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].mid+' : '+list[i].title +'</h5></a>';
+						 		    		}
+						 		    		$("#question").html(str);
+					 		    		  
+					 		    	  }
+					 		    	});  
+			  		  	    });
+		  		  	    	 //댓글내용 보여주기
+		  		     			$.ajax({
+				 		    	  type: "POST",
+				 		    	  url: "/category/qRead",
+				 		    	  data: {
+				 		    		 keyword: vo.sid
+				 		    	  },
+				 		 		  dataType: 'Json',
+				 		    	  success: function(list){
+				 		    		var str='';
+				 		    		for(var i=0; i<list.length; i++){
+				 		    			str += '<a href="#"><h5 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].mid+' : '+list[i].title +'</h5 ></a>';
+				 		    		}
+				 		    		$("#question").html(str);
+				 		    		
+				 		    		
+				 		    		//mqno를 넘겨서 질문 자세히보기
+				 		    		 $(document).on("click",".panel-content",function(e){
+				 		    			e.preventDefault();
+				 		    			 var str1='<h4>댓글</h4>';
+						 		    	
+				 			    	  	$.ajax({
+						 		    	  type: "POST",
+						 		    	  url: "/category/qDetail",
+						 		    	  data: {
+						 		    		 mqno: $(this).data("mqno")
+						 		    	  },
+						 		 		  dataType: 'Json',
+						 		    	  success: function(vo){
+						 		    		str1+='<h5>제목 : ' +vo.title +'</h5><p style:"text-align=right">글쓴이 : '+ vo.mid+'<br>작성일  : '+ vo.regdate+'</p><h5>내용  : '+ vo.question +'</h5>';
+						 		    		$("#detail").html(str1);
+						 		    		$(".input-group").html('');
+							 		    	$("#close").html('<a id="listBtn" style="float:right" href="#">댓글&답글 접기 <i  class="fa fa-times" aria-hidden="true"></i></a>');
+						 		    	  }
+						 		    	});  //댓글보기 ajax 끝
+						 		    	
+						 		    	 
+						 		    	//mqno를 넘겨서  답글보기
+								 		var str2='<br>';
+				 			    	  	$.ajax({
+							 		    	  type: "POST",
+							 		    	  url: "/category/aDetail",
+							 		    	  data: {
+							 		    		 mqno: $(this).data("mqno")
+							 		    	  },
+							 		 		  dataType: 'Json',
+							 		    	  success: function(list){
+								 		    	for(var i=0; i<list.length; i++){
+							 		    			str2 += '<h4>답글</h4><h5>제목 : '+list[i].title +'<br>작성일 : '+list[i].regdate+'<br>내용 : '+list[i].content +'</h5 >';
+							 		    		}
+							 		    		$("#answer").html(str2);
+							 		    		 
+							 		    		
+							 		    	  }
+							 		    	});  //답글보기 ajax  끝
+							 		    	
+
+								    		 
+				 		    		 })//댓글제목 클릭 이벤트처리
+				 		    	  }
+				 		    	  
+				 		    	});  //자세히보기 질문처리 ajax     	
+		  		     		}
+				 		    	qRead();
+		  		    	  }
+		  		    	});     	
+
+
+
+			    	 })
 			 
 			 
 
