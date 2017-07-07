@@ -205,7 +205,7 @@
 						if(data.length!=0){
     		    			adlist(data);
     		    		}else{
-    		    			alert("더이상의 결과가 없습니다.")
+    		    			swal("더이상의 결과가 없습니다.")
     		    		}
 					},
 			        beforeSend: function () {

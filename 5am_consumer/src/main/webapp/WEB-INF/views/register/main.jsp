@@ -268,7 +268,7 @@
     	
     	$("#regiBtn").on("click",function(e){
     		if($("#cemail").val()=="이메일 중복체크를 해주세요"){
-        		alert("중복체크해주세요");
+    			swal("이메일 중복체크해주세요");
         	}
     	})
     	
@@ -277,7 +277,7 @@
     	    	var regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;   
     	    	
     	    	if(regex.test(email) == false) {  
-    	    	    alert("잘못된 이메일 형식입니다.");  
+    	    	    swal("잘못된 이메일 형식입니다.");  
     	    	    return false;  
     	    	} else {  
     	    		
@@ -296,10 +296,10 @@
     			    success: function(re) {
     			  if(re=='fail'){
     				  
-    				  alert('해당하는 아이디는 존재합니다.')
+    				  swal('해당하는 아이디는 존재합니다.')
     				 
     			  }else{
-    				  alert(re+"는 사용하실 수 있습니다.")	
+    				  swal(re+"는 사용하실 수 있습니다.")	
     				  
     				  $("#idcheck").on("click",function(e){
     	    			$("#cemail").val(email);
@@ -309,7 +309,7 @@
     				  
     			$("#regiBtn").on("click",function(e){
     				if($("#cname").val()=="이름을 입력해주세요"||$("#cpw").val()=="비밀번호를 입력해주세요"||$("#caddrm").val()=="주소를 검색해주세요"){
-	    	    		alert("빈칸을 채워주세요")
+	    	    		swal("빈칸을 채워주세요")
 	    	    	}else{
     	    	e.preventDefault();
     	    	if(re){
@@ -326,8 +326,23 @@
     			    	
     			    } ,
     			    success: function(re) {
-    			  
-    			    	self.location = "/login/main"
+    			    	swal({
+    			    		  title: "회원 등록하시겠습니까?",
+    			    		 
+    			    		  type: "info",
+    			    		  showCancelButton: true,
+    			    		  closeOnConfirm: false,
+    			    		  showLoaderOnConfirm: true,
+    			    		},
+    			    		function(){
+    			    		  
+    			    		  swal("등록되셨습니다","2초후 로그인 페이지로 이동합니다.","success");
+    			    		  setTimeout(function(){
+    			    		    self.location = "/login/main"
+    			    		  }, 2000);
+    			    		 
+    			    		});
+    			    	
     			        
     			    },
     			});
@@ -359,9 +374,9 @@
 			
         	e.preventDefault();
         	if($("#cemail").val()=="이메일 중복체크를 해주세요"){
-        		alert("중복체크해주세요");
+        		swal("중복체크해주세요");
         	}else if($("#cname").val()=="이름을 입력해주세요"||$("#cpw").val()=="비밀번호를 입력해주세요"||$("#caddrm").val()=="주소를 검색해주세요"){
-        		alert("빈칸을 채워주세요")
+        		swal("빈칸을 채워주세요")
         	}else{
         	$.ajax({
     			url: '/register/main',

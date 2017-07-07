@@ -312,7 +312,7 @@ $(document).ready(function(e){
 	$("#loginBtn").on("click",function(e){
 	  e.preventDefault();
 	  if($("#cemail").val()=="Email" || $("#cpw").val()=="Password"){
-		  alert("아이디 또는 비밀번호를 입력해주세요")
+		  swal("아이디 또는 비밀번호를 입력해주세요")
 	  }else{
 		  $("#f1").submit();  
 	  }
@@ -340,7 +340,7 @@ $(document).ready(function(e){
      var result = '${fail}';
 	if (result == 'fail') {
 		
-		alert("아이디와 비밀번호를 확인해주세요")
+		swal("아이디와 비밀번호를 확인해주세요")
 		history.pushState(null, null);
 		
 		window.onpopstate = function(e) {
@@ -351,7 +351,7 @@ $(document).ready(function(e){
 	var result3 = '${sendId}';
 	if (result3 == "success") {
 		history.pushState(null, null);
-		alert("메일이 발송 되었습니다. 확인 후 로그인 하세요.");
+		swal("메일이 발송 되었습니다. 확인 후 로그인 하세요.");
 		window.onpopstate = function(e) {
 			history.go(1);
 		};
@@ -359,7 +359,7 @@ $(document).ready(function(e){
 	var result3 = '${sendPw}';
 	if (result3 == "success") {
 		history.pushState(null, null);
-		alert("메일이 발송 되었습니다. 확인 후 로그인 하세요.");
+		swal("메일이 발송 되었습니다. 확인 후 로그인 하세요.");
 		window.onpopstate = function(e) {
 			history.go(1);
 		};
