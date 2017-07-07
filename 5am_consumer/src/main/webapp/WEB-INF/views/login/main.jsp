@@ -106,7 +106,7 @@
 <script type='text/javascript'>
   //<![CDATA[
     // 사용할 앱의 JavaScript 키를 설정해 주세요.
-Kakao.init('e007bd67d95edb54cf4e8a0eb454088a');
+
     // 카카오 로그인 버튼을 생성합니다.
      function loginWithKakao() {
       // 로그인 창을 띄웁니다.
@@ -179,7 +179,7 @@ Kakao.init('e007bd67d95edb54cf4e8a0eb454088a');
 		</div>
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>
-
+<script type='text/javascript' src="js/jquery.mycart.js"></script>
 <!-- smooth scrolling -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -199,7 +199,7 @@ Kakao.init('e007bd67d95edb54cf4e8a0eb454088a');
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
-<script type='text/javascript' src="js/jquery.mycart.js"></script>
+
   <script type="text/javascript">
   $(function () {
 
@@ -239,7 +239,7 @@ Kakao.init('e007bd67d95edb54cf4e8a0eb454088a');
 
   });
 </script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 <script>  
 $(document).ready(function(e){
 	/* facebook login start */

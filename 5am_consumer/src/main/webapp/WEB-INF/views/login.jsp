@@ -33,72 +33,7 @@
 			<div id="fb-root"></div>
 <script>
 
-function statusChangeCallback(response) { 
-	console.log('statusChangeCallback'); 
-	console.log(response);
 
-if (response.status === 'connected') {
-	testAPI(); 
-	} 
-
-
-}
-
-function checkLoginState() { 
-	FB.getLoginStatus(function(response) {
-		statusChangeCallback(response); 
-		}); 
-	} 
-	
-
-window.fbAsyncInit = function() { 
-	FB.init({ appId : '1600320570002277', 
-		      cookie : true,
-		      xfbml  : true,
-		      version: 'v2.1'
-	})
-
-FB.getLoginStatus(function(response) { 
-	statusChangeCallback(response);
-		}); 
-	
-		
-	}; 
-	
-
-(function(d, s, id) { 
-	var js, fjs = d.getElementsByTagName(s)[0]; 
-	if (d.getElementById(id)) return; 
-	js = d.createElement(s); 
-	js.id = id; js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.9&appId=1600320570002277"; 
-	fjs.parentNode.insertBefore(js, fjs); 
-	}(document, 'script', 'facebook-jssdk')); 
-// 로그인이 성공한 다음에는 간단한 그래프API를 호출한다. 
-// 이 호출은 statusChangeCallback()에서 이루어진다. 
-function testAPI() { 
-	FB.api('/me',{fields: 'name,email,gender'},function(response) {
-
-	$.ajax({
-		url:"/login",
-		 data:{
-			 
-            "name" : response.name,
-            "email":response.email,
-            "gender":response.gender
-		 
-        },
-        dataType : "json",
-		type:'post',
-		success: function(vo){
-        
-			console.log(vo.name);
-			
-            }
-
-	})
-});
-	
-} 
 </script> 
 <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
 <!--facebook Login end  -->

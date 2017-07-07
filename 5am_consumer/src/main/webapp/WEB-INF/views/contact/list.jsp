@@ -35,9 +35,9 @@
 				qui ratione voluptatem sequi nesciunt. Neque porro quisquam 
 				est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
 				<ul class="contact-list">
-					<li> <i class="fa fa-map-marker" aria-hidden="true"></i> 756 Global Place, New York.</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com">mail@example.com</a></li>
-					<li> <i class="fa fa-phone" aria-hidden="true"></i>+123 2222 222</li>
+					<li> <i class="fa fa-map-marker" aria-hidden="true"></i>Seocho-gu, Seoul</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:bit925am@gmail.com">bit925am@gmail.com</a></li>
+					<li> <i class="fa fa-phone" aria-hidden="true"></i>+82 02-3486-9600</li>
 				</ul>
 				<div id="container">
 					<!--Horizontal Tab-->
