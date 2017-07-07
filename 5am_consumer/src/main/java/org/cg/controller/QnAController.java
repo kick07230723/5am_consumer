@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -27,23 +28,30 @@ public class QnAController {
 	private final static Logger logger = Logger.getLogger(QnAController.class);
 
 	@GetMapping("/list")
-	public void qnaGet(Criteria cri,Model model){
+	public void qnaGet(){
 	
+	
+			
+	}
+	
+	@PostMapping("/list")
+	@ResponseBody
+	public List<CusQuestionVO> qnaPost(String keyword,String type,Integer page){
+		
+		Criteria cri = new Criteria();
+		cri.setKeyword(keyword);
+		cri.setType(type);
+		cri.setPage(page);
 		List<CusQuestionVO> list= new ArrayList<CusQuestionVO>();
 		
 		PageMaker pageMaker=new PageMaker(cri, dao.getTotal(cri)); 
-		logger.info(cri);
 		
-		String message= dao.gettime();		
-		logger.info(message);
 		
 		list=dao.getQList(cri);
 		
-		model.addAttribute("list", list);
-		model.addAttribute("cri", cri);		
-		model.addAttribute("pageMaker", pageMaker);
-		
+		return list;
 	}
+	
 	
 	
 	@PostMapping("/regi")
@@ -55,6 +63,27 @@ public class QnAController {
 		
 		return "success";
 	}
+	
+	@PostMapping("/modi")
+	public @ResponseBody String modipost(CusQuestionVO vo){
+		
+		logger.info(vo);
+		dao.qUpdate(vo);
+		
+		return "modi success";
+		
+	}
+	
+	@PostMapping("/del")
+	public @ResponseBody String delpost(CusQuestionVO vo){
+		
+		logger.info(vo);
+		dao.qDelete(vo);
+		
+		return "del success";
+		
+	}
+	
 	
 	
 }

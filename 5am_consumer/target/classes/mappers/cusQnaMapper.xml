@@ -32,7 +32,7 @@ order by cusqno desc)
 
  <![CDATA[
 tbl_cusquestion where rownum <= #{pageNum}) 
-where rnum >=#{skip}
+
   ]]>
   </select>
   
@@ -65,10 +65,7 @@ where rnum >=#{skip}
 	</update>
   
   
-  <delete id="qdelete" parameterType="org.cg.domain.QuestionVO">
-		delete from tbl_question where qno='${qno}'
-
-	</delete>
+  
   
   
   
@@ -78,7 +75,14 @@ where rnum >=#{skip}
 
    -->
 
+<update id="qupdate" parameterType="org.cg.domain.CusQuestionVO">
+		UPDATE tbl_cusquestion SET custitle = '${custitle}', cusCONTENT='${cuscontent}',UPDATEDATE=sysdate WHERE cusqno ='${cusqno}'
+	</update>
 
+<delete id="qdelete" parameterType="org.cg.domain.CusQuestionVO">
+		delete from tbl_cusquestion where cusqno='${cusqno}'
+
+	</delete>
 
 </mapper>
   
