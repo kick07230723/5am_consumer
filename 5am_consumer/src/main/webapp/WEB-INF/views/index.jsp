@@ -457,7 +457,7 @@
   		 	 		    	  type: "POST",
   		 	 		    	  url: "/index/replyRegister",
   		 	 		    	  data: {
-  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
+  		 	 		    		 sid: vo.sid , mid:'회원22' , title:$("#titleText").val(), question: $("#questionText").val()
   		 	 		    	  },
   		 	 		 		  dataType: 'text',
   		 	 		    	  success: function(re){
@@ -491,7 +491,7 @@
 			 		    	  },
 			 		 		  dataType: 'json',
 			 		    	  success: function(pageMaker){
-			 		    		var closeStr='<ul class="pagination">';
+			 		    		var closeStr='<ul class="pagination pagination-sm">';
 			 		    		for(var i= pageMaker.start; i<pageMaker.end+1; i++){
 			 		    			closeStr += '<li><a class="curr pageNum" data-pnum="'+i+'"href='+i+'>'+i+'</a></li>';
 			 		    		 }
