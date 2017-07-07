@@ -79,11 +79,13 @@
 <div class="product">
 	<div class="container">
 		<div class="spec ">
-			<h3>Products</h3>
+			<h3>등록된 상점</h3>
 			<div class="ser-t">
 				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
 		</div>
+		<!--search  -->
+		
 		<div class=" con-w3l agileinf">
 			
 			
@@ -91,6 +93,7 @@
 			</div>
 		</div>
 	</div>
+
 <!-- product -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
@@ -182,7 +185,7 @@
 
 			var page = 1;
 			/* var scategory=$(this).data('category'); */
-			var scategory = ${cate}
+			var scategory = '${cate}'
 		
 			/* 	console.log($(this).data('category'));
 			 */

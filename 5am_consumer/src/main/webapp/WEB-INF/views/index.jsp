@@ -431,7 +431,7 @@
 				});
     	
     	
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+
 	    	 $(document).on("click",".offer-img",function(){
 				 
  	    	 $.ajax({
@@ -455,9 +455,9 @@
   		    	});     	
 	    	 })
 
-=======
+
     	
->>>>>>> 352a44a gggg
+
 })
 </script>
 

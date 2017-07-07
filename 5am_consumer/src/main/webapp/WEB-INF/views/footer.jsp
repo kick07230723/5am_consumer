@@ -3,11 +3,11 @@
 
 <div class="footer">
 	<div class="container">
-		<div class="col-md-4 footer-grid">
+		<div class="col-md-5 footer-grid">
 			<h3>About Us</h3>
 			<p>Coding Gears from BIT campus.</p>
 		</div>
-		<div class="col-md-5 footer-grid "style="left: 10%">
+		<div class="col-md-4 footer-grid">
 			<h3>Menu</h3>
 			<ul>
 				<li><a href="/index">Home</a></li>
