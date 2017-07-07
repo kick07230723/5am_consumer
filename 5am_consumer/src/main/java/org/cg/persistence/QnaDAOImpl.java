@@ -45,26 +45,8 @@ public class QnaDAOImpl implements QnaDAO {
 	@Override
 	public void qInsert(CusQuestionVO vo) {
 		sess.insert(namespace+".qinsert",vo);
-		
 	}
-	@Override
-	public List<CusAnswerVO> getAList(CusQuestionVO vo) {
-		
-		return sess.selectList(namespace+".getAnsList",vo);
-	}
-	@Override
-	public void aInsert(CusAnswerVO vo) {
-			sess.insert(namespace+".ainsert",vo);
-	}
-	@Override
-	public void aDelete(CusAnswerVO vo) {
-		sess.delete(namespace+".adelete",vo);
-	}
-	@Override
-	public void aUpdate(CusAnswerVO vo) {
-		sess.update(namespace+".aupdate",vo);
-		
-	}
+	
 	@Override
 	public String gettime() {
 	

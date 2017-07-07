@@ -24,20 +24,19 @@
 			<div class="col-md-5 contact-right">	
 				
 				<img src="images/5am.jpg" class="img-responsive" alt="">
-				 <div class="col-md-5 contact-right" id="googlemap" style="width: 100%;height: 298px"></div>
+				 <div class="col-md-5 contact-right" id="googlemap" style="width: 100%;height: 312px"></div>
 				 
 				
 			</div>
 			<div class="col-md-7 contact-left">
 				<h4>Contact Information</h4>
-				<p> Nemo enim ipsam voluptatem quia voluptas sit aspernatur 
-				aut odit aut fugit, sed quia consequuntur magni dolores eos
-				qui ratione voluptatem sequi nesciunt. Neque porro quisquam 
-				est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+				<p>이용하시면서 불편한 사항이나 개선점이 있다면 언제든지 알려주세요.</p>
+				<p>이메일을 함께 남겨주시면 답변을 받을 수 있습니다.</p>
+				<p>제휴제안에 관한 문의는  연락처를 통해 연락해주세요.</p>
 				<ul class="contact-list">
-					<li> <i class="fa fa-map-marker" aria-hidden="true"></i> 756 Global Place, New York.</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:example@mail.com">mail@example.com</a></li>
-					<li> <i class="fa fa-phone" aria-hidden="true"></i>+123 2222 222</li>
+					<li> <i class="fa fa-map-marker" aria-hidden="true"></i>Seocho-gu, Seoul</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:bit925am@gmail.com">bit925am@gmail.com</a></li>
+					<li> <i class="fa fa-phone" aria-hidden="true"></i>+82 02-3486-9600</li>
 				</ul>
 				<div id="container">
 					<!--Horizontal Tab-->
@@ -60,10 +59,10 @@
 								<div class="map-grid">
 								<h5>Our Branches</h5>
 									<ul>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>756 Global Place, New York.</li>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>889 diamond street, USA.</li>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>756 global Place, New York.</li>
-										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>889 diamond street, USA.</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Bangi-dong,Songpa-gu, Seoul</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Anyang-si, Gyeonggi-do</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Yangjae-dong,Seocho-gu, Seoul</li>
+										<li><i class="fa fa-arrow-right" aria-hidden="true"></i>Gimpo-si, Gyeonggi-do</li>
 									</ul>
 								</div>
 							</div>
@@ -71,10 +70,10 @@
 								<div class="map-grid">
 									<h5>Contact Me Through</h5>
 									<ul>
-										<li>Mobile No : +123 456 7890</li>
-										<li>Office No : +123 222 2222</li>
-										<li>Home No : +123 456 7890</li>
-										<li>Fax No : +123 456 7890</li>
+										<li>Mobile No :+82 010-3486-9600</li>
+										<li>Office No :+82 02-3486-9600</li>
+										<li>Home No : +82 02-3486-9600</li>
+										<li>Fax No : +82 02-3486-9601</li>
 									</ul>
 								</div>
 							</div>

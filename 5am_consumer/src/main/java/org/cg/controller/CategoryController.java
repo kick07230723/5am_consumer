@@ -15,8 +15,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 @Controller
 @RequestMapping("/category")
@@ -28,19 +30,17 @@ public class CategoryController {
 	StoreDAO dao;
 	
 	@GetMapping("/list")
-	public void categoryget(@RequestParam("cate") String cate, Model model){
-		
-		logger.info("category get~~!!!!");
-		logger.info(cate);
+	public void categoryget(@RequestParam("cate")String cate,Model model){
 		
 		model.addAttribute("cate", cate);
+		
 		
 	}
 	
 
 	@PostMapping("/list")
 	@ResponseBody
-	public List<StoreVO> getKitchen(String scategory,String page)throws Exception{
+	public List<StoreVO> getKitchen(@RequestParam("scategory")String scategory,@RequestParam("page")String page)throws Exception{
 
 		logger.info("list 들어와써용 ");
 		
@@ -58,5 +58,7 @@ public class CategoryController {
 		return list;
 		
 	}
+	
+
 	
 }

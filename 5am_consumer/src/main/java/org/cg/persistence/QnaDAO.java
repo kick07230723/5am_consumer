@@ -24,15 +24,7 @@ public interface QnaDAO {
 	
 	public String gettime();
 	
-//	answer
-	
-	public List<CusAnswerVO> getAList(CusQuestionVO vo);
-	
-	public void aInsert(CusAnswerVO vo);
-	
-	public void aDelete(CusAnswerVO vo);
-	
-	public void aUpdate(CusAnswerVO vo);
+
 	
 	
 

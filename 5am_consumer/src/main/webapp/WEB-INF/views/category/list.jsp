@@ -2,8 +2,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<script src="js/bootstrap.js"></script>
 <!-- Carousel
     ================================================== -->
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -13,30 +15,40 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<a href="kitchen.html"><img class="first-slide"
+			<a href="/category/list?cate='식음료'"><img class="first-slide"
 				src="images/ba.jpg" alt="First slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="care.html"> <img class="second-slide "
+			<a href="/category/list?cate='화장품'"> <img class="second-slide "
 				src="images/ba1.jpg" alt="Second slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="hold.html"><img class="third-slide "
+			<a href="/category/list?cate='식음료'"><img class="third-slide "
 				src="images/ba2.jpg" alt="Third slide"></a>
 
 		</div>
 	</div>
+	 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+	
 
 </div>
+
 <!-- /.carousel -->
 
 <!--content-->
 <div class="kic-top ">
 	<div class="container ">
 		<div class="kic ">
-			<h3>한글테스트</h3>${cate}
+			<h3>${cate}</h3>
 
 		</div>
 		<div class="col-md-4 kic-top1">
@@ -67,11 +79,13 @@
 <div class="product">
 	<div class="container">
 		<div class="spec ">
-			<h3>Products</h3>
+			<h3>등록된 상점</h3>
 			<div class="ser-t">
 				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
 		</div>
+		<!--search  -->
+		
 		<div class=" con-w3l agileinf">
 			
 			
@@ -79,6 +93,7 @@
 			</div>
 		</div>
 	</div>
+
 <!-- product -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
@@ -124,7 +139,7 @@
 </div>
 
 <!-- modal -->
-			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-info">
 						<div class="modal-header">
@@ -160,6 +175,7 @@
 <!-- modal -->
 
 <%@ include file="/WEB-INF/views/footer.jsp" %>
+
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
 <script>
 	$(document).ready(function() {
@@ -169,10 +185,11 @@
 
 			var page = 1;
 			/* var scategory=$(this).data('category'); */
-			var scategory = ${cate};
+			var scategory = '${cate}'
+		
 			/* 	console.log($(this).data('category'));
 			 */
-			var init = function() {
+			function init() {
 
 				$.ajax({
 
@@ -185,12 +202,39 @@
 					},
 					success : function(data) {
 						console.log(data);
-					}
+						if(data.length!=0){
+    		    			adlist(data);
+    		    		}else{
+    		    			alert("더이상의 결과가 없습니다.")
+    		    		}
+					},
+			        beforeSend: function () {
+                        var width = 0;
+                        var height = 0;
+                        var left = 0;
+                        var top = 0;
+                        width = 70;
+                        height = 70;
+                        top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+                        left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+                        if($("#div_ajax_load_image").length != 0) {
+                               $("#div_ajax_load_image").css({
+                                      "top": top+"px",
+                                      "left": left+"px"
+                               });
+                               $("#div_ajax_load_image").show();
+                        }
+                        else {
+                               $('body').append('<div id="div_ajax_load_image" style="position:absolute; top:' + top + 'px; left:' + left + 'px; width:' + width + 'px; height:' + height
+                               + 'px; z-index:9999; background:transparent; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="images/loading.gif" style="width:70px; height:70px;"></div>');
+                        }
+                      },
+                    complete: function () {$("#div_ajax_load_image").hide();},
 
 				});
 			}
-			 
-			 init();
+			init();
+		
 			 
 			 var idnum = 1;
 		    	var page = 1;
@@ -203,7 +247,7 @@
 		    			 
 		    			 
 		    			 
-		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
+		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
 		    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>Offer</span></p></div></a>'
 		    					+'<div class="mid-1"><div class="women">'
 		    					+'<h6><a href="single.html">'+value.sid+'</a></h6></div><div class="mid-2">'
@@ -295,32 +339,10 @@
 		    		 
 		    	}
 		    		
-		    		nlist();
+		    	
 		    		
-		    		/* 맨처음에 보여주는거  */
-		    		function nlist(){
-		    			
-		    			 $.ajax({
-		    				  type: "POST",
-		    		    	  url: "/index/getadlist",
-		    		 		  dataType: 'Json',
-		    		 		  data : {
-		    			        	page : page
-		    			        },
-		    		    	  success: function(re){
-		    		    		console.log("리스트를 받아서 ");
-		    		    		
-		    		    		if(re.length!=0){
-		    		    			adlist(re);
-		    		    		}else{
-		    		    			alert("더이상의 결과가 없습니다.")
-		    		    		}
-		    		    		 
-		    		    	  } 
-		    			    });
-		    			
-		    			
-		    		}
+		    		
+		    		
 		    		
 		    		$(document).scroll(
 		    				function() {
@@ -330,7 +352,7 @@
 		    					if (maxHeight <= currentScroll) {
 		    						console.log("down");
 		    						page = page + 1;
-		    						nlist();
+		    						init();
 
 		    					};
 
