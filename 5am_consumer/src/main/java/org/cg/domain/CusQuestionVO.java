@@ -7,10 +7,9 @@ private int cusqno;
 private String custitle;
 private String cuscontent;
 private String cuswriter;
+private int count;
 private Timestamp regdate;
 private Timestamp updatedate;
-
-
 public int getCusqno() {
 	return cusqno;
 }
@@ -35,6 +34,12 @@ public String getCuswriter() {
 public void setCuswriter(String cuswriter) {
 	this.cuswriter = cuswriter;
 }
+public int getCount() {
+	return count;
+}
+public void setCount(int count) {
+	this.count = count;
+}
 public Timestamp getRegdate() {
 	return regdate;
 }
@@ -50,8 +55,9 @@ public void setUpdatedate(Timestamp updatedate) {
 @Override
 public String toString() {
 	return "CusQuestionVO [cusqno=" + cusqno + ", custitle=" + custitle + ", cuscontent=" + cuscontent + ", cuswriter="
-			+ cuswriter + ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
+			+ cuswriter + ", count=" + count + ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
 }
+
 
 
 

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.cg.domain.Criteria;
 import org.cg.domain.CusAnswerVO;
 import org.cg.domain.CusQuestionVO;
+import org.cg.domain.CusReplyVO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -51,6 +52,22 @@ public class QnaDAOImpl implements QnaDAO {
 	public String gettime() {
 	
 		return sess.selectOne(namespace+".gettime");
+	}
+	@Override
+	public void reregi(CusReplyVO vo) {
+		
+		sess.insert(namespace+".reregi",vo);
+		
+	}
+	@Override
+	public List<CusReplyVO> getreList(CusReplyVO vo) {
+		
+		return sess.selectList(namespace+".relist",vo);
+	}
+	@Override
+	public void setcount(int cusqno) {
+		sess.update(namespace+".setcount",cusqno);
+		
 	}
 	
 	

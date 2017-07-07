@@ -15,8 +15,8 @@ select sysdate from dual
   <!-- select * from tbl_question -->  
   
   
-select * from (SELECT rownum rnum,cusqno, custitle, cuscontent, cuswriter, regdate,updatedate FROM 
-( SELECT cusqno, custitle, cusCONTENT, cuswriter, regdate,UPDATEDATE FROM tbl_cusquestion where cusqno>0 
+select * from (SELECT rownum rnum,cusqno, custitle, cuscontent, cuswriter, regdate,updatedate,count FROM 
+( SELECT cusqno, custitle, cusCONTENT, cuswriter, regdate,UPDATEDATE,count FROM tbl_cusquestion where cusqno>0 
  <choose>
   <when test='type=="t"'>
   and (custitle like '%'|| #{keyword} ||'%')
@@ -83,6 +83,21 @@ tbl_cusquestion where rownum <= #{pageNum})
 		delete from tbl_cusquestion where cusqno='${cusqno}'
 
 	</delete>
+	
+	
+	<insert id="reregi" parameterType="org.cg.domain.CusReplyVO" >
+	
+	INSERT INTO tbl_cusreply(rno,cusqno,recontent,rewriter,regdate,updatedate) VALUES(seq_cusreply_rno.NEXTVAL,#{cusqno}, #{recontent}, #{rewriter},SYSDATE, SYSDATE)
+	</insert>
+	
+	<select id="relist" parameterType="org.cg.domain.CusReplyVO" resultType="org.cg.domain.CusReplyVO">
+	select *from tbl_cusreply where cusqno='${cusqno}' order by regdate desc
+	</select>
+	
+	<update id="setcount" parameterType="Integer">
+	UPDATE TBL_CUSQUESTION set count=count+1 where cusqno=#{cusqno}
+	</update>
+	
 
 </mapper>
   

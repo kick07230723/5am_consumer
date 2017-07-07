@@ -248,7 +248,8 @@
 	var str="";
 	var modi=false;
 	
-	
+	var cusqno="";
+	var reply="";
 	/* test */
 	
 	/* test */
@@ -263,8 +264,9 @@
 			console.log(value)
 
 			
-			str+='<div class="panel panel-default"><div class="panel-heading"> <h4 class="panel-title" data-cusqno="'+value.cusqno+'" data-toggle="collapse" data-target="#'+value.cusqno+'"> <span>'+value.cusqno+'</span> '+value.custitle+' </h4><a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-cusqno ="'+value.cusqno+'" data-custitle ="'+value.custitle+'" data-cuscontent ="'+value.cuscontent+'" ><i id="modi" class="glyphicon glyphicon-wrench"></i></a><a><i id="del"  data-cusqno="'+value.cusqno+'" class="glyphicon  glyphicon-remove"></i></a> <h6 style="text-align: right;">작성자 : '+value.cuswriter+'</h6> </div> <div id="'+value.cusqno+'" class="panel-collapse collapse"> <div class="panel-body"> <p>'+value.cuscontent+' </p> </div>' 
-				+'<div class="input-group"> <input id="reply" type="text" class="form-control" placeholder="댓글을입력하세요" aria-describedby="basic-addon2"> <a href="#" style="float:right;"><span id="reregi" class="label label-success">등록</span></a> </div>'	 
+			str+='<div class="panel panel-default"><div class="panel-heading"> <h4 id="getrlist" class="panel-title" data-cusqno="'+value.cusqno+'" data-toggle="collapse" data-target="#'+value.cusqno+'"> <span>'+value.cusqno+'</span> '+value.custitle+' </h4><span class="badge badge-success">'+value.count +'</span><a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-cusqno ="'+value.cusqno+'" data-custitle ="'+value.custitle+'" data-cuscontent ="'+value.cuscontent+'" ><i id="modi" class="glyphicon glyphicon-wrench"></i></a><a><i id="del"  data-cusqno="'+value.cusqno+'" class="glyphicon  glyphicon-remove"></i></a> <h6 style="text-align: right;">작성자 : '+value.cuswriter+'</h6> </div> <div id="'+value.cusqno+'" class="panel-collapse collapse"> <div class="panel-body"> <p>'+value.cuscontent+' </p> </div>' 
+				+'<div class="input-group"> <input id="reply" type="text" class="form-control" placeholder="댓글을입력하세요" aria-describedby="basic-addon2"> <a style="float:right;"><span id="reregi" data-cusqno="'+value.cusqno+'" class="label label-success">등록</span></a> </div>'	 
+				+'<div id="'+value.cusqno+'reply"></div>'
 				+'</div> </div> '
 				
 				
@@ -303,6 +305,37 @@
 			});
 		 }
 	
+	function getrelist(cusqno){
+		
+		console.log("replylist 뽑으러 가는거 ");
+		console.log(cusqno);
+		
+		$.ajax({
+			type:'post',
+			url:'/qna/relist',
+			data:{
+				cusqno:cusqno
+			},
+			success:function(replylist){
+				console.log(replylist)
+				$.each(replylist, function(index, value) {
+					console.log(value.rewriter);
+					console.log(value.recontent);
+					reply+= '<h6>답글: '+value.recontent+' 답변자: '+value.rewriter+'</h6>'
+				})
+				
+				var target = cusqno+'reply';
+				$("#"+target).html(reply);
+				reply="";
+				cusqno="";
+				
+			}
+			
+		});
+		
+	}
+	
+	
 	
 	
 	
@@ -329,9 +362,45 @@
 					});
 			
 			
+			$(".qnalist").on("click","#getrlist",function(){
+			
+				console.log("이게 처음에 질문 눌렀을떄 입니다");
+				
+				cusqno=$(this).data("cusqno");
+				getrelist($(this).data("cusqno"));
+				
+				
+			})
+			
+			
+			
+			
 			$(".qnalist").on("click","#reregi",function(){
 			
-					swal("안녕하세요 테스트중입니다.")
+					console.log($(this).data("cusqno"));
+					console.log($("#reply").val());
+					
+					   $.ajax({
+			                type: "POST",
+			                url: "/qna/reregi",
+			                data : {
+			                    
+			                    cusqno : $(this).data("cusqno"),
+			                    rewriter :"consumer1",
+			                    recontent : $("#reply").val()
+			                },
+			                 dataType: 'text',
+			                success: function(re) {
+			                   console.log(re);
+			                 
+			                   
+			                   getrelist(re);
+			                   
+			                   $("#reply").val("");
+			                  
+			                }
+			            });
+					
 					
 					
 					

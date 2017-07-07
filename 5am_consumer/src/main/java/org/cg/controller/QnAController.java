@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 import org.cg.domain.Criteria;
 import org.cg.domain.CusQuestionVO;
+import org.cg.domain.CusReplyVO;
 import org.cg.domain.PageMaker;
 import org.cg.persistence.QnaDAO;
 import org.springframework.stereotype.Controller;
@@ -81,6 +82,34 @@ public class QnAController {
 		dao.qDelete(vo);
 		
 		return "del success";
+		
+	}
+	
+	
+	@PostMapping("/relist")
+	@ResponseBody
+	public List<CusReplyVO> relistPost(CusReplyVO vo){
+		
+		logger.info("relist post in......");
+		
+		List<CusReplyVO> list= new ArrayList<CusReplyVO>();
+		
+		list=dao.getreList(vo);
+		
+		return list;
+	}
+	
+	
+	@PostMapping("/reregi")
+	public @ResponseBody String reregipost(CusReplyVO vo){
+
+		logger.info("reregi post in......");
+		logger.info(vo.getCusqno());
+		
+		dao.reregi(vo);
+		dao.setcount(vo.getCusqno());
+		
+		return String.valueOf(vo.getCusqno());
 		
 	}
 	

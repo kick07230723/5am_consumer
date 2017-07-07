@@ -112,6 +112,35 @@
 <script src="js/jquery.vide.min.js"></script>
 
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+=======
+
+<script type="text/javascript">
+   $(function () { 
+
+    var goToCartIcon = function($addTocartBtn){
+      var $cartIcon = $(".my-cart-icon");
+      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+      $addTocartBtn.prepend($image);
+      var position = $cartIcon.position();
+      $image.animate({
+        top: position.top,
+        left: position.left
+      }, 500 , "linear", function() {
+        $image.remove();
+      });
+    }
+
+    
+    
+    
+
+  });
+  </script>
+  
+  
+
+>>>>>>> 4538a15 aa
 
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 
@@ -236,10 +265,20 @@
     		    			adlist(re);
     		    		}else{
 <<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
     		    			alert("더이상의 결과가 없습니다.")
 =======
     		    			swal("더 이상 결과가 없습니다.")
 >>>>>>> 04800f1 a
+=======
+    		    			
+    		    			swal({
+    		    				  title: "더이상의 결과가 없습니다.",
+    		    				  text: "I will close in 1 seconds.",
+    		    				  timer: 700,
+    		    				  showConfirmButton: false
+    		    				});
+>>>>>>> 4538a15 aa
     		    		}
     		    		 
     		    	  } ,
@@ -391,6 +430,7 @@
     	
     	
 <<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
  	    	//댓글보고 리스트로 돌아가기 
  	    	$(document).on("click","#listBtn",function(e){
 				e.preventDefault();
@@ -403,6 +443,9 @@
 	    	
 =======
 >>>>>>> 04800f1 a
+=======
+
+>>>>>>> 4538a15 aa
 	    	 $(document).on("click",".offer-img",function(){
 	    		 
 //자세히보기 눌렀을때 정보
@@ -570,11 +613,14 @@
 
 
 <<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
+<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
 
 	    	 })
 	    	 
 =======
 >>>>>>> 04800f1 a
+=======
+>>>>>>> 4538a15 aa
 })
 </script>
 
