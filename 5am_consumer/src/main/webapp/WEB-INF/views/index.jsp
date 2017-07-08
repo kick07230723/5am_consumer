@@ -112,8 +112,7 @@
 <script src="js/jquery.vide.min.js"></script>
 
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-=======
+
 
 <script type="text/javascript">
    $(function () { 
@@ -140,42 +139,13 @@
   
   
 
->>>>>>> 4538a15 aa
 
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 
 <script type="text/javascript">	
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-=======
 
-
->>>>>>> 04800f1 a
     $(document).ready(function(e) {
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-=======
-    	
-    	var goToCartIcon = function($addTocartBtn){
-  	      var $cartIcon = $(".my-cart-icon");
-  	      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
-  	      $addTocartBtn.prepend($image);
-  	      var position = $cartIcon.position();
-  	      $image.animate({
-  	        top: position.top,
-  	        left: position.left
-  	      }, 500 , "linear", function() {
-  	        $image.remove();
-  	      });
-  	    }
-    	
-    	$('.my-cart-btn').myCart({
-		      
-	        clickOnAddToCart: function($addTocart){
-	        	console.log("여긴 언제 33???");
-	          goToCartIcon($addTocart);
-	        }
-	      });
-    	
->>>>>>> 04800f1 a
+
     	
     	var idnum = 1;
     	var page = 1;
@@ -187,14 +157,10 @@
     		 var str="";
     		 
     		 $.each(list, function(index, value) {
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
-=======
+
     			 
     			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
     					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
->>>>>>> 04800f1 a
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
@@ -264,13 +230,6 @@
     		    		if(re.length!=0){
     		    			adlist(re);
     		    		}else{
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-    		    			alert("더이상의 결과가 없습니다.")
-=======
-    		    			swal("더 이상 결과가 없습니다.")
->>>>>>> 04800f1 a
-=======
     		    			
     		    			swal({
     		    				  title: "더이상의 결과가 없습니다.",
@@ -278,7 +237,6 @@
     		    				  timer: 700,
     		    				  showConfirmButton: false
     		    				});
->>>>>>> 4538a15 aa
     		    		}
     		    		 
     		    	  } ,
@@ -429,8 +387,6 @@
 				});
     	
     	
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
  	    	//댓글보고 리스트로 돌아가기 
  	    	$(document).on("click","#listBtn",function(e){
 				e.preventDefault();
@@ -440,15 +396,9 @@
 			 	$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
     		 })//  끝 
 	    	
-	    	
-=======
->>>>>>> 04800f1 a
-=======
 
->>>>>>> 4538a15 aa
 	    	 $(document).on("click",".offer-img",function(){
 	    		 
-//자세히보기 눌렀을때 정보
  	    	 $.ajax({
   		    	  type: "POST",
   		    	  url: "/index/getDetail",
@@ -461,15 +411,12 @@
   		    		$("#stCategory").html(vo.scategory);
   		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
   		    		$("#stPhone").html(vo.sphone);
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
   		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
   		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
   		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
-=======
   		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
   		    		
   		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
->>>>>>> 04800f1 a
   		    		
   		    		
   			    	
@@ -612,15 +559,10 @@
   		    	});     	
 
 
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
-<<<<<<< Upstream, based on branch 'master' of https://github.com/kick07230723/5am_consumer.git
 
 	    	 })
 	    	 
-=======
->>>>>>> 04800f1 a
-=======
->>>>>>> 4538a15 aa
+
 })
 </script>
 
