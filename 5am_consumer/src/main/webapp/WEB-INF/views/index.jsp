@@ -1,21 +1,31 @@
 
-<%@ include file="/WEB-INF/views/header.jsp" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <div data-vide-bg="video/video">
-    <div class="container">
-    
+	<div class="container">
+
 		<div class="banner-info">
-		<br><br><br><br><br><br><br><br><br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<h3>검색을 원하시는 장소를 입력하세요</h3>
 			<br>
-			<div class="search-form">			
-				
-					<input id="area" type="text" placeholder="구/동 주소를 입력하세요..." name="Search...">
-					<input id="searcharea" type="submit" value=" " >
-				
-			</div>		
-		</div>	
-    </div>
+			<div class="search-form">
+
+				<input id="area" type="text" placeholder="구/동 주소를 입력하세요..."
+					name="Search..."> <input id="searcharea" type="submit"
+					value=" ">
+
+			</div>
+		</div>
+	</div>
 </div>
 
 
@@ -24,7 +34,8 @@
 <div class="content-top ">
 	<div class="container ">
 		<div class="spec ">
-			<h2>최근 등록된 상점</h2><br>
+			<h2>최근 등록된 상점</h2>
+			<br>
 			<div class="ser-t">
 				<b></b> <span><i></i></span> <b class="line"></b>
 			</div>
@@ -52,55 +63,71 @@
 
 
 
-	
-<%@ include file="/WEB-INF/views/footer.jsp" %>
+
+<%@ include file="/WEB-INF/views/footer.jsp"%>
 
 
 
 <!-- smooth scrolling -->
-	
-<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+<a href="#" id="toTop" style="display: block;"> <span
+	id="toTopHover" style="opacity: 1;"> </span></a>
 <!-- //smooth scrolling -->
 
 <!-- modal -->
-			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-info">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div>
-						<div class="modal-body modal-spa">
-								<div class="col-md-5 span-2">
-											<div class="item">
-												<img id="storeimg" src="" class="img-responsive" alt="">
-											</div>
-								</div>
-								<div class="col-md-7 span-1 ">
-									<h3><div id="stName">StoreName</div></h3>
-									<div id="stCategory"></div>
-									<span class="reducedfrom "><div id="stPhone"></div></span>
-									<div id="stAddrm"></div>
-<!-- 									<div id="stContent"></div>
-									<p class="in-para">댓글 리스트</p> -->
-									<div id="question"></div>
-									<div id="paging"></div>
-									<div id="close"></div> 
-									<div id="detail"></div>
-									<div id="answer"></div><br>
-									<div class="input-group">
-									  <input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
-									  <textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
-									  <a id="aTag" href="#" id="replyBtn" style="float: right" >댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
-									</div>
-									<div class="add-to">
-										   <button id="cartBtn" class="my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="col-md-5 span-2">
+					<div class="item">
+						<img id="storeimg" src="" class="img-responsive" alt="">
 					</div>
 				</div>
+				<div class="col-md-7 span-1 ">
+					<h3>
+						<div id="stName">StoreName</div>
+					</h3>
+					<div id="stCategory"></div>
+					<span class="reducedfrom "><div id="stPhone"></div></span>
+					<div id="stAddrm"></div>
+					<!-- 									<div id="stContent"></div>
+									<p class="in-para">댓글 리스트</p> -->
+					<div id="question"></div>
+					<div id="paging"></div>
+					<div id="close"></div>
+					<div id="detail"></div>
+					<div id="answer"></div>
+					<br>
+					<div class="input-group">
+						<input id="titleText" type="text" class="form-control"
+							placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
+						<textarea id="questionText" style="height: 80px" type="text"
+							class="form-control" placeholder="내용을 입력하세요..."
+							aria-describedby="basic-addon1"></textarea>
+						<a id="aTag" href="#" id="replyBtn" style="float: right">댓글
+							등록하기<i class="fa fa-envelope" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="add-to">
+						<button id="modal-cart" class="my-cart-btn my-cart-btn1 "
+							data-id="1" data-name="Moong" data-summary="summary 1"
+							data-price="1.50" data-quantity="1" data-image="images/of.png">Add
+							to Cart</button>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <!-- modal -->
@@ -113,39 +140,14 @@
 
 <script type='text/javascript' src="js/jquery.mycart.js"></script>
 
-
-<script type="text/javascript">
-   $(function () { 
-
-    var goToCartIcon = function($addTocartBtn){
-      var $cartIcon = $(".my-cart-icon");
-      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
-      $addTocartBtn.prepend($image);
-      var position = $cartIcon.position();
-      $image.animate({
-        top: position.top,
-        left: position.left
-      }, 500 , "linear", function() {
-        $image.remove();
-      });
-    }
-
-    
-    
-    
-
-  });
-  </script>
-  
-  
-
-
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
+<script type="text/javascript"
+	src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
 
 <script type="text/javascript">	
 
     $(document).ready(function(e) {
-
+    	
+    
     	
     	var idnum = 1;
     	var page = 1;
@@ -159,17 +161,16 @@
     		 $.each(list, function(index, value) {
 
     			 
-    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+    			 str+='<div class="col-md-3 m-wthree" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
+    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-customer="id1" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
     					+'</div></div></div></div>'
-    			 
     					
     			 
     			}); 
@@ -197,15 +198,6 @@
     		 
     		 	$("#adlist").append(str +mid_adv);
     			 
-    			 
-    			 $('#adlist .my-cart-btn').myCart({
-    			      
-    			        clickOnAddToCart: function($addTocart){
-    			        	console.log("여긴 언제 22???");
-    			          goToCartIcon($addTocart);
-    			        }
-    			      });
-    		
     		 
     	}
     		
@@ -383,12 +375,25 @@
 						nlist();
 
 					};
+					
 
 				});
+	    	
+	    	
+	
+   	      
+   	      $(window).scroll(function () {
+   	        if ($(window).scrollTop() > 200) {
+   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','60px').css('right','1.5%').css('font-size', '30px');
+   	        } else {
+   	        	$("#zzim").css('position', 'relative').css('bottom','0px').css('font-size', '15px');
+   	        }
+   	        })
+	    	     
     	
     	
  	    	//댓글보고 리스트로 돌아가기 
- 	    	$(document).on("click","#listBtn",function(e){
+   		$(document).on("click","#listBtn",function(e){
 				e.preventDefault();
 		    	$("#close").html('');
 	 		    $("#detail").html('');
@@ -397,7 +402,7 @@
     		 })//  끝 
 	    	
 
-	    	 $(document).on("click",".offer-img",function(){
+    	 $(document).on("click",".offer-img",function(){
 	    		 
  	    	 $.ajax({
   		    	  type: "POST",
@@ -416,7 +421,7 @@
   		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
   		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
   		    		
-  		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
+  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
   		    		
   		    		
   			    	
@@ -443,7 +448,15 @@
 	  		 	 		    	});
   		 	 		    	  }
   		 	 		    	});   
-  		     		 })//  끝  
+  		     		 })//  끝 
+  		     		 
+  		     		$('#modal-cart').myCart({
+  		    	      
+  		     	        clickOnAddToCart: function($addTocart){
+  		     	        	console.log("여긴 언제 11???");
+  		     	          goToCartIcon($addTocart);
+  		     	        }
+  		     	      });
   		    		
 			    	 
   		     		
@@ -562,6 +575,30 @@
 
 	    	 })
 	    	 
+	    	  $(document).on("click","#toCart",function(e){
+	    	 console.log("toCart Btn click");
+	    	 $.ajax({ 
+					url: "/cart/add" ,
+					type: "POST",
+					data:{
+						
+						customer : $(this).data("customer"),
+						store :   $(this).data("name")
+					},
+					dataType : 'text' , 
+					success: function(data) { 
+						console.log(data);
+						alert(data);
+						console.log("check cart ")
+					
+					}
+				})
+	    	 
+	    	 }); 
+ 	    	
+ 	    	
+ 	    
+ 	    
 
 })
 </script>

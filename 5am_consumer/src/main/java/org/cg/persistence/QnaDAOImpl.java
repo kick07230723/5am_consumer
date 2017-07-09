@@ -5,7 +5,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.cg.domain.Criteria;
-import org.cg.domain.CusAnswerVO;
 import org.cg.domain.CusQuestionVO;
 import org.cg.domain.CusReplyVO;
 import org.mybatis.spring.SqlSessionTemplate;

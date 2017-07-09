@@ -269,20 +269,13 @@
     EVENT
     */
     if(options.affixCartIcon) {
-    	console.log("카트 움직임")
       var cartIconBottom = $cartIcon.offset().top * 1 + $cartIcon.css("height").match(/\d+/) * 1;
       var cartIconPosition = $cartIcon.css('position');
       $(window).scroll(function () {
-    	  console.log("cartIconBottom:" + cartIconBottom);
-    	  console.log("cartIconPosition: "+cartIconPosition);
-    	  console.log("window).scrollTop: "+$(window).scrollTop());
-    	  console.log("document).height: "+$(document).height());
         if ($(window).scrollTop() > 200) {
-        	console.log("카트 움직임--22")
           $cartIcon.css('position', 'fixed').css('z-index', '999').css('bottom','54px').css('right','0%').addClass(classAffixMyCartIcon);
         } else {
-        	console.log("카트 움직임--33")
-          $cartIcon.css('position', cartIconPosition).css('background-color', 'inherit').css('margin','0px').css('bottom','0px').removeClass(classAffixMyCartIcon);
+          $cartIcon.removeClass(classAffixMyCartIcon).css('position', 'relative').css('bottom','0px');
         }
       });
     }
@@ -349,7 +342,7 @@
     /*
     EVENT
     */
-    $target.click(function(){
+    /*$target.click(function(){
       options.clickOnAddToCart($target);
 
       var id = $target.data('id');
@@ -361,7 +354,7 @@
 
       ProductManager.setProduct(id, name, summary, price, quantity, image);
       $cartBadge.text(ProductManager.getTotalQuantity());
-    });
+    });*/
 
   }
 

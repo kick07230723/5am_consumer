@@ -169,8 +169,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<c:if test="${login.cemail ==null}">
 						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i>Register</a>
 						</c:if>
-						<i  style="margin:10px;position:relative;" class="fa fa-shopping-cart my-cart-icon"><i class="badge badge-notify my-cart-badge" style="margin:10px;"></i></i>
-
+<i class="fa fa-shopping-cart" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "id1"></i>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -178,6 +177,42 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>			
 </div>
 
+<!--cart modal begin  -->
+
+
+	<div class="modal fade" id="myCartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						<span class="glyphicon glyphicon-shopping-cart"></span> My Cart
+					</h4>
+				</div>
+				<div class="modal-body">
+				<p>List</p>
+					
+					<div class="col-md-12">
+					<ul id="cartUL"></ul>
+						
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+				
+
+<!--cart modal end  -->
 
 
 
@@ -328,10 +363,6 @@ $(document).ready(function(e){
 				FB.api('/me',{fields: 'name,email,gender'},function(response) {
 				
 				
-					
-					
-
-				
 			});
 				
 			} 
@@ -340,7 +371,72 @@ $(document).ready(function(e){
 				  location.href="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://5am.zz.am/logout"
 				  
 			  })
+			  
+			 
  */
+ 
+ 			$("#zzim").on("click",function(){
+ 				console.log("zzim begin");
+ 				console.log($(document.getElementById("zzim")).data("customer"))
+ 				console.log(this);
+ 				console.log($(this).data("customer"));
+ 				
+ 				
+ 				
+ 				readZzim();
+
+ 				
+ 			})
+ 			
+ 			var readZzim = function(){
+ 				$.ajax({ 
+ 					url: "/cart/list" ,
+ 					type: "POST",
+ 					data:{
+ 						
+ 						customer : $(document.getElementById("zzim")).data("customer")
+ 					},
+ 					dataType : 'json' , 
+ 					success: function(data) { 
+ 						console.log(data);
+ 						
+ 						var str = "";
+ 						
+ 						 $.each(data, function(index, value) {
+ 							 
+ 			    			 str+='<li>'+value.sid+'<i id="zzimDel" class="fa fa-trash-o" aria-hidden="true" data-customer="'+value.mid+'" data-store="'+value.sid+'"></i></li>';
+ 			    			 
+ 			    			}); 
+ 						
+ 						$("#cartUL").html(str);
+ 					
+ 					}
+ 				})
+				
+				
+			}
+ 			
+ 			$(document).on("click","#zzimDel",function(e){
+ 		    	 console.log("zzimDel");
+ 		    	 $.ajax({ 
+ 						url: "/cart/del" ,
+ 						type: "POST",
+ 						data:{
+ 							
+ 							customer : $(this).data("customer"),
+ 							store :   $(this).data("store")
+ 						},
+ 						dataType : 'text' , 
+ 						success: function(data) { 
+ 							console.log(data);
+ 							alert(data);
+ 							console.log("zzim delete");
+ 							readZzim();
+ 						
+ 						}
+ 					})
+ 		    	 
+ 		    	 });
 
 	
 })

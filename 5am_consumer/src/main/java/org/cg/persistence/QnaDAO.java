@@ -3,7 +3,6 @@ package org.cg.persistence;
 import java.util.List;
 
 import org.cg.domain.Criteria;
-import org.cg.domain.CusAnswerVO;
 import org.cg.domain.CusQuestionVO;
 import org.cg.domain.CusReplyVO;
 

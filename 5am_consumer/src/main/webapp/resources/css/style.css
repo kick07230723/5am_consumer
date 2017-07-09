@@ -721,7 +721,7 @@ ul.nav.tabs {
 }
 
 .modal-body {
-    padding: 1em 1em 0em;
+    padding: 0% 1% 0% 4%;
 }
 .modal-footer {
     margin-top: 0px;
@@ -951,7 +951,7 @@ ul.product-qty {
 }
 
 .modal-header {
-    border-bottom: none;
+    border-bottom:1px solid #e5e5e5 ;
 }
 .close {
     font-size: 31px;
@@ -1061,7 +1061,7 @@ ul.product-qty {
 /*-- //footer-top --*/
 .footer-bottom {
     text-align: center;
-    margin: 4em 0 0;
+    margin: 3%;
 }
 .footer-bottom h2 {
     font-family: 'Montserrat', sans-serif;
@@ -1096,7 +1096,7 @@ ul.product-qty {
     font-size: 1em;
     line-height: 2em;
     color: #fff;
-    padding: 1em 0 3em;
+    padding: 1%;
     width: 70%;
     margin: 0 auto;
 }
@@ -1147,7 +1147,7 @@ ul.product-qty {
 /*-- //footer-top --*/
 .footer {
     background: #353535;
-    padding: 5em 0;
+    padding: 1%;
 }
 .footer-grid h3 {
     color: #fff;
@@ -2345,7 +2345,7 @@ span.last {
 .m-wthree {
     width: 50%;
     float: left;
-    margin-bottom: 10px;
+    margin-bottom: 2%;
 }
 .pro-1 {
     width: 50%;
