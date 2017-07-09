@@ -380,18 +380,6 @@
 				});
 	    	
 	    	
-	
-   	      
-   	      $(window).scroll(function () {
-   	        if ($(window).scrollTop() > 200) {
-   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','60px').css('right','1.25%').css('font-size', '30px');
-   	        } else {
-   	        	$("#zzim").css('position', 'relative').css('bottom','0px').css('font-size', '15px');
-   	        }
-   	        })
-	    	     
-    	
-    	
  	    	//댓글보고 리스트로 돌아가기 
    		$(document).on("click","#listBtn",function(e){
 				e.preventDefault();
