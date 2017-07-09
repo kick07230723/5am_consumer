@@ -384,7 +384,7 @@
    	      
    	      $(window).scroll(function () {
    	        if ($(window).scrollTop() > 200) {
-   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','60px').css('right','1.5%').css('font-size', '30px');
+   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','60px').css('right','1.25%').css('font-size', '30px');
    	        } else {
    	        	$("#zzim").css('position', 'relative').css('bottom','0px').css('font-size', '15px');
    	        }
