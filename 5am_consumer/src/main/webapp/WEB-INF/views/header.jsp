@@ -186,27 +186,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
-				<div class="modal-header">
+				<div class="modal-header" style="background-color: pink">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">
+					<h4 class="modal-title" id="myModalLabel" style="color: white">
 						<span class="glyphicon glyphicon-shopping-cart"></span> My Cart
 					</h4>
 				</div>
 				<div class="modal-body">
-				<p>List</p>
+				
 				
 					
 					<div class="col-md-12">
 					<ul id="cartUL"></ul>
-						
+						 
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
+				
 			</div>
 		</div>
 
@@ -405,7 +403,7 @@ $(document).ready(function(e){
  						
  						 $.each(data, function(index, value) {
  							 
- 			    			 str+='<li><img id="myImg" src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt="">'+value.sid+'<i id="zzimDel" class="fa fa-trash-o cartdel" aria-hidden="true" data-customer="'+value.mid+'" data-store="'+value.sid+'"></i></li>';
+ 			    			 str+='<li style="color: white; border:2px solid pink; background-color: pink; border-radius:5px; margin:5px; text-align:center; width:23%; overflow:hidden; float:left;"><img style="width:100%;" id="myImg" src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div style="height:53px" ><h3>'+value.sid+' <i stlye="margin:10px" id="zzimDel" class="fa fa-trash-o cartdel" aria-hidden="true" data-customer="'+value.mid+'" data-store="'+value.sid+'"></i></h3></div></li>';
  			    			 
  			    			}); 
  						
@@ -419,34 +417,36 @@ $(document).ready(function(e){
  			
  			$(document).on("click","#zzimDel",function(e){
  		    	 console.log("zzimDel");
- 		    	 $.ajax({ 
- 						url: "/cart/del" ,
- 						type: "POST",
- 						data:{
- 							
- 							customer : $(this).data("customer"),
- 							store :   $(this).data("store")
- 						},
- 						dataType : 'text' , 
- 						success: function(data) { 
- 							console.log(data);
- 							swal({
- 								  title: "Are you sure?",
- 								  text: "Your will not be able to recover this imaginary file!",
- 								  type: "warning",
- 								  showCancelButton: true,
- 								  confirmButtonClass: "btn-danger",
- 								  confirmButtonText: "Yes, delete it!",
- 								  closeOnConfirm: false
- 								},
- 								function(){
- 								  swal("Deleted!", "Your imaginary file has been deleted.", "success");
- 								});
- 							console.log("zzim delete");
- 							readZzim();
- 						
- 						}
- 					})
+ 		    	swal({
+					  title: "Are you sure?",
+					  text: "Your will not be able to recover this imaginary file!",
+					  type: "warning",
+					  showCancelButton: true,
+					  confirmButtonClass: "btn-danger",
+					  confirmButtonText: "Yes, delete it!",
+					  closeOnConfirm: false
+					},
+					function(){
+					  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+					  $.ajax({ 
+	 						url: "/cart/del" ,
+	 						type: "POST",
+	 						data:{
+	 							
+	 							customer :"${login.cemail}",
+	 							store :   $("#zzimDel").data("store")
+	 						},
+	 						dataType : 'text' , 
+	 						success: function(data) { 
+	 							console.log(data);
+	 							
+	 							console.log("zzim delete");
+	 							readZzim();
+	 						
+	 						}
+	 					})
+					});
+ 		    	
  		    	 
  		    	 });
  			

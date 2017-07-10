@@ -162,15 +162,15 @@
     		 $.each(list, function(index, value) {
 
     			 
-    			 str+='<div class="col-md-3 m-wthree" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+    			 str+='<div class="col-md-3 m-wthree" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
+    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
+    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
     					+'</div></div></div></div>'
     					
     			 
@@ -407,10 +407,10 @@
   		    		$("#stPhone").html(vo.sphone);
   		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
   		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
-  		    		$("#storeimg").attr("src","http://localhost:8083/admin/display/gif?fName="+vo.sid+".gif");
+  		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
   		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
   		    		
-  		    		$("#storeimg").attr("src","http://localhost:8083/admin/display/gif?fName="+vo.sid+".gif");
+  		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
   		    		
   		    		
   			    	
