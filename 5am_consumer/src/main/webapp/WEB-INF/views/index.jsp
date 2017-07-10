@@ -117,7 +117,7 @@
 						</a>
 					</div>
 					<div class="add-to">
-						<button id="modal-cart" class="my-cart-btn my-cart-btn1 "
+						<button id="toCart" class="my-cart-btn my-cart-btn1 "
 							data-id="1" data-name="Moong" data-summary="summary 1"
 							data-price="1.50" data-quantity="1" data-image="images/of.png">Add
 							to Cart</button>
@@ -138,7 +138,6 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 <script src="js/jquery.vide.min.js"></script>
 
-<script type='text/javascript' src="js/jquery.mycart.js"></script>
 
 <script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
@@ -163,7 +162,7 @@
     		 $.each(list, function(index, value) {
 
     			 
-    			 str+='<div class="col-md-3 m-wthree" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
+    			 str+='<div class="col-md-3 m-wthree" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
     					+'<img src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
@@ -422,7 +421,7 @@
   		 	 		    	  type: "POST",
   		 	 		    	  url: "/index/replyRegister",
   		 	 		    	  data: {
-  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
+  		 	 		    		 sid: vo.sid , mid:"${login.cemail}" , title:$("#titleText").val(), question: $("#questionText").val()
   		 	 		    	  },
   		 	 		 		  dataType: 'text',
   		 	 		    	  success: function(re){
@@ -439,14 +438,6 @@
   		 	 		    	  }
   		 	 		    	});   
   		     		 })//  끝 
-  		     		 
-  		     		$('#modal-cart').myCart({
-  		    	      
-  		     	        clickOnAddToCart: function($addTocart){
-  		     	        	console.log("여긴 언제 11???");
-  		     	          goToCartIcon($addTocart);
-  		     	        }
-  		     	      });
   		    		
 			    	 
   		     		
