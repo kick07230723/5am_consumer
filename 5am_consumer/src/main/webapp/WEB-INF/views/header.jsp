@@ -169,8 +169,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<c:if test="${login.cemail ==null}">
 						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i><label>Register</label></a>
 						</c:if>
-					<a href="#" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}"><i class="fa fa-shopping-cart"  style="margin:10px"></i>
-					<label>list</label></a></div>
+					<a href="#" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}"><i class="fa fa-shopping-cart" style="margin:10px"></i><label>List</label></a></div>
 					<div class="clearfix"></div>
 				</div>
 					
@@ -452,8 +451,11 @@ $(document).ready(function(e){
  			
  			$(window).scroll(function () {
  	   	        if ($(window).scrollTop() > 200) {
- 	   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','60px').css('right','1.25%').css('font-size', '30px');
+ 	   	        	console.log($("#zzim").children()[1]);
+ 	   	        $("#zzim").children()[1].innerText="";
+ 	   	        	$("#zzim").css('position', 'fixed').css('z-index', '999').css('bottom','57px').css('right','0.7%').css('font-size', '30px');
  	   	        } else {
+ 	   	        $("#zzim").children()[1].innerText="List";
  	   	        	$("#zzim").css('position', 'relative').css('bottom','0px').css('font-size', '15px');
  	   	        }
  	   	        })
