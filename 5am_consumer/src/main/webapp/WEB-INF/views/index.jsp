@@ -117,7 +117,7 @@
 						</a>
 					</div>
 					<div class="add-to">
-						<button id="modal-cart" class="my-cart-btn my-cart-btn1 "
+						<button id="toCart" class="my-cart-btn my-cart-btn1 "
 							data-id="1" data-name="Moong" data-summary="summary 1"
 							data-price="1.50" data-quantity="1" data-image="images/of.png">Add
 							to Cart</button>
@@ -138,7 +138,6 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 <script src="js/jquery.vide.min.js"></script>
 
-<script type='text/javascript' src="js/jquery.mycart.js"></script>
 
 <script type="text/javascript"
 	src="//apis.daum.net/maps/maps3.js?apikey=175962b9a13ff23b6ba95789998c261c&libraries=services"></script>
@@ -148,7 +147,8 @@
     $(document).ready(function(e) {
     	
     
-    	
+    	var customer_id = "${login.cemail}";
+    	console.log(customer_id);
     	var idnum = 1;
     	var page = 1;
     	var lat=0;
@@ -157,19 +157,20 @@
     	function adlist(list){
     		 
     		 var str="";
+    		
     		 
     		 $.each(list, function(index, value) {
 
     			 
-    			 str+='<div class="col-md-3 m-wthree" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+    			 str+='<div class="col-md-3 m-wthree" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif">'
+    					+'<img src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-customer="id1" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
+    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
     					+'</div></div></div></div>'
     					
     			 
@@ -301,7 +302,7 @@
     	    }
     	    else
     	    {
-    	        alert("이 브라우저는 Geolocation를 지원하지 않습니다");
+    	        swal("이 브라우저는 Geolocation를 지원하지 않습니다");
     	    }
 
     	    function successCallback(position)
@@ -316,7 +317,7 @@
     	            crossDomain:true,
     	            url: "https://apis.daum.net/local/geo/coord2addr?apikey=175962b9a13ff23b6ba95789998c261c&longitude="+lng+"&latitude="+lat+"&inputCoordSystem=WGS84&output=json",
     	            error   : function (msg) {
-    	                alert(msg);
+    	                swal(msg);
     	                
     	            },
     	            success: function(data){
@@ -329,7 +330,7 @@
 
     	    function errorCallback(error)
     	    {
-    	        alert(error.message);
+    	        swal(error.message);
     	    }
     		
     		
@@ -406,10 +407,10 @@
   		    		$("#stPhone").html(vo.sphone);
   		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
   		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
-  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+  		    		$("#storeimg").attr("src","http://localhost:8083/admin/display/gif?fName="+vo.sid+".gif");
   		    		$("#stContent").html("사장님은 "+vo.sid+"입니다... 블라블라..");
   		    		
-  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+  		    		$("#storeimg").attr("src","http://localhost:8083/admin/display/gif?fName="+vo.sid+".gif");
   		    		
   		    		
   			    	
@@ -420,7 +421,7 @@
   		 	 		    	  type: "POST",
   		 	 		    	  url: "/index/replyRegister",
   		 	 		    	  data: {
-  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
+  		 	 		    		 sid: vo.sid , mid:"${login.cemail}" , title:$("#titleText").val(), question: $("#questionText").val()
   		 	 		    	  },
   		 	 		 		  dataType: 'text',
   		 	 		    	  success: function(re){
@@ -437,14 +438,6 @@
   		 	 		    	  }
   		 	 		    	});   
   		     		 })//  끝 
-  		     		 
-  		     		$('#modal-cart').myCart({
-  		    	      
-  		     	        clickOnAddToCart: function($addTocart){
-  		     	        	console.log("여긴 언제 11???");
-  		     	          goToCartIcon($addTocart);
-  		     	        }
-  		     	      });
   		    		
 			    	 
   		     		
@@ -570,13 +563,14 @@
 					type: "POST",
 					data:{
 						
-						customer : $(this).data("customer"),
+						customer : "${login.cemail}",
 						store :   $(this).data("name")
 					},
 					dataType : 'text' , 
 					success: function(data) { 
 						console.log(data);
-						alert(data);
+						swal(data);
+						
 						console.log("check cart ")
 					
 					}

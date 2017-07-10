@@ -39,7 +39,6 @@ public class CartController {
 	public String cartaddPost(@RequestParam("customer") String customer, @RequestParam("store") String sid ){
 		
 		logger.info("카트에 넣기");
-		
 			
 			CartVO vo = dao.same(customer, sid);
 			

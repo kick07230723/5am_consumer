@@ -30,7 +30,25 @@ ul{
 }
 
 /*--popup--*/
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width : 10%;
+}
 
+#myImg:hover {opacity: 0.7;}
+
+}
+
+.cartdel{
+	
+	float: right;
+}
+
+#cartUL{
+	list-style-type: none;
+}
 
 
 
@@ -3211,4 +3229,6 @@ h1.t-button {
 .grid_3 p, .page-header p {
     font-size: 13px;
 }
-}
+
+
+
