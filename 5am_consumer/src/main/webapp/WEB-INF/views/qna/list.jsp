@@ -265,7 +265,7 @@
 
 			
 			str+='<div class="panel panel-default"><div class="panel-heading"> <h4 id="getrlist" class="panel-title" data-cusqno="'+value.cusqno+'" data-toggle="collapse" data-target="#'+value.cusqno+'"> <span>'+value.cusqno+'</span> '+value.custitle+' </h4><span class="badge badge-success">'+value.count +'</span><a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-cusqno ="'+value.cusqno+'" data-custitle ="'+value.custitle+'" data-cuscontent ="'+value.cuscontent+'" ><i id="modi" class="glyphicon glyphicon-wrench"></i></a><a><i id="del"  data-cusqno="'+value.cusqno+'" class="glyphicon  glyphicon-remove"></i></a> <h6 style="text-align: right;">작성자 : '+value.cuswriter+'</h6> </div> <div id="'+value.cusqno+'" class="panel-collapse collapse"> <div class="panel-body"> <p>'+value.cuscontent+' </p> </div>' 
-				+'<form class="form-inline"><div class="form-group" style="width:90%;"><input id="reply" style="width:100%;" type="text"class="form-control" id="inputPassword2" placeholder="댓글을입력하세요"aria-describedby="basic-addon2"></div><button id="reregi" data-cusqno="'+value.cusqno+'" class="btn btn-success" type="button">등록</button></form>'	 
+				+'<form class="form-inline" style="margin-bottom:10px"><div class="form-group" style="width:84%;"><input id="reply" style="width:100%;" type="text"class="form-control" id="inputPassword2" placeholder="댓글을입력하세요"aria-describedby="basic-addon2"></div><button id="reregi" data-cusqno="'+value.cusqno+'" class="btn btn-success" type="button">등록</button></form>'	 
 				+'<div style="width:90%;"><table class="table"><thead><tr><th>내용</th><th>답변자</th></tr></thead><tbody id="'+value.cusqno+'reply"></tbody></table></div>'
 				+'</div> </div> '
 				
