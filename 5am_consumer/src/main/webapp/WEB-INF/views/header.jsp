@@ -135,11 +135,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="col-sm-3">
 										
 											<ul class="multi-column-dropdown">
-												<li><a href="/category/list?cate='전자%26통신"  data-category="전자&amp;통신"><i class="fa fa-angle-right" aria-hidden="true"></i>전자 &amp; 통신</a></li>
-												<li><a href="/category/list?cate='유통"  data-category="유통"><i class="fa fa-angle-right" aria-hidden="true"></i>유통</a></li>
-												<li><a href="/category/list?cate='수송"  data-category="수송"><i class="fa fa-angle-right" aria-hidden="true"></i>수송</a></li>
-												<li><a href="/category/list?cate='인터넷"  data-category="인터넷"><i class="fa fa-angle-right" aria-hidden="true"></i>인터넷</a></li>
-												<li><a href="/category/list?cate='서비스%26기타"  data-category="서비스&amp;기타"><i class="fa fa-angle-right" aria-hidden="true"></i>서비스 &amp; 기타</a></li>
+												<li><a href="/category/list?cate=전자%26통신"  data-category="전자&amp;통신"><i class="fa fa-angle-right" aria-hidden="true"></i>전자 &amp; 통신</a></li>
+												<li><a href="/category/list?cate=유통"  data-category="유통"><i class="fa fa-angle-right" aria-hidden="true"></i>유통</a></li>
+												<li><a href="/category/list?cate=수송"  data-category="수송"><i class="fa fa-angle-right" aria-hidden="true"></i>수송</a></li>
+												<li><a href="/category/list?cate=인터넷"  data-category="인터넷"><i class="fa fa-angle-right" aria-hidden="true"></i>인터넷</a></li>
+												<li><a href="/category/list?cate=서비스%26기타"  data-category="서비스&amp;기타"><i class="fa fa-angle-right" aria-hidden="true"></i>서비스 &amp; 기타</a></li>
 											</ul>
 										</div>
 										<div class="col-sm-3 w3l">
@@ -159,15 +159,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</div>
 					</nav>
 
-					<div class="cart">
+					<div class="cart" style="">
 						<c:if test="${login.cemail !=null}">    
-						<a id="logout" ><i class="fa fa-user" aria-hidden="true" style="margin:10px;  "></i>Logout</a >			
+						<a id="logout" ><i class="fa fa-user" aria-hidden="true"  style="margin:10px;  ">Logout</i></a >			
 					</c:if>
 					<c:if test="${login.cemail ==null}">
-						<a href="/login/main" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; "></i>Login</a >
+						<a href="/login/main" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; ">Login</i></a >
 					</c:if>
 					<c:if test="${login.cemail ==null}">
-						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i>Register</a>
+						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px">Register</i></a>
 						</c:if>
 					<i class="fa fa-shopping-cart" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}"></i>
 					</div>

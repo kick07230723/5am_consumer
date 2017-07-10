@@ -327,22 +327,14 @@
     			    	
     			    } ,
     			    success: function(re) {
-    			    	swal({
-    			    		  title: "회원 등록하시겠습니까?",
-    			    		 
-    			    		  type: "info",
-    			    		  showCancelButton: true,
-    			    		  closeOnConfirm: false,
-    			    		  showLoaderOnConfirm: true,
-    			    		},
-    			    		function(){
-    			    		  
+    			    	
+    			    	  
     			    		  swal("등록되셨습니다","2초후 로그인 페이지로 이동합니다.","success");
     			    		  setTimeout(function(){
     			    		    self.location = "/login/main"
     			    		  }, 2000);
     			    		 
-    			    		});
+    			    		
     			    	
     			        
     			    },

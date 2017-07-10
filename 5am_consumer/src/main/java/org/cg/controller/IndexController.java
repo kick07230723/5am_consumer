@@ -1,6 +1,7 @@
 package org.cg.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,7 +40,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "getadlist", method = RequestMethod.POST)
-	public @ResponseBody List<StoreVO> sendadlist(@RequestParam("lat") String lat, @RequestParam("lng") String lng,@RequestParam("page") Integer page){
+	public @ResponseBody List<StoreVO> sendadlist(@RequestParam("lat") String lat, @RequestParam("lng") String lng,@RequestParam("page") Integer page,@RequestParam("sname")String sname){
 
 		logger.info("zzzzzzzzzzzzzzzdddd");
 		logger.info("..."+lat+"...");
@@ -59,8 +60,11 @@ public class IndexController {
 			StoreVO vo=new StoreVO(); 
 			vo.setLat(lat);
 			vo.setLng(lng);
+			vo.setSname(sname);
 			
 			list = dao.getlist(vo,page);
+			
+			
 			logger.info(list.toString());
 			
 			
@@ -154,4 +158,5 @@ public class IndexController {
 		return "success";
 	}
 	
+
 }

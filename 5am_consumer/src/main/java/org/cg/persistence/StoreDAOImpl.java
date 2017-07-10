@@ -28,6 +28,7 @@ public class StoreDAOImpl implements StoreDAO {
 		map.put("vo", vo);
 		map.put("page", page);
 		
+		
 		return sess.selectList(namespace+".getlist",map);
 	}
 

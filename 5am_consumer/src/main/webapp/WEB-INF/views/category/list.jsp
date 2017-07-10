@@ -15,17 +15,17 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<a href="/category/list?cate='식음료'"><img class="first-slide"
+			<a href="/category/list?cate=식음료"><img class="first-slide"
 				src="images/ba.jpg" alt="First slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="/category/list?cate='화장품'"> <img class="second-slide "
+			<a href="/category/list?cate=화장품"> <img class="second-slide "
 				src="images/ba1.jpg" alt="Second slide"></a>
 
 		</div>
 		<div class="item">
-			<a href="/category/list?cate='식음료'"><img class="third-slide "
+			<a href="/category/list?cate=식음료"><img class="third-slide "
 				src="images/ba2.jpg" alt="Third slide"></a>
 
 		</div>
@@ -123,9 +123,11 @@
 									<div id="detail"></div>
 									<div id="answer"></div><br>
 									<div class="input-group">
+										<c:if test="${login.cemail !=null}"> 
 									  <input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
 									  <textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
 									  <a id="aTag" href="#" id="replyBtn" style="float: right" >댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
+									  </c:if>
 									</div>
 									<div class="add-to">
 										   <button id="cartBtn" class="my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
@@ -212,15 +214,15 @@
 		    			 
 		    			 
 		    			 
-		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-	    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+		    			 str+='<div class="col-md-3 m-wthree" style="margin-bottom:10px;margin-top:10px"><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal4" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
+	    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
 	    					+'<div class="mid-1"><div class="women">'
 	    					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
 	    					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
 	    					+'<p>카테고리 : '+value.scategory+'</p>'
 	    				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
 	    					+'<div class="clearfix"></div></div><div class="add">'
-	    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
+	    				  	+'<button class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">Add to Cart</button>'
 	    					+'</div></div></div></div>'
 		    			 
 		    					
@@ -317,8 +319,10 @@
 				    	$("#close").html('');
 			 		    $("#detail").html('');
 				 		$("#answer").html('');
+				 		if(${login.cemail !=null}){
 					 	$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
-		    		 })//  끝 
+				 		}
+				 		})//  끝 
 			    	
 			    	
 			    	 $(document).on("click",".offer-img",function(){
@@ -337,19 +341,23 @@
 		  		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
 		  		    		$("#stPhone").html(vo.sphone);
 		  		    		$("#stContent").html("상점 소개<br>안녕하세요. 사장님은 "+vo.sid+"입니다.");
+		  		    		if(${login.cemail !=null}){
 		  		    		$(".input-group").html('<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1"><textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea><a style="float: right" id="replyBtn" id="aTag" href="#">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>');
-		  		    		$("#storeimg").attr("src","http://localhost:8080/admin/display/gif?fName="+vo.sid+".gif");
+		  		    		}
+		  		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
 		  		    		
 		  		    		
 		  			    	
 		  		     		//댓글달기
 		  		  	    	$(document).on("click","#replyBtn",function(e){
 		  		  	    		e.preventDefault();
+		  		  	    		
+		  		  	    	
 		  		  	    	  	$.ajax({
 		  		 	 		    	  type: "POST",
 		  		 	 		    	  url: "/category/replyRegister",
 		  		 	 		    	  data: {
-		  		 	 		    		 sid: vo.sid , mid:'회원11' , title:$("#titleText").val(), question: $("#questionText").val()
+		  		 	 		    		 sid: vo.sid , mid: "${login.cemail}" , title:$("#titleText").val(), question: $("#questionText").val()
 		  		 	 		    	  },
 		  		 	 		 		  dataType: 'text',
 		  		 	 		    	  success: function(re){

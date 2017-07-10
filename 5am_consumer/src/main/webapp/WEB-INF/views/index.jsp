@@ -17,15 +17,15 @@
 			<br>
 			<h3>검색을 원하시는 장소를 입력하세요</h3>
 			<br>
-			<div class="search-form">
-
-				<input id="area" type="text" placeholder="구/동 주소를 입력하세요..."
-					name="Search..."> <input id="searcharea" type="submit"
-					value=" ">
-
-			</div>
-		</div>
-	</div>
+			<div class="search-form">			
+				
+					<input id="area" type="text" placeholder="주소를 입력하세요" name="Search..." style="width: 30%">
+					<input id="area2" type="text" placeholder="업소명을 검색해주세요" value="" name="Search..." style="width: 55%;">
+					<input id="searcharea" type="submit" value=" " >
+				
+			</div>		
+		</div>	
+    </div>
 </div>
 
 
@@ -216,6 +216,7 @@
     		 			 	lat : lat,
       		    		  	lng : lng,
     			        	page : page
+    			        	sname : $("#area2").val()
     			        },
     		    	  success: function(re){
     		    		console.log("리스트를 받아서 ");
@@ -285,8 +286,17 @@
        		 		  dataType: 'Json',
        		    	  success: function(re){
        		    		console.log("리스트를 받아서 ");
-       		    		  
-       		    		adlist(re);
+       		    		 console.log(re);
+       		    		if(re.length!=0){
+       		    			adlist(re);
+       		    		}else{
+       		    			swal("검색결과가 없습니다.","","warning")
+       		    			
+       		    		}
+       		    				
+       		    		
+       		    		
+       		    		
        		    	  },
        		    	}); 
     		    } 
@@ -357,9 +367,12 @@
     		console.log("in~~~!!");
     		putArea = $("#area").val();
     		console.log(putArea);
-    		
+    		if(putArea==""){
+    			
+    			swal("위치를 확인해주세요","","warning")
+    		}else{
     		transGeocode(putArea);
-    		
+    		}
     		
     	});
 
