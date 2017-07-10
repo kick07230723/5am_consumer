@@ -161,16 +161,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 					<div class="cart" style="">
 						<c:if test="${login.cemail !=null}">    
-						<a id="logout" ><i class="fa fa-user" aria-hidden="true"  style="margin:10px;  ">Logout</i></a >			
+						<a id="logout" ><i class="fa fa-user" aria-hidden="true"  style="margin:10px;  "></i><label>Logout</label></a >			
 					</c:if>
 					<c:if test="${login.cemail ==null}">
-						<a href="/login/main" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; ">Login</i></a >
+						<a href="/login/main" ><i class="fa fa-user" aria-hidden="true" style="margin:10px; "></i><label>Login</label></a >
 					</c:if>
 					<c:if test="${login.cemail ==null}">
-						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px">Register</i></a>
+						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i><label>Register</label></a>
 						</c:if>
-					<i class="fa fa-shopping-cart" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}"></i>
-					</div>
+					<i class="fa fa-shopping-cart" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}" style="margin:10px"></i>
+					<label>list</label></div>
 					<div class="clearfix"></div>
 				</div>
 					
