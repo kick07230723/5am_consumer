@@ -169,8 +169,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<c:if test="${login.cemail ==null}">
 						<a href="/register/main" ><i class="fa fa-arrow-right" aria-hidden="true" style="margin:10px"></i><label>Register</label></a>
 						</c:if>
-					<i class="fa fa-shopping-cart" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}" style="margin:10px"></i>
-					<label>list</label></div>
+					<a href="#" id="zzim" data-toggle="modal" data-target="#myCartModal" data-customer = "${login.cemail}"><i class="fa fa-shopping-cart"  style="margin:10px"></i>
+					<label>list</label></a></div>
 					<div class="clearfix"></div>
 				</div>
 					
