@@ -148,7 +148,8 @@
     $(document).ready(function(e) {
     	
     
-    	
+    	var customer_id = "${login.cemail}";
+    	console.log(customer_id);
     	var idnum = 1;
     	var page = 1;
     	var lat=0;
@@ -157,19 +158,20 @@
     	function adlist(list){
     		 
     		 var str="";
+    		
     		 
     		 $.each(list, function(index, value) {
 
     			 
     			 str+='<div class="col-md-3 m-wthree" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+    					+'<img src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
     					+'<div class="clearfix"></div></div><div class="add">'
-    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-customer="id1" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
+    				  	+'<button id="toCart" class="btn my-cart-btn my-cart-b" data-id="'+ idnum++ +'" data-name="'+value.sid+'" data-summary="summary'+idnum+'" data-price="1.50" data-quantity="1" data-image="http://localhost:8080/admin/display/gif?fName='+value.sid+'.gif" ">Add to Cart</button>'
     					+'</div></div></div></div>'
     					
     			 
@@ -570,7 +572,7 @@
 					type: "POST",
 					data:{
 						
-						customer : $(this).data("customer"),
+						customer : "${login.cemail}",
 						store :   $(this).data("name")
 					},
 					dataType : 'text' , 
