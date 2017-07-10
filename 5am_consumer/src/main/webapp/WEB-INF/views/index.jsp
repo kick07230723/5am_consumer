@@ -216,7 +216,8 @@
     		 			 	lat : lat,
       		    		  	lng : lng,
     			        	page : page,
-    			        	sname : $("#area2").val()
+    			        	sname:""
+    			        	
     			        },
     		    	  success: function(re){
     		    		console.log("리스트를 받아서 ");
@@ -281,7 +282,8 @@
        		    	  data: {
        		    		  lat : result.addr[0].lat,
        		    		  lng : result.addr[0].lng,
-       		    		  page:page
+       		    		  page:page,
+       		    		sname : $("#area2").val()
        		    	  },
        		 		  dataType: 'Json',
        		    	  success: function(re){
