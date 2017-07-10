@@ -215,7 +215,7 @@
     		 		  data : {
     		 			 	lat : lat,
       		    		  	lng : lng,
-    			        	page : page
+    			        	page : page,
     			        	sname : $("#area2").val()
     			        },
     		    	  success: function(re){
