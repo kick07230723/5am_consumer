@@ -197,6 +197,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="modal-body">
 				<p>List</p>
+				
 					
 					<div class="col-md-12">
 					<ul id="cartUL"></ul>
@@ -404,7 +405,7 @@ $(document).ready(function(e){
  						
  						 $.each(data, function(index, value) {
  							 
- 			    			 str+='<li>'+value.sid+'<i id="zzimDel" class="fa fa-trash-o" aria-hidden="true" data-customer="'+value.mid+'" data-store="'+value.sid+'"></i></li>';
+ 			    			 str+='<li><img id="myImg" src="http://localhost:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive" alt="">'+value.sid+'<i id="zzimDel" class="fa fa-trash-o cartdel" aria-hidden="true" data-customer="'+value.mid+'" data-store="'+value.sid+'"></i></li>';
  			    			 
  			    			}); 
  						
@@ -429,7 +430,18 @@ $(document).ready(function(e){
  						dataType : 'text' , 
  						success: function(data) { 
  							console.log(data);
- 							alert(data);
+ 							swal({
+ 								  title: "Are you sure?",
+ 								  text: "Your will not be able to recover this imaginary file!",
+ 								  type: "warning",
+ 								  showCancelButton: true,
+ 								  confirmButtonClass: "btn-danger",
+ 								  confirmButtonText: "Yes, delete it!",
+ 								  closeOnConfirm: false
+ 								},
+ 								function(){
+ 								  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+ 								});
  							console.log("zzim delete");
  							readZzim();
  						
