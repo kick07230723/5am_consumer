@@ -52,23 +52,23 @@
 
 		</div>
 		<div class="col-md-4 kic-top1">
-			<a href="single.html"> <img src="images/ki.jpg"
+			 <img src="images/ki.jpg"
 				class="img-responsive" alt="">
-			</a>
+			
 			<h6>Dal</h6>
 			<p>Nam libero tempore</p>
 		</div>
 		<div class="col-md-4 kic-top1">
-			<a href="single.html"> <img src="images/ki1.jpg"
+			 <img src="images/ki1.jpg"
 				class="img-responsive" alt="">
-			</a>
+			
 			<h6>Snacks</h6>
 			<p>Nam libero tempore</p>
 		</div>
 		<div class="col-md-4 kic-top1">
-			<a href="single.html"> <img src="images/ki2.jpg"
+			<img src="images/ki2.jpg"
 				class="img-responsive" alt="">
-			</a>
+			
 			<h6>Spice</h6>
 			<p>Nam libero tempore</p>
 		</div>
@@ -122,13 +122,15 @@
 									<div id="close"></div> 
 									<div id="detail"></div>
 									<div id="answer"></div><input id="stSid" type="hidden"><br>
+									<c:if test="${login.cemail !=null}"> 
 									<div class="input-group">
-										<c:if test="${login.cemail !=null}"> 
+										
 									  <input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
 									  <textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
 									  <a id="aTag" href="#" id="replyBtn" style="float: right" >댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
-									  </c:if>
+									  
 									</div>
+									</c:if>
 									<div class="add-to">
 										   <button id="cartBtn" class="my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
 									</div>
@@ -230,25 +232,25 @@
 		    			}); 
 		    		 
 		    		 mid_adv='<div class="clearfix"></div> <div class="col-md-4 m-w3ls1">'
-		    			 +' <div class="col-md "><a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt="">'
+		    			 +' <div class="col-md "> <img src="images/co.jpg" class="img-responsive img" alt="">'
 		    			 +'    <div class="big-sale">'
 		    			 +'       <div class="big-sale1"><h3>Big <span>Sale</span></h3>'
 		    			 +'           <p>It is a long established fact that a reader </p></div>'
-		    			 +'   </div></a></div></div>'
+		    			 +'   </div></div></div>'
 		    			 +'  <div class="col-md-4 m-w3ls1">'
-		    			 +'<div class="col-md "><a href="hold.html"> <img src="images/co.jpg" class="img-responsive img" alt="">'
+		    			 +'<div class="col-md "> <img src="images/co.jpg" class="img-responsive img" alt="">'
 		    			 +'   <div class="big-sale">'
 		    			 +'      <div class="big-sale1"><h3>Big <span>Sale</span></h3><p>It is a long established fact that a reader </p></div>'
-		    			 +'</div></a></div></div>'
+		    			 +'</div></div></div>'
 		    			 +' <div class="col-md-4 m-w3ls">'
-		    			 +' <div class="col-md2 "><a href="kitchen.html"> <img src="images/co2.jpg" class="img-responsive img1" alt="">'
+		    			 +' <div class="col-md2 "><img src="images/co2.jpg" class="img-responsive img1" alt="">'
 		    			 +' <div class="big-sale2"><h3>Cooking <span>Oil</span></h3>'
 		    			 +'    <p>It is a long established fact that a reader </p></div>'
-		    			 +' </a></div>'
-		    			 +'  <div class="col-md3 "><a href="hold.html"> <img src="images/co3.jpg" class="img-responsive img1" alt="">'
+		    			 +' </div>'
+		    			 +'  <div class="col-md3 "><img src="images/co3.jpg" class="img-responsive img1" alt="">'
 		    			 +'    <div class="big-sale3"><h3>Vegeta<span>bles</span></h3>'
 		    			 +'        <p>It is a long established fact that a reader </p></div>'
-		    			 +'  </a></div></div><div class="clearfix"></div>'
+		    			 +'  </div></div><div class="clearfix"></div>'
 		    		 
 		    		 	$(".agileinf").append(str +mid_adv);
 		    			 
