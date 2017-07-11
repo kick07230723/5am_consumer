@@ -788,7 +788,7 @@ a:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #039445;
+  background: #9857b7;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -800,7 +800,7 @@ a:focus {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
     border-radius: 50px;
-	border: 2px solid #039445;
+	border: 2px solid #9857b7;
 }
 .my-cart-b:hover, .my-cart-b:focus, .my-cart-b:active {
 	color: white;

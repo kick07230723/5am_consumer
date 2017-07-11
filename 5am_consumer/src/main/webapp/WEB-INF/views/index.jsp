@@ -80,8 +80,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content modal-info">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
@@ -104,15 +103,15 @@
 					<div id="paging"></div>
 					<div id="close"></div>
 					<div id="detail"></div>
-					<div id="answer"></div>
+					<div id="answer"></div><input id="stSid" type="hidden">
 					<br>
-					<div class="input-group">
-						<c:if test="${login.cemail !=null}"> 
-							<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
-							<textarea id="questionText" style="height: 80px" type="text"class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
-							<a id="aTag" href="#" id="replyBtn" style="float: right">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
-						</c:if>
-					</div>
+					<c:if test="${login.cemail !=null}"> 
+						<div class="input-group">
+								<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
+								<textarea id="questionText" style="height: 80px" type="text" class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
+								<a id="aTag" href="#" id="replyBtn" style="float: right" >댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
+						</div>
+					</c:if>
 					<div class="add-to">
 						<button id="toCart" class="my-cart-btn my-cart-btn1 "
 							data-id="1" data-name="Moong" data-summary="summary 1"
@@ -162,7 +161,7 @@
     			 str+='<div class="col-md-3 pro-1" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
     					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
     					+'<div class="mid-1"><div class="women">'
-    					+'<h6>'+value.sname+'</h6></div><div class="mid-2">'
+    					+'<h6>'+value.sname+'</h6></div><div style="height:120px" class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
     					+'<p>카테고리 : '+value.scategory+'</p>'
     				  	+'<div class="block"><div class="starbox small ghosting"> </div></div>'
@@ -409,8 +408,8 @@
     		 })//  끝 
 	    	
 
+    		//상점광고 자세히 보기
     	 $(document).on("click",".offer-img",function(){
-	    		 
 		    	$("#close").html('');
 	 		    $("#detail").html('');
 		 		$("#answer").html('');
@@ -422,6 +421,7 @@
   		    	  },
   		 		  dataType: 'Json',
   		    	  success: function(vo){
+	    		 console.log(vo);
   		    		$("#stName").html(vo.sname);
   		    		$("#stCategory").html(vo.scategory);
   		    		$("#stAddrm").html("<p class='in-para'>"+vo.saddrm+', '+vo.saddr+"</p>");
@@ -433,38 +433,39 @@
   		    		
   		    		$("#storeimg").attr("src","http://192.168.0.17:8083/admin/display/gif?fName="+vo.sid+".gif");
   		    		
-  		    		
-  			    	
-  		     		//댓글달기
-  		  	    	$(document).on("click","#replyBtn",function(e){
-  		  	    		e.preventDefault();
-  		  	    	  	$.ajax({
-  		 	 		    	  type: "POST",
-  		 	 		    	  url: "/index/replyRegister",
-  		 	 		    	  data: {
-  		 	 		    		 sid: vo.sid , mid:"${login.cemail}" , title:$("#titleText").val(), question: $("#questionText").val()
-  		 	 		    	  },
-  		 	 		 		  dataType: 'text',
-  		 	 		    	  success: function(re){
-  		 	 		    		qRead(); 	
-  		 	 		    		console.log(re);
-  		 	 		    		$("#titleText").val('');
-  		 	 		    		$("#questionText").val('');
-	  		 	 		    	swal({
-	  		 	 		    	  title: "성공",
-	  		 	 		    	  text: "댓글이 성공적으로 등록되었습니다",
-	  		 	 		    	  timer: 2000,
-	  		 	 		    	  showConfirmButton: false
-	  		 	 		    	});
-  		 	 		    	  }
-  		 	 		    	});   
-  		     		 })//  끝 
-  		    		
-			    	 
-  		     		
-  		     		 
+  		    		$("#stSid").val(vo.sid);
+  	
+		 		    	qRead();
+  		    	  }
+  		    	});     	
+
+	    	 })
+	    	 
+	    	  $(document).on("click","#toCart",function(e){
+	    	 console.log("toCart Btn click");
+	    	 $.ajax({ 
+					url: "/cart/add" ,
+					type: "POST",
+					data:{
+						
+						customer : "${login.cemail}",
+						store :   $(this).data("name")
+					},
+					dataType : 'text' , 
+					success: function(data) { 
+						console.log(data);
+						swal(data);
+						
+						console.log("check cart ")
+					}
+				})
+	    	 
+	    	 }); 
+ 	    	
+   		
+		 
 		//자세히보기에서 질문보기
-			    function qRead(){ 
+			    function qRead(){
   		     			
   		     			
   		  	    	 //댓글 페이징	
@@ -472,7 +473,7 @@
 			 		    	  type: "POST",
 			 		    	  url: "/index/qPage",
 			 		    	  data: {
-			 		    		 keyword: vo.sid, page:1
+			 		    		 keyword: $("#stSid").val(), page:1
 			 		    	  },
 			 		 		  dataType: 'json',
 			 		    	  success: function(pageMaker){
@@ -493,7 +494,7 @@
 			 		    	  type: "POST",
 			 		    	  url: "/index/qRead",
 			 		    	  data: {
-			 		    		 keyword: vo.sid, page: $(this).data('pnum')
+			 		    		 keyword: $("#stSid").val(), page: $(this).data('pnum')
 			 		    	  },
 			 		 		  dataType: 'json',
 			 		    	  success: function(list){
@@ -502,7 +503,6 @@
 				 		    			str += '<div style="margin:7px"><a href="#"><h3 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].title+'</h3></a><h5>'+list[i].mid +'</h5></div>';
 				 		    		}
 				 		    		$("#question").html(str);
-			 		    		  
 			 		    	  }
 			 		    	});  
 	  		  	    });
@@ -511,14 +511,14 @@
 		 		    	  type: "POST",
 		 		    	  url: "/index/qRead",
 		 		    	  data: {
-		 		    		 keyword: vo.sid
+		 		    		 keyword: $("#stSid").val()
 		 		    	  },
 		 		 		  dataType: 'Json',
 		 		    	  success: function(list){
 		 		    		  console.log()
 		 		    		var str='';
 		 		    		for(var i=0; i<list.length; i++){
-		 		    			str += '<div style="margin:7px"><a href="#"><h3 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].title+'</h3></a><p	>'+list[i].mid +'</p></div>';
+		 		    			str += '<div style="margin:7px"><a href="#"><h3 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].title+'</h3></a><h5>'+list[i].mid +'</h5></div>';
 		 		    		}
 		 		    		$("#question").html(str);
 		 		    		
@@ -526,7 +526,7 @@
 		 		    		//mqno를 넘겨서 질문 자세히보기
 		 		    		 $(document).on("click",".panel-content",function(e){
 		 		    			e.preventDefault();
-		 		    			 var str1='<h4>댓글</h4>';
+		 		    			 var str1='<p class="in-para"><h4>댓글</h4>';
 				 		    	
 		 			    	  	$.ajax({
 				 		    	  type: "POST",
@@ -536,7 +536,7 @@
 				 		    	  },
 				 		 		  dataType: 'Json',
 				 		    	  success: function(vo){
-				 		    		str1+='<h5>제목 : ' +vo.title +'</h5><p style:"text-align=right">글쓴이 : '+ vo.mid+'<br>작성일  : '+ vo.regdate+'</p><h5>내용  : '+ vo.question +'</h5>';
+				 		    		str1+='<h5>제목 : ' +vo.title +'</h5><p style:"text-align=right">글쓴이 : '+ vo.mid+'<br>작성일  : '+ vo.regdate+'</p><h5>내용  : '+ vo.question +'</h5></p>';
 				 		    		$("#detail").html(str1);
 				 		    		$(".input-group").html('');
 					 		    	$("#close").html('<a id="listBtn" style="float:right" href="#">댓글&답글 접기 <i  class="fa fa-times" aria-hidden="true"></i></a>');
@@ -545,7 +545,7 @@
 				 		    	
 				 		    	 
 				 		    	//mqno를 넘겨서  답글보기
-						 		var str2='<br>';
+						 		var str2='<br><p class="in-para">';
 		 			    	  	$.ajax({
 					 		    	  type: "POST",
 					 		    	  url: "/index/aDetail",
@@ -555,54 +555,45 @@
 					 		 		  dataType: 'Json',
 					 		    	  success: function(list){
 						 		    	for(var i=0; i<list.length; i++){
-					 		    			str2 += '<h4>답글</h4><h5>제목 : '+list[i].title +'<br>작성일 : '+list[i].regdate+'<br>내용 : '+list[i].content +'</h5 >';
+					 		    			str2 += '<h4>답글</h4><h5>제목 : '+list[i].title +'<br>작성일 : '+list[i].regdate+'<br>내용 : '+list[i].content +'</h5></p>';
 					 		    		}
 					 		    		$("#answer").html(str2);
-					 		    		 
-					 		    		
 					 		    	  }
 					 		    	});  //답글보기 ajax  끝
-					 		    	
-
-						    		 
 		 		    		 })//댓글제목 클릭 이벤트처리
 		 		    	  }
-		 		    	  
 		 		    	});  //자세히보기 질문처리 ajax     	
   		     		}
-		 		    	qRead();
-  		    	  }
-  		    	});     	
-
-
-
-	    	 })
-	    	 
-	    	  $(document).on("click","#toCart",function(e){
-	    	 console.log("toCart Btn click");
-	    	 $.ajax({ 
-					url: "/cart/add" ,
-					type: "POST",
-					data:{
-						
-						customer : "${login.cemail}",
-						store :   $(this).data("name")
-					},
-					dataType : 'text' , 
-					success: function(data) { 
-						console.log(data);
-						swal(data);
-						
-						console.log("check cart ")
-					
-					}
-				})
-	    	 
-	    	 }); 
  	    	
  	    	
- 	    
- 	    
+	    	
+    		//댓글달기
+ 	    	$(document).on("click","#replyBtn",function(e){
+ 	    		e.preventDefault();
+ 	    		console.log($("#stSid").val())
+  	    	  	$.ajax({
+ 	 		    	  type: "POST",
+ 	 		    	  url: "/index/replyRegister",
+ 	 		    	  data: {
+ 	 		    		 sid: $("#stSid").val(), mid:"${login.cemail}" , title:$("#titleText").val(), question: $("#questionText").val()
+ 	 		    	  },
+ 	 		 		  dataType: 'text',
+ 	 		    	  success: function(re){
+ 	 		    		console.log(re);
+ 	 		    		qRead();
+ 	 		    		$("#titleText").val('');
+ 	 		    		$("#questionText").val('');
+ 	 	 		    	swal({
+ 	 	 		    	  title: "성공",
+ 	 	 		    	  text: "댓글이 성공적으로 등록되었습니다",
+ 	 	 		    	  timer: 2000,
+ 	 	 		    	  showConfirmButton: false
+ 	 	 		    	});
+ 	 		    	  }
+ 	 		    	});    
+    		 })//  끝 
+   		
+   		
 
 })
 </script>
