@@ -159,7 +159,7 @@
 
     			 
     			 str+='<div class="col-md-3 pro-1" style="min-height:80%" ><div class="col-m"><a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img" data-name="'+value.sid+'"  data-src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif">'
-    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""><div class="offer"><p><span>자세히보기</span></p></div></a>'
+    					+'<img src="http://192.168.0.17:8083/admin/display/gif?fName='+value.sid+'.gif" class="img-responsive " alt=""></a>'
     					+'<div class="mid-1"><div class="women">'
     					+'<h6>'+value.sname+'</h6></div><div style="height:120px" class="mid-2">'
     					+'<h5>주소 : '+value.saddrm+' , '+value.saddr+'</h5>'
