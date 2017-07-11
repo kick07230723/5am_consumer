@@ -4,6 +4,13 @@
 <div class="banner-top">
 	<div class="container">
 		<h3 >FAQ / Q&A</h3>
+		
+		${login};
+		<%-- <c:if test="${login.gubun=='admin'}">
+		<c:if test="${login}">
+		<h1>부부부부부부ㅜㅜ부부ㅜㅂ부ㅜ부부부부부부부붑부부부부부부</h1>
+		</c:if> --%>
+		
 		<h4><a href="/index">Home</a><label>/</label>FAQ / Q&A</h4>
 		<div class="clearfix"> </div>
 	</div>
@@ -250,6 +257,7 @@
 	
 	var cusqno="";
 	var reply="";
+	var cusname="${login.cname}";
 	/* test */
 	
 	/* test */
@@ -264,7 +272,7 @@
 			console.log(value)
 
 			
-			str+='<div class="panel panel-default"><div class="panel-heading"> <h4 id="getrlist" class="panel-title" data-cusqno="'+value.cusqno+'" data-toggle="collapse" data-target="#'+value.cusqno+'"> <span>'+value.cusqno+'</span> '+value.custitle+' </h4><span class="badge badge-success">'+value.count +'</span><a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-cusqno ="'+value.cusqno+'" data-custitle ="'+value.custitle+'" data-cuscontent ="'+value.cuscontent+'" ><i id="modi" class="glyphicon glyphicon-wrench"></i></a><a><i id="del"  data-cusqno="'+value.cusqno+'" class="glyphicon  glyphicon-remove"></i></a> <h6 style="text-align: right;">작성자 : '+value.cuswriter+'</h6> </div> <div id="'+value.cusqno+'" class="panel-collapse collapse"> <div class="panel-body"> <p>'+value.cuscontent+' </p> </div>' 
+			str+='<div class="panel panel-default"><div class="panel-heading"> <h4 id="getrlist" class="panel-title" data-cusqno="'+value.cusqno+'" data-toggle="collapse" data-target="#'+value.cusqno+'"> <span>'+value.cusqno+'</span> '+value.custitle+' <span class="badge badge-success">'+value.count +'</span><a class="noticemodi" href="" data-toggle="modal" data-target="#myModal1" data-cusqno ="'+value.cusqno+'" data-custitle ="'+value.custitle+'" data-cuscontent ="'+value.cuscontent+'" ><i id="modi" class="glyphicon glyphicon-wrench"></i></a><a><i id="del"  data-cusqno="'+value.cusqno+'" class="glyphicon  glyphicon-remove"></i></a></h4> <h6 style="text-align: right;">작성자 : '+value.cuswriter+'</h6> </div> <div id="'+value.cusqno+'" class="panel-collapse collapse"> <div class="panel-body"> <p>'+value.cuscontent+' </p> </div>' 
 				+'<form class="form-inline" style="margin-bottom:10px"><div class="form-group" style="width:84%;"><input id="reply" style="width:100%;" type="text"class="form-control" id="inputPassword2" placeholder="댓글을입력하세요"aria-describedby="basic-addon2"></div><button id="reregi" data-cusqno="'+value.cusqno+'" class="btn btn-success" type="button">등록</button></form>'	 
 				+'<div style="width:90%;"><table class="table"><thead><tr><th>내용</th><th>답변자</th></tr></thead><tbody id="'+value.cusqno+'reply"></tbody></table></div>'
 				+'</div> </div> '
@@ -339,9 +347,16 @@
 	
 	
 	
-	
+		$(document).keydown(function(event) {
+        if (event.keyCode == '13') {
+        	console.log($(this));   
+        	return false;
+            }   
+        })
 	
 		$(document).ready(function() {
+			
+			
 			
 			
 			getqnalist();
@@ -387,7 +402,7 @@
 			                data : {
 			                    
 			                    cusqno : $(this).data("cusqno"),
-			                    rewriter :"consumer1",
+			                    rewriter :cusname,
 			                    recontent : $("#reply").val()
 			                },
 			                 dataType: 'text',
@@ -398,6 +413,8 @@
 			                   getrelist(re);
 			                   
 			                   $("#reply").val("");
+			                  	
+			                   
 			                  
 			                }
 			            });
@@ -501,14 +518,14 @@
 			
 			$("#cusregi2").on("click",function(e){
 				e.preventDefault();
-				
+						
 				  $.ajax({
 				type:'post',
 				url:'/qna/regi',
 				data:{
 					custitle:$("#custitle").val(),
 					cuscontent:$("#cuscontent").val(),
-					cuswriter:"userVO.id"
+					cuswriter:cusname
 				},
 				success:function(re){
 					
