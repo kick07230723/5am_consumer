@@ -107,14 +107,11 @@
 					<div id="answer"></div>
 					<br>
 					<div class="input-group">
-						<input id="titleText" type="text" class="form-control"
-							placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
-						<textarea id="questionText" style="height: 80px" type="text"
-							class="form-control" placeholder="내용을 입력하세요..."
-							aria-describedby="basic-addon1"></textarea>
-						<a id="aTag" href="#" id="replyBtn" style="float: right">댓글
-							등록하기<i class="fa fa-envelope" aria-hidden="true"></i>
-						</a>
+						<c:if test="${login.cemail !=null}"> 
+							<input id="titleText" type="text" class="form-control" placeholder="제목을 입력하세요..." aria-describedby="basic-addon1">
+							<textarea id="questionText" style="height: 80px" type="text"class="form-control" placeholder="내용을 입력하세요..." aria-describedby="basic-addon1"></textarea>
+							<a id="aTag" href="#" id="replyBtn" style="float: right">댓글 등록하기<i class="fa fa-envelope" aria-hidden="true"></i></a>
+						</c:if>
 					</div>
 					<div class="add-to">
 						<button id="toCart" class="my-cart-btn my-cart-btn1 "
@@ -374,6 +371,12 @@
     			swal("위치를 확인해주세요","","warning")
     		}else{
     		transGeocode(putArea);
+    		if($("#area2").val()!=''){
+    			$(".spec").html("<h2>검색 : '"+$("#area").val()+"', '"+$("#area2").val()+"'</h2>");
+    		}else{
+    			$(".spec").html("<h2>검색: '"+$("#area").val()+"'</h2>");
+    		}
+    			
     		}
     		
     	});
@@ -408,6 +411,9 @@
 
     	 $(document).on("click",".offer-img",function(){
 	    		 
+		    	$("#close").html('');
+	 		    $("#detail").html('');
+		 		$("#answer").html('');
  	    	 $.ajax({
   		    	  type: "POST",
   		    	  url: "/index/getDetail",
@@ -493,7 +499,7 @@
 			 		    	  success: function(list){
 				 		    		var str='';
 				 		    		for(var i=0; i<list.length; i++){
-				 		    			str += '<a href="#"><h5 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].mid+' : '+list[i].title +'</h5></a>';
+				 		    			str += '<div style="margin:7px"><a href="#"><h3 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].title+'</h3></a><h5>'+list[i].mid +'</h5></div>';
 				 		    		}
 				 		    		$("#question").html(str);
 			 		    		  
@@ -509,9 +515,10 @@
 		 		    	  },
 		 		 		  dataType: 'Json',
 		 		    	  success: function(list){
+		 		    		  console.log()
 		 		    		var str='';
 		 		    		for(var i=0; i<list.length; i++){
-		 		    			str += '<a href="#"><h5 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].mid+' : '+list[i].title +'</h5 ></a>';
+		 		    			str += '<div style="margin:7px"><a href="#"><h3 class="panel-content" data-mqno='+list[i].mqno +'>'+list[i].title+'</h3></a><p	>'+list[i].mid +'</p></div>';
 		 		    		}
 		 		    		$("#question").html(str);
 		 		    		
